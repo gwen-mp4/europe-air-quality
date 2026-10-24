@@ -1,0 +1,3 @@
+{
+    "dbt.dbtPythonPathOverride": "/home/criolys/Git-Repo/dbt-project/.venv/bin/python"
+}

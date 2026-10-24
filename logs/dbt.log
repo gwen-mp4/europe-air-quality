@@ -1,0 +1,87 @@
+[0m14:04:48.332568 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f30cf0e1e80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f30d0ff0e10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f30cda47890>]}
+
+
+============================== 14:04:48.335055 | 17eb6e81-5e48-4256-b620-f384627a9256 ==============================
+[0m14:04:48.335055 [info ] [MainThread]: Running with dbt=1.12.6
+[0m14:04:48.335499 [debug] [MainThread]: running dbt with arguments {'partial_parse': 'True', 'introspect': 'True', 'no_print': 'None', 'indirect_selection': 'eager', 'profiles_dir': '/home/criolys/.dbt', 'warn_error': 'None', 'target_path': 'None', 'send_anonymous_usage_stats': 'True', 'debug': 'False', 'static_parser': 'True', 'cache_selected_only': 'False', 'invocation_command': 'dbt init', 'log_format': 'default', 'empty': 'None', 'log_path': 'logs', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'fail_fast': 'False', 'use_colors': 'True', 'log_cache_events': 'False', 'maximum_seed_size_mib': '1', 'hints_enabled': 'True', 'use_experimental_parser': 'False', 'version_check': 'True', 'printer_width': '80', 'quiet': 'False', 'write_json': 'True'}
+[0m14:04:53.910590 [debug] [MainThread]: Starter project path: /home/criolys/Git-Repo/dbt-project/.venv/lib/python3.14/site-packages/dbt/include/starter_project
+[0m14:04:53.914540 [info ] [MainThread]: Setting up your profile.
+[0m14:04:59.950546 [debug] [MainThread]: Spark adapter: Setting pyhive.hive logging to ERROR
+[0m14:04:59.951146 [debug] [MainThread]: Spark adapter: Setting thrift.transport logging to ERROR
+[0m14:04:59.951441 [debug] [MainThread]: Spark adapter: Setting thrift.protocol logging to ERROR
+[0m14:17:01.511972 [info ] [MainThread]: Profile data_pipeline_project written to /home/criolys/.dbt/profiles.yml using target's profile_template.yml and your supplied values.
+[0m14:17:01.518653 [info ] [MainThread]: Running dbt debug to validate the project...
+[0m14:17:01.519215 [info ] [MainThread]: dbt version: 1.12.6
+[0m14:17:01.519515 [info ] [MainThread]: python version: 3.14.8
+[0m14:17:01.519798 [info ] [MainThread]: python path: /home/criolys/Git-Repo/dbt-project/.venv/bin/python
+[0m14:17:01.520079 [info ] [MainThread]: os info: Linux-7.2.9-arch1-1-x86_64-with-glibc2.44
+[0m14:17:01.564001 [info ] [MainThread]: Using profiles dir at /home/criolys/.dbt
+[0m14:17:01.565111 [info ] [MainThread]: Using profiles.yml file at /home/criolys/.dbt/profiles.yml
+[0m14:17:01.565569 [info ] [MainThread]: Using dbt_project.yml file at /home/criolys/Git-Repo/dbt-project/data_pipeline_project/dbt_project.yml
+[0m14:17:01.565930 [info ] [MainThread]: adapter type: databricks
+[0m14:17:01.566230 [info ] [MainThread]: adapter version: 1.10.9
+[0m14:17:01.654482 [info ] [MainThread]: Configuration:
+[0m14:17:01.654873 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m14:17:01.655125 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m14:17:01.655351 [info ] [MainThread]: Required dependencies:
+[0m14:17:01.655599 [debug] [MainThread]: Executing "git --help"
+[0m14:17:01.657186 [debug] [MainThread]: STDOUT: "b"usage : git [-v | --version] [-h | --help] [-C <chemin>] [-c <nom>=<valeur>]\n           [--exec-path[=<chemin>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<chemin>]\n           [--work-tree=<chemin>] [--namespace=<nom>] [--config-env=<nom>=<var-d-env>] \n           <commande> [<args>]\n\nCi-dessous les commandes Git habituelles dans diverses situations\xc2\xa0:\n\nd\xc3\xa9marrer une zone de travail (voir aussi\xc2\xa0: git help tutorial)\n   clone      Cloner un d\xc3\xa9p\xc3\xb4t dans un nouveau r\xc3\xa9pertoire\n   init       Cr\xc3\xa9er un d\xc3\xa9p\xc3\xb4t Git vide ou r\xc3\xa9initialiser un existant\n\ntravailler sur la modification actuelle (voir aussi\xc2\xa0: git help revisions)\n   add        Ajouter le contenu de fichiers dans l'index\n   mv         D\xc3\xa9placer ou renommer un fichier, un r\xc3\xa9pertoire, ou un lien symbolique\n   restore    Restaurer les fichiers de l'arbre de travail\n   rm         Supprimer des fichiers de l'arbre de travail et de l'index\n\nexaminer l'historique et l'\xc3\xa9tat (voir aussi\xc2\xa0: git help revisions)\n   bisect     Trouver par recherche binaire la modification qui a introduit un bogue\n   diff       Afficher les changements entre les validations, entre validation et arbre de travail, etc\n   grep       Afficher les lignes correspondant \xc3\xa0 un motif\n   log        Afficher l'historique des validations\n   show       Afficher diff\xc3\xa9rents types d'objets\n   status     Afficher l'\xc3\xa9tat de l'arbre de travail\n\nagrandir, marquer et modifier votre historique\n   backfill   T\xc3\xa9l\xc3\xa9charger les objets manquants dans un clone partiel\n   branch     Lister, cr\xc3\xa9er ou supprimer des branches\n   commit     Enregistrer les modifications dans le d\xc3\xa9p\xc3\xb4t\n   history    EXPERIMENTAL\xc2\xa0: R\xc3\xa9\xc3\xa9crit l'historique\n   merge      Fusionner deux ou plusieurs historiques de d\xc3\xa9veloppement ensemble\n   rebase     R\xc3\xa9application des commits sur le sommet de l'autre base\n   reset      Positionner `HEAD` ou l'index \xc3\xa0 un \xc3\xa9tat connu\n   switch     Basculer de branche\n   tag        Cr\xc3\xa9er, lister, supprimer ou v\xc3\xa9rifier les \xc3\xa9tiquettes\n\ncollaborer (voir aussi\xc2\xa0: git help workflows)\n   fetch      T\xc3\xa9l\xc3\xa9charger les objets et r\xc3\xa9f\xc3\xa9rences depuis un autre d\xc3\xa9p\xc3\xb4t\n   pull       R\xc3\xa9cup\xc3\xa9rer et int\xc3\xa9grer un autre d\xc3\xa9p\xc3\xb4t ou une branche locale\n   push       Mettre \xc3\xa0 jour les r\xc3\xa9f\xc3\xa9rences distantes ainsi que les objets associ\xc3\xa9s\n\n'git help -a' et 'git help -g' listent les sous-commandes disponibles et\nquelques concepts. Voir 'git help <commande>' ou 'git help <concept>'\npour en lire plus \xc3\xa0 propos d'une commande sp\xc3\xa9cifique ou d'un concept.\nVoir 'git help git' pour un survol du syst\xc3\xa8me.\n""
+[0m14:17:01.657578 [debug] [MainThread]: STDERR: "b''"
+[0m14:17:01.657825 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m14:17:01.658077 [info ] [MainThread]: Connection:
+[0m14:17:01.658327 [info ] [MainThread]:   host: dbc-db45c0f7-2d9f.cloud.databricks.com
+[0m14:17:01.658602 [info ] [MainThread]:   http_path: /sql/1.0/warehouses/4501f6a6717e96a6
+[0m14:17:01.658864 [info ] [MainThread]:   catalog: air_quality
+[0m14:17:01.659133 [info ] [MainThread]:   schema: dbt_schema
+[0m14:17:01.659548 [info ] [MainThread]: Registered adapter: databricks=1.10.9
+[0m14:17:01.713979 [debug] [MainThread]: Databricks adapter: DatabricksDBTConnection(session-id=None, name=debug) - Creating connection
+[0m14:17:01.714477 [debug] [MainThread]: Acquiring new databricks connection 'debug'
+[0m14:17:01.714756 [debug] [MainThread]: Using databricks connection "debug"
+[0m14:17:01.714998 [debug] [MainThread]: On debug: select 1 as id
+[0m14:17:01.715225 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m14:17:03.084896 [debug] [MainThread]: Databricks adapter: Connection(session-id=01f1cc80-27af-11ca-a347-28934b28c314) - Created
+[0m14:17:12.977114 [debug] [MainThread]: SQL status: OK in 11.260 seconds
+[0m14:17:12.979307 [debug] [MainThread]: Databricks adapter: Cursor(session-id=01f1cc80-27af-11ca-a347-28934b28c314, command-id=01f1cc80-2824-117f-94f3-247c85dd3bed) - Closing
+[0m14:17:13.227407 [debug] [MainThread]: On debug: Close
+[0m14:17:13.228542 [debug] [MainThread]: Databricks adapter: Connection(session-id=01f1cc80-27af-11ca-a347-28934b28c314) - Closing
+[0m14:17:13.394717 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m14:17:13.395702 [info ] [MainThread]: [32mAll checks passed![0m
+[0m14:17:13.396507 [info ] [MainThread]: Your new dbt project "data_pipeline_project" was created!
+Initialized new project in /home/criolys/Git-Repo/dbt-project/data_pipeline_project/data_pipeline_project
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m14:17:13.398455 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 745.1932, "process_in_blocks": "4160", "process_kernel_time": 0.217488, "process_mem_max_rss": "374220", "process_out_blocks": "46864", "process_user_time": 5.284448}
+[0m14:17:13.400167 [debug] [MainThread]: Command `dbt init` succeeded at 14:17:13.399891 after 745.20 seconds
+[0m14:17:13.401092 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f30cda8de00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f30a19b70b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f30a1966470>]}
+[0m14:17:13.402182 [debug] [MainThread]: Flushing usage events
+[0m14:17:13.813204 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:08:00.630349 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff45a2e1e80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff45c17ce10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff458c4b890>]}
+
+
+============================== 11:08:00.634578 | b7c9583b-4d8c-46c7-ade8-aaa077ef6e5a ==============================
+[0m11:08:00.634578 [info ] [MainThread]: Running with dbt=1.12.6
+[0m11:08:00.635083 [debug] [MainThread]: running dbt with arguments {'log_path': 'logs', 'printer_width': '80', 'use_colors': 'True', 'warn_error': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'debug': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'invocation_command': 'dbt ls', 'no_print': 'None', 'use_experimental_parser': 'False', 'profiles_dir': '/home/criolys/.dbt', 'introspect': 'True', 'partial_parse': 'True', 'write_json': 'True', 'version_check': 'True', 'log_format': 'default', 'indirect_selection': 'eager', 'hints_enabled': 'True', 'target_path': 'None', 'log_cache_events': 'False', 'quiet': 'False', 'send_anonymous_usage_stats': 'True', 'fail_fast': 'False', 'static_parser': 'True', 'maximum_seed_size_mib': '1'}
+[0m11:08:00.635540 [error] [MainThread]: [[31mERROR[0m]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /home/criolys/Git-Repo/dbt-project/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m11:08:00.636223 [debug] [MainThread]: Resource report: {"command_name": "list", "command_success": false, "command_wall_clock_time": 0.068106346, "process_in_blocks": "0", "process_kernel_time": 0.056688, "process_mem_max_rss": "122672", "process_out_blocks": "8", "process_user_time": 1.252735}
+[0m11:08:00.636605 [debug] [MainThread]: Command `dbt ls` failed at 11:08:00.636532 after 0.07 seconds
+[0m11:08:00.636892 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff458c89f30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff458acc950>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff458ad8490>]}
+[0m11:08:00.637175 [debug] [MainThread]: Flushing usage events
+[0m11:08:00.969299 [debug] [MainThread]: An error was encountered while trying to flush usage events

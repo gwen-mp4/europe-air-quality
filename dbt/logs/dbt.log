@@ -1,0 +1,714 @@
+[0m14:47:12.855900 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0f92ce9d30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0f94b78e10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0f9164b890>]}
+
+
+============================== 14:47:12.860898 | f4825447-0b4e-4726-9058-1834ab890ff2 ==============================
+[0m14:47:12.860898 [info ] [MainThread]: Running with dbt=1.12.6
+[0m14:47:12.861453 [debug] [MainThread]: running dbt with arguments {'invocation_command': 'dbt ', 'no_print': 'None', 'use_colors': 'True', 'log_path': '/home/criolys/Git-Repo/dbt-project/data_pipeline_project/logs', 'log_cache_events': 'False', 'send_anonymous_usage_stats': 'True', 'hints_enabled': 'True', 'use_experimental_parser': 'False', 'log_format': 'default', 'printer_width': '80', 'static_parser': 'True', 'empty': 'None', 'indirect_selection': 'eager', 'write_json': 'True', 'partial_parse': 'True', 'debug': 'False', 'profiles_dir': '/home/criolys/.dbt', 'target_path': 'None', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'maximum_seed_size_mib': '1', 'warn_error': 'None', 'fail_fast': 'False', 'cache_selected_only': 'False', 'quiet': 'False', 'introspect': 'True'}
+[0m14:47:12.975178 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'f4825447-0b4e-4726-9058-1834ab890ff2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0f91692d70>]}
+[0m14:47:12.986313 [info ] [MainThread]: Warning: No packages were found in packages.yml
+[0m14:47:12.987074 [info ] [MainThread]: Warning: No packages were found in packages.yml
+[0m14:47:12.988768 [debug] [MainThread]: Resource report: {"command_name": "deps", "command_success": true, "command_wall_clock_time": 0.28837666, "process_in_blocks": "0", "process_kernel_time": 0.098508, "process_mem_max_rss": "126660", "process_out_blocks": "8", "process_user_time": 1.554907}
+[0m14:47:12.989684 [debug] [MainThread]: Command `cli deps` succeeded at 14:47:12.989468 after 0.29 seconds
+[0m14:47:12.990203 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0f913fb570>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0f9129c7c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0f9327a650>]}
+[0m14:47:12.990693 [debug] [MainThread]: Flushing usage events
+[0m14:47:13.391989 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:22:10.166204 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f927d8c1d30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f927f6cce10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f927c07f890>]}
+
+
+============================== 15:22:10.169448 | 992d8cb0-fbd2-4fdf-9c4d-0fc50448e8e6 ==============================
+[0m15:22:10.169448 [info ] [MainThread]: Running with dbt=1.12.6
+[0m15:22:10.170143 [debug] [MainThread]: running dbt with arguments {'quiet': 'False', 'log_path': '/home/criolys/Git-Repo/dbt-project/dbt/logs', 'fail_fast': 'False', 'hints_enabled': 'True', 'log_cache_events': 'False', 'maximum_seed_size_mib': '1', 'partial_parse': 'True', 'profiles_dir': '/home/criolys/.dbt', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'warn_error': 'None', 'static_parser': 'True', 'log_format': 'default', 'no_print': 'None', 'write_json': 'True', 'indirect_selection': 'eager', 'cache_selected_only': 'False', 'use_experimental_parser': 'False', 'target_path': 'None', 'printer_width': '80', 'debug': 'False', 'empty': 'None', 'use_colors': 'True', 'invocation_command': 'dbt ', 'version_check': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m15:22:10.264710 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '992d8cb0-fbd2-4fdf-9c4d-0fc50448e8e6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f927c2bed70>]}
+[0m15:22:10.275921 [info ] [MainThread]: Warning: No packages were found in packages.yml
+[0m15:22:10.276725 [info ] [MainThread]: Warning: No packages were found in packages.yml
+[0m15:22:10.277636 [debug] [MainThread]: Resource report: {"command_name": "deps", "command_success": true, "command_wall_clock_time": 0.23840626, "process_in_blocks": "0", "process_kernel_time": 0.069658, "process_mem_max_rss": "126600", "process_out_blocks": "16", "process_user_time": 1.239187}
+[0m15:22:10.278049 [debug] [MainThread]: Command `cli deps` succeeded at 15:22:10.277973 after 0.24 seconds
+[0m15:22:10.278348 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f927be3b570>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f927bedc7c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f927dd86550>]}
+[0m15:22:10.278674 [debug] [MainThread]: Flushing usage events
+[0m15:22:10.670826 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:34:34.150811 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8ad34e9d30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8ad52d0e10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8ad1e3f890>]}
+
+
+============================== 15:34:34.153263 | 02c7fefb-3a46-4b13-8dc1-b1122209ad49 ==============================
+[0m15:34:34.153263 [info ] [MainThread]: Running with dbt=1.12.6
+[0m15:34:34.153729 [debug] [MainThread]: running dbt with arguments {'write_json': 'True', 'quiet': 'False', 'target_path': 'None', 'no_print': 'None', 'introspect': 'True', 'version_check': 'True', 'maximum_seed_size_mib': '1', 'partial_parse': 'True', 'empty': 'None', 'cache_selected_only': 'False', 'hints_enabled': 'True', 'send_anonymous_usage_stats': 'True', 'invocation_command': 'dbt ', 'use_colors': 'True', 'printer_width': '80', 'log_format': 'default', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'debug': 'False', 'fail_fast': 'False', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': '/home/criolys/Git-Repo/dbt-project/dbt/logs', 'static_parser': 'True', 'log_cache_events': 'False', 'profiles_dir': '/home/criolys/.dbt', 'warn_error': 'None'}
+[0m15:34:34.251279 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '02c7fefb-3a46-4b13-8dc1-b1122209ad49', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8ad1e92d70>]}
+[0m15:34:34.262197 [info ] [MainThread]: Warning: No packages were found in packages.yml
+[0m15:34:34.263603 [info ] [MainThread]: Warning: No packages were found in packages.yml
+[0m15:34:34.264976 [debug] [MainThread]: Resource report: {"command_name": "deps", "command_success": true, "command_wall_clock_time": 0.2453739, "process_in_blocks": "0", "process_kernel_time": 0.076498, "process_mem_max_rss": "126544", "process_out_blocks": "8", "process_user_time": 1.309403}
+[0m15:34:34.265482 [debug] [MainThread]: Command `cli deps` succeeded at 15:34:34.265389 after 0.25 seconds
+[0m15:34:34.265834 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8ad1bff570>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8ad1aa47c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8ad3a7e550>]}
+[0m15:34:34.266165 [debug] [MainThread]: Flushing usage events
+[0m15:34:34.654313 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:34:36.435820 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7febff4c5d30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fec012d0e10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7febfdd5b890>]}
+
+
+============================== 15:34:36.438412 | 61060498-f7b4-475e-be96-b4c67ef0f459 ==============================
+[0m15:34:36.438412 [info ] [MainThread]: Running with dbt=1.12.6
+[0m15:34:36.438874 [debug] [MainThread]: running dbt with arguments {'maximum_seed_size_mib': '1', 'log_path': '/home/criolys/Git-Repo/dbt-project/dbt/logs', 'cache_selected_only': 'False', 'fail_fast': 'False', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True', 'write_json': 'True', 'use_colors': 'True', 'empty': 'None', 'invocation_command': 'dbt ', 'debug': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'profiles_dir': '/home/criolys/.dbt', 'log_cache_events': 'False', 'use_experimental_parser': 'False', 'hints_enabled': 'True', 'version_check': 'True', 'quiet': 'False', 'log_format': 'default', 'target_path': 'None', 'no_print': 'None', 'introspect': 'True', 'printer_width': '80', 'partial_parse': 'True', 'indirect_selection': 'eager', 'warn_error': 'None'}
+[0m15:34:36.446887 [info ] [MainThread]: dbt version: 1.12.6
+[0m15:34:36.447370 [info ] [MainThread]: python version: 3.14.8
+[0m15:34:36.447685 [info ] [MainThread]: python path: /home/criolys/Git-Repo/dbt-project/.venv/bin/python
+[0m15:34:36.447945 [info ] [MainThread]: os info: Linux-7.2.9-arch1-1-x86_64-with-glibc2.44
+[0m15:34:36.450782 [info ] [MainThread]: Using profiles dir at /home/criolys/.dbt
+[0m15:34:36.451107 [info ] [MainThread]: Using profiles.yml file at /home/criolys/.dbt/profiles.yml
+[0m15:34:36.451382 [info ] [MainThread]: Using dbt_project.yml file at /home/criolys/Git-Repo/dbt-project/dbt/dbt_project.yml
+[0m15:34:36.538948 [info ] [MainThread]: Configuration:
+[0m15:34:36.539354 [info ] [MainThread]:   profiles.yml file [[31mERROR invalid[0m]
+[0m15:34:36.539637 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m15:34:36.539940 [info ] [MainThread]: Required dependencies:
+[0m15:34:36.540226 [debug] [MainThread]: Executing "git --help"
+[0m15:34:36.541729 [debug] [MainThread]: STDOUT: "b"usage : git [-v | --version] [-h | --help] [-C <chemin>] [-c <nom>=<valeur>]\n           [--exec-path[=<chemin>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<chemin>]\n           [--work-tree=<chemin>] [--namespace=<nom>] [--config-env=<nom>=<var-d-env>] \n           <commande> [<args>]\n\nCi-dessous les commandes Git habituelles dans diverses situations\xc2\xa0:\n\nd\xc3\xa9marrer une zone de travail (voir aussi\xc2\xa0: git help tutorial)\n   clone      Cloner un d\xc3\xa9p\xc3\xb4t dans un nouveau r\xc3\xa9pertoire\n   init       Cr\xc3\xa9er un d\xc3\xa9p\xc3\xb4t Git vide ou r\xc3\xa9initialiser un existant\n\ntravailler sur la modification actuelle (voir aussi\xc2\xa0: git help revisions)\n   add        Ajouter le contenu de fichiers dans l'index\n   mv         D\xc3\xa9placer ou renommer un fichier, un r\xc3\xa9pertoire, ou un lien symbolique\n   restore    Restaurer les fichiers de l'arbre de travail\n   rm         Supprimer des fichiers de l'arbre de travail et de l'index\n\nexaminer l'historique et l'\xc3\xa9tat (voir aussi\xc2\xa0: git help revisions)\n   bisect     Trouver par recherche binaire la modification qui a introduit un bogue\n   diff       Afficher les changements entre les validations, entre validation et arbre de travail, etc\n   grep       Afficher les lignes correspondant \xc3\xa0 un motif\n   log        Afficher l'historique des validations\n   show       Afficher diff\xc3\xa9rents types d'objets\n   status     Afficher l'\xc3\xa9tat de l'arbre de travail\n\nagrandir, marquer et modifier votre historique\n   backfill   T\xc3\xa9l\xc3\xa9charger les objets manquants dans un clone partiel\n   branch     Lister, cr\xc3\xa9er ou supprimer des branches\n   commit     Enregistrer les modifications dans le d\xc3\xa9p\xc3\xb4t\n   history    EXPERIMENTAL\xc2\xa0: R\xc3\xa9\xc3\xa9crit l'historique\n   merge      Fusionner deux ou plusieurs historiques de d\xc3\xa9veloppement ensemble\n   rebase     R\xc3\xa9application des commits sur le sommet de l'autre base\n   reset      Positionner `HEAD` ou l'index \xc3\xa0 un \xc3\xa9tat connu\n   switch     Basculer de branche\n   tag        Cr\xc3\xa9er, lister, supprimer ou v\xc3\xa9rifier les \xc3\xa9tiquettes\n\ncollaborer (voir aussi\xc2\xa0: git help workflows)\n   fetch      T\xc3\xa9l\xc3\xa9charger les objets et r\xc3\xa9f\xc3\xa9rences depuis un autre d\xc3\xa9p\xc3\xb4t\n   pull       R\xc3\xa9cup\xc3\xa9rer et int\xc3\xa9grer un autre d\xc3\xa9p\xc3\xb4t ou une branche locale\n   push       Mettre \xc3\xa0 jour les r\xc3\xa9f\xc3\xa9rences distantes ainsi que les objets associ\xc3\xa9s\n\n'git help -a' et 'git help -g' listent les sous-commandes disponibles et\nquelques concepts. Voir 'git help <commande>' ou 'git help <concept>'\npour en lire plus \xc3\xa0 propos d'une commande sp\xc3\xa9cifique ou d'un concept.\nVoir 'git help git' pour un survol du syst\xc3\xa8me.\n""
+[0m15:34:36.542091 [debug] [MainThread]: STDERR: "b''"
+[0m15:34:36.542336 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m15:34:36.542617 [info ] [MainThread]: Connection test skipped since no profile was found
+[0m15:34:36.542902 [info ] [MainThread]: [31m1 check failed:[0m
+[0m15:34:36.543178 [info ] [MainThread]: Profile loading failed for the following reason:
+Runtime Error
+  Could not find profile named 'dbt'
+
+
+[0m15:34:36.544099 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 0.2512434, "process_in_blocks": "0", "process_kernel_time": 0.077659, "process_mem_max_rss": "126348", "process_out_blocks": "8", "process_user_time": 1.289733}
+[0m15:34:36.544831 [debug] [MainThread]: Command `cli debug` failed at 15:34:36.544699 after 0.25 seconds
+[0m15:34:36.545400 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7febfdda1a70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7febfdaeb1d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7febfda9b680>]}
+[0m15:34:36.545921 [debug] [MainThread]: Flushing usage events
+[0m15:34:36.921362 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:35:39.766796 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fdb4bee9d30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fdb4dccce10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fdb4a847890>]}
+
+
+============================== 15:35:39.769665 | d22c6ff1-8638-47ee-9066-59a8037bcb37 ==============================
+[0m15:35:39.769665 [info ] [MainThread]: Running with dbt=1.12.6
+[0m15:35:39.770208 [debug] [MainThread]: running dbt with arguments {'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/criolys/.dbt', 'log_cache_events': 'False', 'write_json': 'True', 'log_format': 'default', 'warn_error': 'None', 'maximum_seed_size_mib': '1', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'empty': 'None', 'printer_width': '80', 'static_parser': 'True', 'use_experimental_parser': 'False', 'target_path': 'None', 'introspect': 'True', 'debug': 'False', 'hints_enabled': 'True', 'version_check': 'True', 'use_colors': 'True', 'fail_fast': 'False', 'indirect_selection': 'eager', 'invocation_command': 'dbt ', 'send_anonymous_usage_stats': 'True', 'log_path': '/home/criolys/Git-Repo/dbt-project/dbt/logs', 'quiet': 'False'}
+[0m15:35:39.872392 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'd22c6ff1-8638-47ee-9066-59a8037bcb37', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fdb4a88ed70>]}
+[0m15:35:39.883729 [info ] [MainThread]: Warning: No packages were found in packages.yml
+[0m15:35:39.884632 [info ] [MainThread]: Warning: No packages were found in packages.yml
+[0m15:35:39.885446 [debug] [MainThread]: Resource report: {"command_name": "deps", "command_success": true, "command_wall_clock_time": 0.25342494, "process_in_blocks": "0", "process_kernel_time": 0.084695, "process_mem_max_rss": "126584", "process_out_blocks": "16", "process_user_time": 1.313276}
+[0m15:35:39.885884 [debug] [MainThread]: Command `cli deps` succeeded at 15:35:39.885807 after 0.25 seconds
+[0m15:35:39.886296 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fdb4a5fb570>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fdb4a4a07c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fdb4c47a550>]}
+[0m15:35:39.886668 [debug] [MainThread]: Flushing usage events
+[0m15:35:40.281862 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:35:41.932556 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc7f38c9d30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc7f5614e10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc7f215f890>]}
+
+
+============================== 15:35:41.936218 | 51372336-2576-4588-9995-8ad04a7e5990 ==============================
+[0m15:35:41.936218 [info ] [MainThread]: Running with dbt=1.12.6
+[0m15:35:41.936702 [debug] [MainThread]: running dbt with arguments {'warn_error': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True', 'hints_enabled': 'True', 'target_path': 'None', 'no_print': 'None', 'use_colors': 'True', 'log_cache_events': 'False', 'log_path': '/home/criolys/Git-Repo/dbt-project/dbt/logs', 'log_format': 'default', 'profiles_dir': '/home/criolys/.dbt', 'partial_parse': 'True', 'printer_width': '80', 'quiet': 'False', 'write_json': 'True', 'debug': 'False', 'cache_selected_only': 'False', 'version_check': 'True', 'empty': 'None', 'use_experimental_parser': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'maximum_seed_size_mib': '1', 'invocation_command': 'dbt ', 'introspect': 'True', 'indirect_selection': 'eager', 'fail_fast': 'False'}
+[0m15:35:41.943376 [info ] [MainThread]: dbt version: 1.12.6
+[0m15:35:41.943758 [info ] [MainThread]: python version: 3.14.8
+[0m15:35:41.944028 [info ] [MainThread]: python path: /home/criolys/Git-Repo/dbt-project/.venv/bin/python
+[0m15:35:41.944271 [info ] [MainThread]: os info: Linux-7.2.9-arch1-1-x86_64-with-glibc2.44
+[0m15:35:42.543373 [debug] [MainThread]: Spark adapter: Setting pyhive.hive logging to ERROR
+[0m15:35:42.543835 [debug] [MainThread]: Spark adapter: Setting thrift.transport logging to ERROR
+[0m15:35:42.544127 [debug] [MainThread]: Spark adapter: Setting thrift.protocol logging to ERROR
+[0m15:35:42.897066 [info ] [MainThread]: Using profiles dir at /home/criolys/.dbt
+[0m15:35:42.897567 [info ] [MainThread]: Using profiles.yml file at /home/criolys/.dbt/profiles.yml
+[0m15:35:42.897890 [info ] [MainThread]: Using dbt_project.yml file at /home/criolys/Git-Repo/dbt-project/dbt/dbt_project.yml
+[0m15:35:42.898207 [info ] [MainThread]: adapter type: databricks
+[0m15:35:42.898494 [info ] [MainThread]: adapter version: 1.10.9
+[0m15:35:42.986693 [info ] [MainThread]: Configuration:
+[0m15:35:42.987112 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m15:35:42.987424 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m15:35:42.987733 [info ] [MainThread]: Required dependencies:
+[0m15:35:42.988026 [debug] [MainThread]: Executing "git --help"
+[0m15:35:42.989464 [debug] [MainThread]: STDOUT: "b"usage : git [-v | --version] [-h | --help] [-C <chemin>] [-c <nom>=<valeur>]\n           [--exec-path[=<chemin>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<chemin>]\n           [--work-tree=<chemin>] [--namespace=<nom>] [--config-env=<nom>=<var-d-env>] \n           <commande> [<args>]\n\nCi-dessous les commandes Git habituelles dans diverses situations\xc2\xa0:\n\nd\xc3\xa9marrer une zone de travail (voir aussi\xc2\xa0: git help tutorial)\n   clone      Cloner un d\xc3\xa9p\xc3\xb4t dans un nouveau r\xc3\xa9pertoire\n   init       Cr\xc3\xa9er un d\xc3\xa9p\xc3\xb4t Git vide ou r\xc3\xa9initialiser un existant\n\ntravailler sur la modification actuelle (voir aussi\xc2\xa0: git help revisions)\n   add        Ajouter le contenu de fichiers dans l'index\n   mv         D\xc3\xa9placer ou renommer un fichier, un r\xc3\xa9pertoire, ou un lien symbolique\n   restore    Restaurer les fichiers de l'arbre de travail\n   rm         Supprimer des fichiers de l'arbre de travail et de l'index\n\nexaminer l'historique et l'\xc3\xa9tat (voir aussi\xc2\xa0: git help revisions)\n   bisect     Trouver par recherche binaire la modification qui a introduit un bogue\n   diff       Afficher les changements entre les validations, entre validation et arbre de travail, etc\n   grep       Afficher les lignes correspondant \xc3\xa0 un motif\n   log        Afficher l'historique des validations\n   show       Afficher diff\xc3\xa9rents types d'objets\n   status     Afficher l'\xc3\xa9tat de l'arbre de travail\n\nagrandir, marquer et modifier votre historique\n   backfill   T\xc3\xa9l\xc3\xa9charger les objets manquants dans un clone partiel\n   branch     Lister, cr\xc3\xa9er ou supprimer des branches\n   commit     Enregistrer les modifications dans le d\xc3\xa9p\xc3\xb4t\n   history    EXPERIMENTAL\xc2\xa0: R\xc3\xa9\xc3\xa9crit l'historique\n   merge      Fusionner deux ou plusieurs historiques de d\xc3\xa9veloppement ensemble\n   rebase     R\xc3\xa9application des commits sur le sommet de l'autre base\n   reset      Positionner `HEAD` ou l'index \xc3\xa0 un \xc3\xa9tat connu\n   switch     Basculer de branche\n   tag        Cr\xc3\xa9er, lister, supprimer ou v\xc3\xa9rifier les \xc3\xa9tiquettes\n\ncollaborer (voir aussi\xc2\xa0: git help workflows)\n   fetch      T\xc3\xa9l\xc3\xa9charger les objets et r\xc3\xa9f\xc3\xa9rences depuis un autre d\xc3\xa9p\xc3\xb4t\n   pull       R\xc3\xa9cup\xc3\xa9rer et int\xc3\xa9grer un autre d\xc3\xa9p\xc3\xb4t ou une branche locale\n   push       Mettre \xc3\xa0 jour les r\xc3\xa9f\xc3\xa9rences distantes ainsi que les objets associ\xc3\xa9s\n\n'git help -a' et 'git help -g' listent les sous-commandes disponibles et\nquelques concepts. Voir 'git help <commande>' ou 'git help <concept>'\npour en lire plus \xc3\xa0 propos d'une commande sp\xc3\xa9cifique ou d'un concept.\nVoir 'git help git' pour un survol du syst\xc3\xa8me.\n""
+[0m15:35:42.989836 [debug] [MainThread]: STDERR: "b''"
+[0m15:35:42.990091 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m15:35:42.990362 [info ] [MainThread]: Connection:
+[0m15:35:42.990658 [info ] [MainThread]:   host: dbc-db45c0f7-2d9f.cloud.databricks.com
+[0m15:35:42.990907 [info ] [MainThread]:   http_path: /sql/1.0/warehouses/4501f6a6717e96a6
+[0m15:35:42.991170 [info ] [MainThread]:   catalog: air_quality
+[0m15:35:42.991417 [info ] [MainThread]:   schema: dbt_schema
+[0m15:35:42.991836 [info ] [MainThread]: Registered adapter: databricks=1.10.9
+[0m15:35:43.055018 [debug] [MainThread]: Databricks adapter: DatabricksDBTConnection(session-id=None, name=debug) - Creating connection
+[0m15:35:43.055419 [debug] [MainThread]: Acquiring new databricks connection 'debug'
+[0m15:35:43.055702 [debug] [MainThread]: Using databricks connection "debug"
+[0m15:35:43.055962 [debug] [MainThread]: On debug: select 1 as id
+[0m15:35:43.056203 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m15:35:44.386245 [debug] [MainThread]: Databricks adapter: Connection(session-id=01f1cc8b-25d2-1393-94fc-d074f88a904b) - Created
+[0m15:35:49.918619 [debug] [MainThread]: SQL status: OK in 6.860 seconds
+[0m15:35:49.921897 [debug] [MainThread]: Databricks adapter: Cursor(session-id=01f1cc8b-25d2-1393-94fc-d074f88a904b, command-id=01f1cc8b-2648-1207-accc-98341b5c688f) - Closing
+[0m15:35:50.142990 [debug] [MainThread]: On debug: Close
+[0m15:35:50.143904 [debug] [MainThread]: Databricks adapter: Connection(session-id=01f1cc8b-25d2-1393-94fc-d074f88a904b) - Closing
+[0m15:35:50.322417 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m15:35:50.324385 [info ] [MainThread]: [32mAll checks passed![0m
+[0m15:35:50.328104 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": true, "command_wall_clock_time": 8.523364, "process_in_blocks": "0", "process_kernel_time": 0.128621, "process_mem_max_rss": "299668", "process_out_blocks": "16", "process_user_time": 3.361519}
+[0m15:35:50.328945 [debug] [MainThread]: Command `cli debug` succeeded at 15:35:50.328827 after 8.52 seconds
+[0m15:35:50.329430 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc7c24a5810>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc7c253f9b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc7c24f2470>]}
+[0m15:35:50.330046 [debug] [MainThread]: Flushing usage events
+[0m15:35:50.836146 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:40:40.833834 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff3ab2d9d30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff3ad180e10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff3a9c2b890>]}
+
+
+============================== 15:40:40.836289 | e4a4ab25-3879-4048-b74f-be1e613fe85f ==============================
+[0m15:40:40.836289 [info ] [MainThread]: Running with dbt=1.12.6
+[0m15:40:40.836758 [debug] [MainThread]: running dbt with arguments {'cache_selected_only': 'False', 'no_print': 'None', 'invocation_command': 'dbt ', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_path': '/home/criolys/Git-Repo/dbt-project/dbt/logs', 'empty': 'None', 'partial_parse': 'True', 'version_check': 'True', 'printer_width': '80', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True', 'maximum_seed_size_mib': '1', 'quiet': 'False', 'use_experimental_parser': 'False', 'log_cache_events': 'False', 'write_json': 'True', 'hints_enabled': 'True', 'debug': 'False', 'fail_fast': 'False', 'indirect_selection': 'eager', 'warn_error': 'None', 'introspect': 'True', 'use_colors': 'True', 'profiles_dir': '/home/criolys/.dbt', 'static_parser': 'True'}
+[0m15:40:40.932599 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'e4a4ab25-3879-4048-b74f-be1e613fe85f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff3a9c7ed70>]}
+[0m15:40:40.942436 [info ] [MainThread]: Warning: No packages were found in packages.yml
+[0m15:40:40.943707 [info ] [MainThread]: Warning: No packages were found in packages.yml
+[0m15:40:40.945103 [debug] [MainThread]: Resource report: {"command_name": "deps", "command_success": true, "command_wall_clock_time": 0.24023624, "process_in_blocks": "0", "process_kernel_time": 0.058745, "process_mem_max_rss": "126540", "process_out_blocks": "8", "process_user_time": 1.243064}
+[0m15:40:40.945697 [debug] [MainThread]: Command `cli deps` succeeded at 15:40:40.945600 after 0.24 seconds
+[0m15:40:40.946080 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff3a99eb570>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff3a988c7c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff3ab86a550>]}
+[0m15:40:40.946497 [debug] [MainThread]: Flushing usage events
+[0m15:40:41.323965 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m10:27:05.289606 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f3ac96e9d30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f3acb584e10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f3ac803b890>]}
+
+
+============================== 10:27:05.292829 | 135960bd-cb9a-4bfe-b1f0-269beee59d81 ==============================
+[0m10:27:05.292829 [info ] [MainThread]: Running with dbt=1.12.6
+[0m10:27:05.293658 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'debug': 'False', 'target_path': 'None', 'printer_width': '80', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_path': '/home/criolys/Git-Repo/dbt-project/dbt/logs', 'introspect': 'True', 'log_format': 'default', 'no_print': 'None', 'use_experimental_parser': 'False', 'use_colors': 'True', 'profiles_dir': '/home/criolys/.dbt', 'log_cache_events': 'False', 'empty': 'None', 'fail_fast': 'False', 'maximum_seed_size_mib': '1', 'invocation_command': 'dbt ', 'static_parser': 'True', 'partial_parse': 'True', 'write_json': 'True', 'warn_error': 'None', 'cache_selected_only': 'False', 'quiet': 'False', 'hints_enabled': 'True', 'send_anonymous_usage_stats': 'True', 'indirect_selection': 'eager'}
+[0m10:27:05.391635 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '135960bd-cb9a-4bfe-b1f0-269beee59d81', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f3ac808ed70>]}
+[0m10:27:05.404523 [info ] [MainThread]: Warning: No packages were found in packages.yml
+[0m10:27:05.405751 [info ] [MainThread]: Warning: No packages were found in packages.yml
+[0m10:27:05.406884 [debug] [MainThread]: Resource report: {"command_name": "deps", "command_success": true, "command_wall_clock_time": 0.25810853, "process_in_blocks": "672", "process_kernel_time": 0.068748, "process_mem_max_rss": "125812", "process_out_blocks": "8", "process_user_time": 1.329519}
+[0m10:27:05.407391 [debug] [MainThread]: Command `cli deps` succeeded at 10:27:05.407295 after 0.26 seconds
+[0m10:27:05.407748 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f3ac7dfb570>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f3ac7c9c7c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f3ac9c7a550>]}
+[0m10:27:05.408159 [debug] [MainThread]: Flushing usage events
+[0m10:27:05.793329 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m10:35:35.669957 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f911fbf1e80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9121a78e10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f911e55b890>]}
+
+
+============================== 10:35:35.672431 | f400382a-17eb-4364-be79-bf9457ce8ba5 ==============================
+[0m10:35:35.672431 [info ] [MainThread]: Running with dbt=1.12.6
+[0m10:35:35.672882 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'log_path': 'dbt/logs', 'no_print': 'None', 'write_json': 'True', 'profiles_dir': '/home/criolys/.dbt', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'empty': 'None', 'hints_enabled': 'True', 'version_check': 'True', 'use_experimental_parser': 'False', 'cache_selected_only': 'False', 'debug': 'False', 'log_cache_events': 'False', 'indirect_selection': 'eager', 'use_colors': 'True', 'log_format': 'default', 'quiet': 'False', 'partial_parse': 'True', 'invocation_command': 'dbt parse --project-dir dbt', 'send_anonymous_usage_stats': 'True', 'fail_fast': 'False', 'static_parser': 'True', 'warn_error': 'None', 'target_path': 'None', 'introspect': 'True', 'maximum_seed_size_mib': '1'}
+[0m10:35:36.383783 [debug] [MainThread]: Spark adapter: Setting pyhive.hive logging to ERROR
+[0m10:35:36.384245 [debug] [MainThread]: Spark adapter: Setting thrift.transport logging to ERROR
+[0m10:35:36.384595 [debug] [MainThread]: Spark adapter: Setting thrift.protocol logging to ERROR
+[0m10:35:36.845024 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'f400382a-17eb-4364-be79-bf9457ce8ba5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f90eeba16e0>]}
+[0m10:35:36.907690 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'f400382a-17eb-4364-be79-bf9457ce8ba5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f90eea13f00>]}
+[0m10:35:36.908395 [info ] [MainThread]: Registered adapter: databricks=1.10.9
+[0m10:35:36.971040 [error] [MainThread]: [[31mERROR[0m]: Encountered an error:
+Compilation Error
+  dbt found more than one package with the name "dbt" included in this project. Package names must be unique in a project. Please rename one of these packages.
+[0m10:35:36.972085 [debug] [MainThread]: Resource report: {"command_name": "parse", "command_success": false, "command_wall_clock_time": 1.44347, "process_in_blocks": "664", "process_kernel_time": 0.150062, "process_mem_max_rss": "260172", "process_out_blocks": "16", "process_user_time": 3.514022}
+[0m10:35:36.972875 [debug] [MainThread]: Command `dbt parse` failed at 10:35:36.972753 after 1.44 seconds
+[0m10:35:36.973456 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f90eeb3af50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f90eeb3b050>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f911ba5ad50>]}
+[0m10:35:36.973799 [debug] [MainThread]: Flushing usage events
+[0m10:35:37.496211 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:04:12.546774 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc74f4e5e80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc751408e10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc74de4f890>]}
+
+
+============================== 11:04:12.551060 | 6b6206b2-e974-4294-b945-bf5659fed661 ==============================
+[0m11:04:12.551060 [info ] [MainThread]: Running with dbt=1.12.6
+[0m11:04:12.551564 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'log_cache_events': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'introspect': 'True', 'empty': 'None', 'send_anonymous_usage_stats': 'True', 'debug': 'False', 'profiles_dir': '/home/criolys/.dbt', 'use_experimental_parser': 'False', 'use_colors': 'True', 'indirect_selection': 'eager', 'printer_width': '80', 'log_path': 'dbt/logs', 'cache_selected_only': 'False', 'log_format': 'default', 'target_path': 'None', 'fail_fast': 'False', 'invocation_command': 'dbt parse --project-dir dbt', 'hints_enabled': 'True', 'quiet': 'False', 'no_print': 'None', 'version_check': 'True', 'write_json': 'True', 'maximum_seed_size_mib': '1', 'partial_parse': 'True', 'warn_error': 'None'}
+[0m11:04:13.142449 [debug] [MainThread]: Spark adapter: Setting pyhive.hive logging to ERROR
+[0m11:04:13.142947 [debug] [MainThread]: Spark adapter: Setting thrift.transport logging to ERROR
+[0m11:04:13.143254 [debug] [MainThread]: Spark adapter: Setting thrift.protocol logging to ERROR
+[0m11:04:13.596936 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '6b6206b2-e974-4294-b945-bf5659fed661', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc71e5456e0>]}
+[0m11:04:13.655824 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '6b6206b2-e974-4294-b945-bf5659fed661', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc71e3bff00>]}
+[0m11:04:13.656580 [info ] [MainThread]: Registered adapter: databricks=1.10.9
+[0m11:04:13.849946 [debug] [MainThread]: checksum: 1457e9e0cab7fbddc602d11521c646aed4d6ff99c1bf217138a50570423cae67, vars: {}, profile: dbt, target: dev, version: 1.12.6
+[0m11:04:13.919337 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m11:04:13.919753 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m11:04:13.920009 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m11:04:13.925393 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.data_pipeline_project.example
+[0m11:04:13.929477 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '6b6206b2-e974-4294-b945-bf5659fed661', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc71e4dfe50>]}
+[0m11:04:13.932899 [info ] [MainThread]: Performance info: dbt/target/perf_info.json
+[0m11:04:14.007776 [debug] [MainThread]: Wrote artifact WritableManifest to dbt/target/manifest.json
+[0m11:04:14.010158 [debug] [MainThread]: Wrote artifact SemanticManifest to dbt/target/semantic_manifest.json
+[0m11:04:14.040263 [debug] [MainThread]: Wrote artifact OsiDocument to dbt/target/osi_document.json
+[0m11:04:14.041061 [debug] [MainThread]: Resource report: {"command_name": "parse", "command_success": true, "command_wall_clock_time": 1.62598, "process_in_blocks": "440", "process_kernel_time": 0.134547, "process_mem_max_rss": "265704", "process_out_blocks": "2272", "process_user_time": 3.666434}
+[0m11:04:14.041689 [debug] [MainThread]: Command `dbt parse` succeeded at 11:04:14.041609 after 1.63 seconds
+[0m11:04:14.042031 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc71e38b020>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc71e38ae40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc74df035b0>]}
+[0m11:04:14.042338 [debug] [MainThread]: Flushing usage events
+[0m11:04:14.392784 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:04:29.451084 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6c8aaede80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6c8c9f4e10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6c89457890>]}
+
+
+============================== 11:04:29.453540 | 59cbad03-748f-4c39-8523-5aea0aba3375 ==============================
+[0m11:04:29.453540 [info ] [MainThread]: Running with dbt=1.12.6
+[0m11:04:29.453974 [debug] [MainThread]: running dbt with arguments {'use_colors': 'True', 'printer_width': '80', 'hints_enabled': 'True', 'fail_fast': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_format': 'default', 'cache_selected_only': 'False', 'no_print': 'None', 'introspect': 'True', 'profiles_dir': '/home/criolys/.dbt', 'empty': 'None', 'partial_parse': 'True', 'use_experimental_parser': 'False', 'target_path': 'None', 'log_path': 'dbt/logs', 'debug': 'False', 'invocation_command': 'dbt ls --project-dir dbt', 'warn_error': 'None', 'static_parser': 'True', 'indirect_selection': 'eager', 'send_anonymous_usage_stats': 'True', 'version_check': 'True', 'log_cache_events': 'False', 'maximum_seed_size_mib': '1', 'quiet': 'False', 'write_json': 'True'}
+[0m11:04:30.042116 [debug] [MainThread]: Spark adapter: Setting pyhive.hive logging to ERROR
+[0m11:04:30.042909 [debug] [MainThread]: Spark adapter: Setting thrift.transport logging to ERROR
+[0m11:04:30.043377 [debug] [MainThread]: Spark adapter: Setting thrift.protocol logging to ERROR
+[0m11:04:30.503066 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '59cbad03-748f-4c39-8523-5aea0aba3375', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6c5db256e0>]}
+[0m11:04:30.564025 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '59cbad03-748f-4c39-8523-5aea0aba3375', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6c5d9a3f00>]}
+[0m11:04:30.564763 [info ] [MainThread]: Registered adapter: databricks=1.10.9
+[0m11:04:30.757396 [debug] [MainThread]: checksum: 1457e9e0cab7fbddc602d11521c646aed4d6ff99c1bf217138a50570423cae67, vars: {}, profile: dbt, target: dev, version: 1.12.6
+[0m11:04:30.830082 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m11:04:30.830503 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m11:04:30.830753 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m11:04:30.836106 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.data_pipeline_project.example
+[0m11:04:30.839298 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '59cbad03-748f-4c39-8523-5aea0aba3375', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6c5dac7e50>]}
+[0m11:04:30.923531 [debug] [MainThread]: Wrote artifact WritableManifest to dbt/target/manifest.json
+[0m11:04:30.928165 [debug] [MainThread]: Wrote artifact SemanticManifest to dbt/target/semantic_manifest.json
+[0m11:04:30.938636 [debug] [MainThread]: Wrote artifact OsiDocument to dbt/target/osi_document.json
+[0m11:04:30.954720 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '59cbad03-748f-4c39-8523-5aea0aba3375', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6c5d60b4d0>]}
+[0m11:04:30.955165 [info ] [MainThread]: Found 1 model, 726 macros
+[0m11:04:30.955483 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '59cbad03-748f-4c39-8523-5aea0aba3375', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6c5d58a7b0>]}
+[0m11:04:30.956130 [info ] [MainThread]: data_pipeline_project.src.test
+[0m11:04:30.956901 [debug] [MainThread]: Resource report: {"command_name": "list", "command_success": true, "command_wall_clock_time": 1.5682757, "process_in_blocks": "160", "process_kernel_time": 0.119103, "process_mem_max_rss": "265992", "process_out_blocks": "1952", "process_user_time": 3.660417}
+[0m11:04:30.957734 [debug] [MainThread]: Command `dbt ls` succeeded at 11:04:30.957606 after 1.57 seconds
+[0m11:04:30.958228 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6c8a15e5b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6c5d4ab110>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6c5d4aae10>]}
+[0m11:04:30.958726 [debug] [MainThread]: Flushing usage events
+[0m11:04:31.382597 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:09:38.555200 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faec78e1e80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faec96c4e10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faec624b890>]}
+
+
+============================== 11:09:38.557823 | d4f0bd3f-63b9-4281-9f00-b69c11841307 ==============================
+[0m11:09:38.557823 [info ] [MainThread]: Running with dbt=1.12.6
+[0m11:09:38.558318 [debug] [MainThread]: running dbt with arguments {'profiles_dir': '/home/criolys/.dbt', 'introspect': 'True', 'target_path': 'None', 'warn_error': 'None', 'empty': 'None', 'invocation_command': 'dbt ls', 'use_colors': 'True', 'printer_width': '80', 'log_path': '/home/criolys/Git-Repo/dbt-project/dbt/logs', 'indirect_selection': 'eager', 'maximum_seed_size_mib': '1', 'no_print': 'None', 'fail_fast': 'False', 'quiet': 'False', 'partial_parse': 'True', 'write_json': 'True', 'hints_enabled': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'cache_selected_only': 'False', 'version_check': 'True', 'send_anonymous_usage_stats': 'True', 'static_parser': 'True', 'debug': 'False', 'log_format': 'default', 'use_experimental_parser': 'False', 'log_cache_events': 'False'}
+[0m11:09:39.165316 [debug] [MainThread]: Spark adapter: Setting pyhive.hive logging to ERROR
+[0m11:09:39.165817 [debug] [MainThread]: Spark adapter: Setting thrift.transport logging to ERROR
+[0m11:09:39.166112 [debug] [MainThread]: Spark adapter: Setting thrift.protocol logging to ERROR
+[0m11:09:39.639491 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'd4f0bd3f-63b9-4281-9f00-b69c11841307', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fae968996e0>]}
+[0m11:09:39.698198 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'd4f0bd3f-63b9-4281-9f00-b69c11841307', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fae96717f00>]}
+[0m11:09:39.698982 [info ] [MainThread]: Registered adapter: databricks=1.10.9
+[0m11:09:39.902524 [debug] [MainThread]: checksum: 1457e9e0cab7fbddc602d11521c646aed4d6ff99c1bf217138a50570423cae67, vars: {}, profile: dbt, target: dev, version: 1.12.6
+[0m11:09:39.972667 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m11:09:39.973034 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m11:09:39.973284 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m11:09:39.979597 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.data_pipeline_project.example
+[0m11:09:39.984765 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'd4f0bd3f-63b9-4281-9f00-b69c11841307', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fae9683be50>]}
+[0m11:09:40.065108 [debug] [MainThread]: Wrote artifact WritableManifest to /home/criolys/Git-Repo/dbt-project/dbt/target/manifest.json
+[0m11:09:40.067505 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/criolys/Git-Repo/dbt-project/dbt/target/semantic_manifest.json
+[0m11:09:40.076314 [debug] [MainThread]: Wrote artifact OsiDocument to /home/criolys/Git-Repo/dbt-project/dbt/target/osi_document.json
+[0m11:09:40.082814 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'd4f0bd3f-63b9-4281-9f00-b69c11841307', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fae961e34d0>]}
+[0m11:09:40.083240 [info ] [MainThread]: Found 1 model, 726 macros
+[0m11:09:40.083584 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'd4f0bd3f-63b9-4281-9f00-b69c11841307', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fae96392a50>]}
+[0m11:09:40.084170 [info ] [MainThread]: data_pipeline_project.src.test
+[0m11:09:40.084880 [debug] [MainThread]: Resource report: {"command_name": "list", "command_success": true, "command_wall_clock_time": 1.5915821, "process_in_blocks": "0", "process_kernel_time": 0.144361, "process_mem_max_rss": "271908", "process_out_blocks": "1808", "process_user_time": 3.704437}
+[0m11:09:40.087697 [debug] [MainThread]: Command `dbt ls` succeeded at 11:09:40.087593 after 1.59 seconds
+[0m11:09:40.088041 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faec6f565b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fae962225d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fae96222510>]}
+[0m11:09:40.088334 [debug] [MainThread]: Flushing usage events
+[0m11:09:40.453962 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:10:05.086518 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f84866c5e80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f848840ce10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8484d67890>]}
+
+
+============================== 11:10:05.089260 | d7e9d3aa-0544-4b49-8d6d-b90c8eebd5c0 ==============================
+[0m11:10:05.089260 [info ] [MainThread]: Running with dbt=1.12.6
+[0m11:10:05.089720 [debug] [MainThread]: running dbt with arguments {'profiles_dir': '/home/criolys/.dbt', 'debug': 'False', 'log_format': 'default', 'log_path': '/home/criolys/Git-Repo/dbt-project/dbt/logs', 'introspect': 'True', 'invocation_command': 'dbt parse', 'fail_fast': 'False', 'hints_enabled': 'True', 'no_print': 'None', 'target_path': 'None', 'use_colors': 'True', 'warn_error': 'None', 'send_anonymous_usage_stats': 'True', 'log_cache_events': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'cache_selected_only': 'False', 'empty': 'None', 'write_json': 'True', 'partial_parse': 'True', 'printer_width': '80', 'version_check': 'True', 'use_experimental_parser': 'False', 'maximum_seed_size_mib': '1', 'static_parser': 'True', 'quiet': 'False', 'indirect_selection': 'eager'}
+[0m11:10:05.686569 [debug] [MainThread]: Spark adapter: Setting pyhive.hive logging to ERROR
+[0m11:10:05.687016 [debug] [MainThread]: Spark adapter: Setting thrift.transport logging to ERROR
+[0m11:10:05.687295 [debug] [MainThread]: Spark adapter: Setting thrift.protocol logging to ERROR
+[0m11:10:06.163168 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'd7e9d3aa-0544-4b49-8d6d-b90c8eebd5c0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f84595896e0>]}
+[0m11:10:06.222060 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'd7e9d3aa-0544-4b49-8d6d-b90c8eebd5c0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f84593fff00>]}
+[0m11:10:06.222784 [info ] [MainThread]: Registered adapter: databricks=1.10.9
+[0m11:10:06.419477 [debug] [MainThread]: checksum: 1457e9e0cab7fbddc602d11521c646aed4d6ff99c1bf217138a50570423cae67, vars: {}, profile: dbt, target: dev, version: 1.12.6
+[0m11:10:06.489954 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m11:10:06.490366 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m11:10:06.490619 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m11:10:06.496154 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.data_pipeline_project.example
+[0m11:10:06.500168 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'd7e9d3aa-0544-4b49-8d6d-b90c8eebd5c0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8459523e50>]}
+[0m11:10:06.504063 [info ] [MainThread]: Performance info: /home/criolys/Git-Repo/dbt-project/dbt/target/perf_info.json
+[0m11:10:06.585387 [debug] [MainThread]: Wrote artifact WritableManifest to /home/criolys/Git-Repo/dbt-project/dbt/target/manifest.json
+[0m11:10:06.588570 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/criolys/Git-Repo/dbt-project/dbt/target/semantic_manifest.json
+[0m11:10:06.597342 [debug] [MainThread]: Wrote artifact OsiDocument to /home/criolys/Git-Repo/dbt-project/dbt/target/osi_document.json
+[0m11:10:06.598123 [debug] [MainThread]: Resource report: {"command_name": "parse", "command_success": true, "command_wall_clock_time": 1.6469142, "process_in_blocks": "0", "process_kernel_time": 0.121696, "process_mem_max_rss": "271484", "process_out_blocks": "1792", "process_user_time": 3.750382}
+[0m11:10:06.598930 [debug] [MainThread]: Command `dbt parse` succeeded at 11:10:06.598829 after 1.65 seconds
+[0m11:10:06.599418 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f84593b3020>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f84593b2e40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f848501b5b0>]}
+[0m11:10:06.599840 [debug] [MainThread]: Flushing usage events
+[0m11:10:06.946693 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:17:45.781237 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc5302e9d30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc5320cce10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc52ec3f890>]}
+
+
+============================== 11:17:45.783641 | ce6d449d-0044-412a-9d09-0b76610db444 ==============================
+[0m11:17:45.783641 [info ] [MainThread]: Running with dbt=1.12.6
+[0m11:17:45.784140 [debug] [MainThread]: running dbt with arguments {'write_json': 'True', 'partial_parse': 'True', 'quiet': 'False', 'profiles_dir': '/home/criolys/.dbt', 'log_path': '/home/criolys/Git-Repo/air-quality-pipeline/dbt/logs', 'printer_width': '80', 'use_experimental_parser': 'False', 'log_format': 'default', 'cache_selected_only': 'False', 'introspect': 'True', 'hints_enabled': 'True', 'indirect_selection': 'eager', 'invocation_command': 'dbt ', 'empty': 'None', 'send_anonymous_usage_stats': 'True', 'log_cache_events': 'False', 'version_check': 'True', 'maximum_seed_size_mib': '1', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'use_colors': 'True', 'static_parser': 'True', 'debug': 'False', 'fail_fast': 'False', 'warn_error': 'None', 'target_path': 'None', 'no_print': 'None'}
+[0m11:17:45.878301 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'ce6d449d-0044-412a-9d09-0b76610db444', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc52ec8ed70>]}
+[0m11:17:45.887771 [info ] [MainThread]: Warning: No packages were found in packages.yml
+[0m11:17:45.888704 [info ] [MainThread]: Warning: No packages were found in packages.yml
+[0m11:17:45.889682 [debug] [MainThread]: Resource report: {"command_name": "deps", "command_success": true, "command_wall_clock_time": 0.23679845, "process_in_blocks": "0", "process_kernel_time": 0.061624, "process_mem_max_rss": "125740", "process_out_blocks": "8", "process_user_time": 1.450842}
+[0m11:17:45.890193 [debug] [MainThread]: Command `cli deps` succeeded at 11:17:45.890095 after 0.24 seconds
+[0m11:17:45.890607 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc52e9ff570>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc52e8a47c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc53087e550>]}
+[0m11:17:45.890962 [debug] [MainThread]: Flushing usage events
+[0m11:17:46.259023 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:20:18.325665 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc7bdae9d30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc7bf9f4e10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc7bc44f890>]}
+
+
+============================== 11:20:18.328266 | 74547469-2283-4bfb-b952-d2a2b4bb6a4b ==============================
+[0m11:20:18.328266 [info ] [MainThread]: Running with dbt=1.12.6
+[0m11:20:18.328837 [debug] [MainThread]: running dbt with arguments {'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'log_cache_events': 'False', 'indirect_selection': 'eager', 'static_parser': 'True', 'empty': 'None', 'quiet': 'False', 'use_colors': 'True', 'target_path': 'None', 'fail_fast': 'False', 'maximum_seed_size_mib': '1', 'cache_selected_only': 'False', 'invocation_command': 'dbt ', 'warn_error': 'None', 'introspect': 'True', 'write_json': 'True', 'debug': 'False', 'partial_parse': 'True', 'no_print': 'None', 'log_path': '/home/criolys/Git-Repo/air-quality-pipeline/dbt/logs', 'hints_enabled': 'True', 'send_anonymous_usage_stats': 'True', 'log_format': 'default', 'version_check': 'True', 'use_experimental_parser': 'False', 'profiles_dir': '/home/criolys/.dbt'}
+[0m11:20:18.434625 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '74547469-2283-4bfb-b952-d2a2b4bb6a4b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc7bc48ed70>]}
+[0m11:20:18.446408 [info ] [MainThread]: Warning: No packages were found in packages.yml
+[0m11:20:18.447584 [info ] [MainThread]: Warning: No packages were found in packages.yml
+[0m11:20:18.449084 [debug] [MainThread]: Resource report: {"command_name": "deps", "command_success": true, "command_wall_clock_time": 0.25992477, "process_in_blocks": "0", "process_kernel_time": 0.086438, "process_mem_max_rss": "125888", "process_out_blocks": "8", "process_user_time": 1.443029}
+[0m11:20:18.449898 [debug] [MainThread]: Command `cli deps` succeeded at 11:20:18.449746 after 0.26 seconds
+[0m11:20:18.450496 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc7bc1ff570>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc7bc0a47c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc7be07e550>]}
+[0m11:20:18.451094 [debug] [MainThread]: Flushing usage events
+[0m11:20:18.824064 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:32:19.467848 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fedb7df1d30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fedb9cc8e10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fedb6757890>]}
+
+
+============================== 11:32:19.470470 | ef7195fa-dfd7-48d5-943b-482e6f489af8 ==============================
+[0m11:32:19.470470 [info ] [MainThread]: Running with dbt=1.12.6
+[0m11:32:19.471016 [debug] [MainThread]: running dbt with arguments {'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'invocation_command': 'dbt ', 'cache_selected_only': 'False', 'warn_error': 'None', 'indirect_selection': 'eager', 'fail_fast': 'False', 'target_path': 'None', 'no_print': 'None', 'use_experimental_parser': 'False', 'empty': 'None', 'partial_parse': 'True', 'introspect': 'True', 'write_json': 'True', 'log_path': '/home/criolys/Git-Repo/air-quality-pipeline/dbt/logs', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'debug': 'False', 'profiles_dir': '/home/criolys/.dbt', 'maximum_seed_size_mib': '1', 'static_parser': 'True', 'version_check': 'True', 'hints_enabled': 'True', 'printer_width': '80', 'log_format': 'default', 'log_cache_events': 'False', 'use_colors': 'True'}
+[0m11:32:19.592873 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'ef7195fa-dfd7-48d5-943b-482e6f489af8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fedb6796d70>]}
+[0m11:32:19.602802 [info ] [MainThread]: Warning: No packages were found in packages.yml
+[0m11:32:19.603811 [info ] [MainThread]: Warning: No packages were found in packages.yml
+[0m11:32:19.604959 [debug] [MainThread]: Resource report: {"command_name": "deps", "command_success": true, "command_wall_clock_time": 0.29332048, "process_in_blocks": "0", "process_kernel_time": 0.071827, "process_mem_max_rss": "125800", "process_out_blocks": "16", "process_user_time": 1.350093}
+[0m11:32:19.605541 [debug] [MainThread]: Command `cli deps` succeeded at 11:32:19.605397 after 0.29 seconds
+[0m11:32:19.605981 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fedb6507570>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fedb63ac7c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fedb8386550>]}
+[0m11:32:19.607047 [debug] [MainThread]: Flushing usage events
+[0m11:32:19.979096 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:32:21.869857 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe7914cdd30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe793214e10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe78fb6b890>]}
+
+
+============================== 11:32:21.872425 | ecd9ffe1-1411-4330-953e-637d8750b2ad ==============================
+[0m11:32:21.872425 [info ] [MainThread]: Running with dbt=1.12.6
+[0m11:32:21.872926 [debug] [MainThread]: running dbt with arguments {'target_path': 'None', 'debug': 'False', 'send_anonymous_usage_stats': 'True', 'hints_enabled': 'True', 'version_check': 'True', 'invocation_command': 'dbt ', 'profiles_dir': '/home/criolys/.dbt', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'introspect': 'True', 'log_path': '/home/criolys/Git-Repo/air-quality-pipeline/dbt/logs', 'log_cache_events': 'False', 'partial_parse': 'True', 'fail_fast': 'False', 'empty': 'None', 'use_colors': 'True', 'warn_error': 'None', 'quiet': 'False', 'no_print': 'None', 'use_experimental_parser': 'False', 'static_parser': 'True', 'maximum_seed_size_mib': '1', 'write_json': 'True', 'log_format': 'default', 'printer_width': '80', 'cache_selected_only': 'False', 'indirect_selection': 'eager'}
+[0m11:32:21.883153 [info ] [MainThread]: dbt version: 1.12.6
+[0m11:32:21.883597 [info ] [MainThread]: python version: 3.14.8
+[0m11:32:21.883893 [info ] [MainThread]: python path: /home/criolys/Git-Repo/air-quality-pipeline/.venv/bin/python
+[0m11:32:21.884175 [info ] [MainThread]: os info: Linux-7.2.11-arch1-1-x86_64-with-glibc2.44
+[0m11:32:22.497984 [debug] [MainThread]: Spark adapter: Setting pyhive.hive logging to ERROR
+[0m11:32:22.498437 [debug] [MainThread]: Spark adapter: Setting thrift.transport logging to ERROR
+[0m11:32:22.498722 [debug] [MainThread]: Spark adapter: Setting thrift.protocol logging to ERROR
+[0m11:32:22.869002 [info ] [MainThread]: Using profiles dir at /home/criolys/.dbt
+[0m11:32:22.869413 [info ] [MainThread]: Using profiles.yml file at /home/criolys/.dbt/profiles.yml
+[0m11:32:22.869670 [info ] [MainThread]: Using dbt_project.yml file at /home/criolys/Git-Repo/air-quality-pipeline/dbt/dbt_project.yml
+[0m11:32:22.869937 [info ] [MainThread]: adapter type: databricks
+[0m11:32:22.870189 [info ] [MainThread]: adapter version: 1.10.9
+[0m11:32:22.963369 [info ] [MainThread]: Configuration:
+[0m11:32:22.963844 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m11:32:22.964128 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m11:32:22.964409 [info ] [MainThread]: Required dependencies:
+[0m11:32:22.964700 [debug] [MainThread]: Executing "git --help"
+[0m11:32:22.966089 [debug] [MainThread]: STDOUT: "b"usage : git [-v | --version] [-h | --help] [-C <chemin>] [-c <nom>=<valeur>]\n           [--exec-path[=<chemin>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<chemin>]\n           [--work-tree=<chemin>] [--namespace=<nom>] [--config-env=<nom>=<var-d-env>] \n           <commande> [<args>]\n\nCi-dessous les commandes Git habituelles dans diverses situations\xc2\xa0:\n\nd\xc3\xa9marrer une zone de travail (voir aussi\xc2\xa0: git help tutorial)\n   clone      Cloner un d\xc3\xa9p\xc3\xb4t dans un nouveau r\xc3\xa9pertoire\n   init       Cr\xc3\xa9er un d\xc3\xa9p\xc3\xb4t Git vide ou r\xc3\xa9initialiser un existant\n\ntravailler sur la modification actuelle (voir aussi\xc2\xa0: git help revisions)\n   add        Ajouter le contenu de fichiers dans l'index\n   mv         D\xc3\xa9placer ou renommer un fichier, un r\xc3\xa9pertoire, ou un lien symbolique\n   restore    Restaurer les fichiers de l'arbre de travail\n   rm         Supprimer des fichiers de l'arbre de travail et de l'index\n\nexaminer l'historique et l'\xc3\xa9tat (voir aussi\xc2\xa0: git help revisions)\n   bisect     Trouver par recherche binaire la modification qui a introduit un bogue\n   diff       Afficher les changements entre les validations, entre validation et arbre de travail, etc\n   grep       Afficher les lignes correspondant \xc3\xa0 un motif\n   log        Afficher l'historique des validations\n   show       Afficher diff\xc3\xa9rents types d'objets\n   status     Afficher l'\xc3\xa9tat de l'arbre de travail\n\nagrandir, marquer et modifier votre historique\n   backfill   T\xc3\xa9l\xc3\xa9charger les objets manquants dans un clone partiel\n   branch     Lister, cr\xc3\xa9er ou supprimer des branches\n   commit     Enregistrer les modifications dans le d\xc3\xa9p\xc3\xb4t\n   history    EXPERIMENTAL\xc2\xa0: R\xc3\xa9\xc3\xa9crit l'historique\n   merge      Fusionner deux ou plusieurs historiques de d\xc3\xa9veloppement ensemble\n   rebase     R\xc3\xa9application des commits sur le sommet de l'autre base\n   reset      Positionner `HEAD` ou l'index \xc3\xa0 un \xc3\xa9tat connu\n   switch     Basculer de branche\n   tag        Cr\xc3\xa9er, lister, supprimer ou v\xc3\xa9rifier les \xc3\xa9tiquettes\n\ncollaborer (voir aussi\xc2\xa0: git help workflows)\n   fetch      T\xc3\xa9l\xc3\xa9charger les objets et r\xc3\xa9f\xc3\xa9rences depuis un autre d\xc3\xa9p\xc3\xb4t\n   pull       R\xc3\xa9cup\xc3\xa9rer et int\xc3\xa9grer un autre d\xc3\xa9p\xc3\xb4t ou une branche locale\n   push       Mettre \xc3\xa0 jour les r\xc3\xa9f\xc3\xa9rences distantes ainsi que les objets associ\xc3\xa9s\n\n'git help -a' et 'git help -g' listent les sous-commandes disponibles et\nquelques concepts. Voir 'git help <commande>' ou 'git help <concept>'\npour en lire plus \xc3\xa0 propos d'une commande sp\xc3\xa9cifique ou d'un concept.\nVoir 'git help git' pour un survol du syst\xc3\xa8me.\n""
+[0m11:32:22.966501 [debug] [MainThread]: STDERR: "b''"
+[0m11:32:22.966742 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m11:32:22.966980 [info ] [MainThread]: Connection:
+[0m11:32:22.967238 [info ] [MainThread]:   host: dbc-db45c0f7-2d9f.cloud.databricks.com
+[0m11:32:22.967482 [info ] [MainThread]:   http_path: /sql/1.0/warehouses/4501f6a6717e96a6
+[0m11:32:22.967747 [info ] [MainThread]:   catalog: air_quality
+[0m11:32:22.967979 [info ] [MainThread]:   schema: dbt_schema
+[0m11:32:22.968335 [info ] [MainThread]: Registered adapter: databricks=1.10.9
+[0m11:32:23.049332 [debug] [MainThread]: Databricks adapter: DatabricksDBTConnection(session-id=None, name=debug) - Creating connection
+[0m11:32:23.049802 [debug] [MainThread]: Acquiring new databricks connection 'debug'
+[0m11:32:23.050106 [debug] [MainThread]: Using databricks connection "debug"
+[0m11:32:23.050386 [debug] [MainThread]: On debug: select 1 as id
+[0m11:32:23.050658 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m11:32:24.567705 [debug] [MainThread]: Databricks adapter: Connection(session-id=01f1cf8d-d128-1915-8dd9-f6a71d4f9364) - Created
+[0m11:32:33.916954 [debug] [MainThread]: SQL status: OK in 10.870 seconds
+[0m11:32:33.920275 [debug] [MainThread]: Databricks adapter: Cursor(session-id=01f1cf8d-d128-1915-8dd9-f6a71d4f9364, command-id=01f1cf8d-d1af-1e64-a0a5-6c507887e194) - Closing
+[0m11:32:34.188313 [debug] [MainThread]: On debug: Close
+[0m11:32:34.189806 [debug] [MainThread]: Databricks adapter: Connection(session-id=01f1cf8d-d128-1915-8dd9-f6a71d4f9364) - Closing
+[0m11:32:34.374586 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m11:32:34.375956 [info ] [MainThread]: [32mAll checks passed![0m
+[0m11:32:34.377903 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": true, "command_wall_clock_time": 12.645069, "process_in_blocks": "6128", "process_kernel_time": 0.135869, "process_mem_max_rss": "273732", "process_out_blocks": "16", "process_user_time": 3.509962}
+[0m11:32:34.379106 [debug] [MainThread]: Command `cli debug` succeeded at 11:32:34.378904 after 12.65 seconds
+[0m11:32:34.379813 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe75fe11810>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe76419f530>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe76414a470>]}
+[0m11:32:34.380470 [debug] [MainThread]: Flushing usage events
+[0m11:32:34.873857 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:54:13.968329 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fae65ae9e80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fae678c8e10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fae6445b890>]}
+
+
+============================== 11:54:13.970805 | 1b3e3235-f5ca-4600-8bcd-f04dd8b2cbb6 ==============================
+[0m11:54:13.970805 [info ] [MainThread]: Running with dbt=1.12.6
+[0m11:54:13.971362 [debug] [MainThread]: running dbt with arguments {'log_cache_events': 'False', 'hints_enabled': 'True', 'no_print': 'None', 'debug': 'False', 'partial_parse': 'True', 'introspect': 'True', 'log_path': 'dbt/logs', 'send_anonymous_usage_stats': 'True', 'profiles_dir': '/home/criolys/.dbt', 'invocation_command': 'dbt parse --project-dir dbt', 'use_colors': 'True', 'log_format': 'default', 'target_path': 'None', 'cache_selected_only': 'False', 'warn_error': 'None', 'static_parser': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'printer_width': '80', 'version_check': 'True', 'empty': 'None', 'write_json': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'maximum_seed_size_mib': '1', 'quiet': 'False', 'fail_fast': 'False'}
+[0m11:54:14.589674 [debug] [MainThread]: Spark adapter: Setting pyhive.hive logging to ERROR
+[0m11:54:14.590107 [debug] [MainThread]: Spark adapter: Setting thrift.transport logging to ERROR
+[0m11:54:14.590499 [debug] [MainThread]: Spark adapter: Setting thrift.protocol logging to ERROR
+[0m11:54:14.909477 [error] [MainThread]: [[31mERROR[0m]: Encountered an error:
+('Invalid object reference. See https://packaging.python.org/en/latest/specifications/entry-points/#data-model', 'air-quality-pipeline:main')
+[0m11:54:14.913993 [error] [MainThread]: Traceback (most recent call last):
+  File "/home/criolys/Git-Repo/air-quality-pipeline/.venv/lib/python3.14/site-packages/dbt/cli/requires.py", line 198, in wrapper
+    result, success = func(*args, **kwargs)
+                      ~~~~^^^^^^^^^^^^^^^^^
+  File "/home/criolys/Git-Repo/air-quality-pipeline/.venv/lib/python3.14/site-packages/dbt/cli/requires.py", line 144, in wrapper
+    return func(*args, **kwargs)
+  File "/home/criolys/Git-Repo/air-quality-pipeline/.venv/lib/python3.14/site-packages/dbt/cli/requires.py", line 291, in wrapper
+    profile = load_profile(flags.PROJECT_DIR, flags.VARS, flags.PROFILE, flags.TARGET, threads)
+  File "/home/criolys/Git-Repo/air-quality-pipeline/.venv/lib/python3.14/site-packages/dbt/config/runtime.py", line 98, in load_profile
+    profile = Profile.render(
+        profile_renderer, profile_name, profile_name_override, target_override, threads_override
+    )
+  File "/home/criolys/Git-Repo/air-quality-pipeline/.venv/lib/python3.14/site-packages/dbt/config/profile.py", line 404, in render
+    return cls.from_raw_profiles(
+           ~~~~~~~~~~~~~~~~~~~~~^
+        raw_profiles=raw_profiles,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        threads_override=threads_override,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/criolys/Git-Repo/air-quality-pipeline/.venv/lib/python3.14/site-packages/dbt/config/profile.py", line 370, in from_raw_profiles
+    return cls.from_raw_profile_info(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        raw_profile=raw_profile,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        threads_override=threads_override,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/criolys/Git-Repo/air-quality-pipeline/.venv/lib/python3.14/site-packages/dbt/config/profile.py", line 326, in from_raw_profile_info
+    credentials: Credentials = cls._credentials_from_profile(
+                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        profile_data, profile_name, target_name
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/criolys/Git-Repo/air-quality-pipeline/.venv/lib/python3.14/site-packages/dbt/config/profile.py", line 150, in _credentials_from_profile
+    cls = load_plugin(typename)
+  File "/home/criolys/Git-Repo/air-quality-pipeline/.venv/lib/python3.14/site-packages/dbt/adapters/factory.py", line 239, in load_plugin
+    return FACTORY.load_plugin(name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/criolys/Git-Repo/air-quality-pipeline/.venv/lib/python3.14/site-packages/dbt/adapters/factory.py", line 68, in load_plugin
+    mod: Any = import_module("." + name, "dbt.adapters")
+               ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1406, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1371, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1342, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 938, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 763, in exec_module
+  File "<frozen importlib._bootstrap>", line 491, in _call_with_frames_removed
+  File "/home/criolys/Git-Repo/air-quality-pipeline/.venv/lib/python3.14/site-packages/dbt/adapters/databricks/__init__.py", line 3, in <module>
+    from dbt.adapters.databricks.impl import DatabricksAdapter
+  File "/home/criolys/Git-Repo/air-quality-pipeline/.venv/lib/python3.14/site-packages/dbt/adapters/databricks/impl.py", line 44, in <module>
+    from dbt.adapters.databricks.python_models.python_submissions import (
+    ...<4 lines>...
+    )
+  File "/home/criolys/Git-Repo/air-quality-pipeline/.venv/lib/python3.14/site-packages/dbt/adapters/databricks/python_models/python_submissions.py", line 12, in <module>
+    from dbt.adapters.databricks.python_models.python_config import ParsedPythonModel
+  File "/home/criolys/Git-Repo/air-quality-pipeline/.venv/lib/python3.14/site-packages/dbt/adapters/databricks/python_models/python_config.py", line 12, in <module>
+    class PythonJobConfig(BaseModel):
+    ...<9 lines>...
+            extra = "allow"
+  File "/home/criolys/Git-Repo/air-quality-pipeline/.venv/lib/python3.14/site-packages/pydantic/_internal/_model_construction.py", line 253, in __new__
+    complete_model_class(
+    ~~~~~~~~~~~~~~~~~~~~^
+        cls,
+        ^^^^
+    ...<3 lines>...
+        create_model_module=_create_model_module,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/criolys/Git-Repo/air-quality-pipeline/.venv/lib/python3.14/site-packages/pydantic/_internal/_model_construction.py", line 651, in complete_model_class
+    cls.__pydantic_validator__ = create_schema_validator(
+                                 ~~~~~~~~~~~~~~~~~~~~~~~^
+        schema,
+        ^^^^^^^
+    ...<6 lines>...
+        _use_prebuilt=not is_force_rebuild,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/criolys/Git-Repo/air-quality-pipeline/.venv/lib/python3.14/site-packages/pydantic/plugin/_schema_validator.py", line 40, in create_schema_validator
+    plugins = get_plugins()
+  File "/home/criolys/Git-Repo/air-quality-pipeline/.venv/lib/python3.14/site-packages/pydantic/plugin/_loader.py", line 40, in get_plugins
+    for entry_point in dist.entry_points:
+                       ^^^^^^^^^^^^^^^^^
+  File "/home/criolys/Git-Repo/air-quality-pipeline/.venv/lib/python3.14/site-packages/importlib_metadata/__init__.py", line 586, in entry_points
+    return EntryPoints._from_text_for(self.read_text('entry_points.txt'), self)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/criolys/Git-Repo/air-quality-pipeline/.venv/lib/python3.14/site-packages/importlib_metadata/__init__.py", line 368, in _from_text_for
+    return cls(ep._for(dist) for ep in cls._from_text(text))
+  File "/home/criolys/Git-Repo/air-quality-pipeline/.venv/lib/python3.14/site-packages/importlib_metadata/__init__.py", line 368, in <genexpr>
+    return cls(ep._for(dist) for ep in cls._from_text(text))
+                                       ~~~~~~~~~~~~~~^^^^^^
+  File "/home/criolys/Git-Repo/air-quality-pipeline/.venv/lib/python3.14/site-packages/importlib_metadata/__init__.py", line 373, in <genexpr>
+    EntryPoint(name=item.value.name, value=item.value.value, group=item.name)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/criolys/Git-Repo/air-quality-pipeline/.venv/lib/python3.14/site-packages/importlib_metadata/__init__.py", line 221, in __init__
+    _ = self.module
+        ^^^^^^^^^^^
+  File "/home/criolys/Git-Repo/air-quality-pipeline/.venv/lib/python3.14/site-packages/importlib_metadata/__init__.py", line 234, in module
+    return self._match.module
+           ^^^^^^^^^^^
+  File "/usr/lib/python3.14/functools.py", line 1126, in __get__
+    val = self.func(instance)
+  File "/home/criolys/Git-Repo/air-quality-pipeline/.venv/lib/python3.14/site-packages/importlib_metadata/__init__.py", line 248, in _match
+    raise ValueError(
+    ...<4 lines>...
+    )
+ValueError: ('Invalid object reference. See https://packaging.python.org/en/latest/specifications/entry-points/#data-model', 'air-quality-pipeline:main')
+
+[0m11:54:14.915734 [debug] [MainThread]: Resource report: {"command_name": "parse", "command_success": false, "command_wall_clock_time": 1.0836492, "process_in_blocks": "0", "process_kernel_time": 0.092521, "process_mem_max_rss": "253456", "process_out_blocks": "24", "process_user_time": 3.19735}
+[0m11:54:14.917297 [debug] [MainThread]: Command `dbt parse` failed at 11:54:14.917111 after 1.09 seconds
+[0m11:54:14.917809 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fae38f07ce0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fae38e21490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fae38d47f00>]}
+[0m11:54:14.918333 [debug] [MainThread]: Flushing usage events
+[0m11:54:15.284547 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:57:18.184048 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f24162e9e80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2418208e10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2414c5b890>]}
+
+
+============================== 11:57:18.186823 | c19fe198-2d17-4031-9e52-e814ca0a25f7 ==============================
+[0m11:57:18.186823 [info ] [MainThread]: Running with dbt=1.12.6
+[0m11:57:18.187263 [debug] [MainThread]: running dbt with arguments {'invocation_command': 'dbt parse --project-dir dbt', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'use_colors': 'True', 'send_anonymous_usage_stats': 'True', 'cache_selected_only': 'False', 'hints_enabled': 'True', 'no_print': 'None', 'partial_parse': 'True', 'debug': 'False', 'write_json': 'True', 'printer_width': '80', 'log_format': 'default', 'static_parser': 'True', 'version_check': 'True', 'quiet': 'False', 'target_path': 'None', 'profiles_dir': '/home/criolys/.dbt', 'use_experimental_parser': 'False', 'log_path': 'dbt/logs', 'log_cache_events': 'False', 'fail_fast': 'False', 'empty': 'None', 'maximum_seed_size_mib': '1', 'introspect': 'True', 'warn_error': 'None', 'indirect_selection': 'eager'}
+[0m11:57:18.794039 [debug] [MainThread]: Spark adapter: Setting pyhive.hive logging to ERROR
+[0m11:57:18.794486 [debug] [MainThread]: Spark adapter: Setting thrift.transport logging to ERROR
+[0m11:57:18.794924 [debug] [MainThread]: Spark adapter: Setting thrift.protocol logging to ERROR
+[0m11:57:19.291546 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'c19fe198-2d17-4031-9e52-e814ca0a25f7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f23e937ab10>]}
+[0m11:57:19.352808 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'c19fe198-2d17-4031-9e52-e814ca0a25f7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f24158a2ad0>]}
+[0m11:57:19.353535 [info ] [MainThread]: Registered adapter: databricks=1.10.9
+[0m11:57:19.410257 [debug] [MainThread]: checksum: 1457e9e0cab7fbddc602d11521c646aed4d6ff99c1bf217138a50570423cae67, vars: {}, profile: dbt, target: dev, version: 1.12.6
+[0m11:57:19.621827 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m11:57:19.622235 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m11:57:19.622537 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m11:57:19.627961 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.air_quality.example
+[0m11:57:19.632003 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'c19fe198-2d17-4031-9e52-e814ca0a25f7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f23e92dfe50>]}
+[0m11:57:19.635796 [info ] [MainThread]: Performance info: dbt/target/perf_info.json
+[0m11:57:19.713304 [debug] [MainThread]: Wrote artifact WritableManifest to dbt/target/manifest.json
+[0m11:57:19.716864 [debug] [MainThread]: Wrote artifact SemanticManifest to dbt/target/semantic_manifest.json
+[0m11:57:19.744786 [debug] [MainThread]: Wrote artifact OsiDocument to dbt/target/osi_document.json
+[0m11:57:19.745625 [debug] [MainThread]: Resource report: {"command_name": "parse", "command_success": true, "command_wall_clock_time": 1.7013469, "process_in_blocks": "424", "process_kernel_time": 0.161989, "process_mem_max_rss": "265896", "process_out_blocks": "3096", "process_user_time": 3.690147}
+[0m11:57:19.746412 [debug] [MainThread]: Command `dbt parse` succeeded at 11:57:19.746279 after 1.70 seconds
+[0m11:57:19.746944 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f23e9182f30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f23e9182d50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2414c0fd90>]}
+[0m11:57:19.747371 [debug] [MainThread]: Flushing usage events
+[0m11:57:20.105455 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m12:07:11.964454 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa999bede80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa99ba0ce10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa9983ab890>]}
+
+
+============================== 12:07:11.968306 | 472045c4-4435-414b-8fac-9d623c5cfa1c ==============================
+[0m12:07:11.968306 [info ] [MainThread]: Running with dbt=1.12.6
+[0m12:07:11.968878 [debug] [MainThread]: running dbt with arguments {'fail_fast': 'False', 'empty': 'False', 'static_parser': 'True', 'debug': 'False', 'target_path': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'send_anonymous_usage_stats': 'True', 'use_colors': 'True', 'maximum_seed_size_mib': '1', 'version_check': 'True', 'use_experimental_parser': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error': 'None', 'log_format': 'default', 'cache_selected_only': 'False', 'indirect_selection': 'eager', 'write_json': 'True', 'printer_width': '80', 'log_path': '/home/criolys/Git-Repo/air-quality-pipeline/dbt/logs', 'partial_parse': 'True', 'invocation_command': 'dbt build', 'hints_enabled': 'True', 'profiles_dir': '/home/criolys/.dbt', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])'}
+[0m12:07:12.550673 [debug] [MainThread]: Spark adapter: Setting pyhive.hive logging to ERROR
+[0m12:07:12.551394 [debug] [MainThread]: Spark adapter: Setting thrift.transport logging to ERROR
+[0m12:07:12.551815 [debug] [MainThread]: Spark adapter: Setting thrift.protocol logging to ERROR
+[0m12:07:12.996171 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '472045c4-4435-414b-8fac-9d623c5cfa1c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa96caf56e0>]}
+[0m12:07:13.053243 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '472045c4-4435-414b-8fac-9d623c5cfa1c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa96ca03f00>]}
+[0m12:07:13.053933 [info ] [MainThread]: Registered adapter: databricks=1.10.9
+[0m12:07:13.112241 [debug] [MainThread]: checksum: 1457e9e0cab7fbddc602d11521c646aed4d6ff99c1bf217138a50570423cae67, vars: {}, profile: dbt, target: dev, version: 1.12.6
+[0m12:07:13.312820 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m12:07:13.313166 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m12:07:13.313403 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m12:07:13.319908 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.air_quality.example
+[0m12:07:13.323463 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '472045c4-4435-414b-8fac-9d623c5cfa1c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa96cb73b50>]}
+[0m12:07:13.401792 [debug] [MainThread]: Wrote artifact WritableManifest to /home/criolys/Git-Repo/air-quality-pipeline/dbt/target/manifest.json
+[0m12:07:13.405295 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/criolys/Git-Repo/air-quality-pipeline/dbt/target/semantic_manifest.json
+[0m12:07:13.414896 [debug] [MainThread]: Wrote artifact OsiDocument to /home/criolys/Git-Repo/air-quality-pipeline/dbt/target/osi_document.json
+[0m12:07:13.549251 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '472045c4-4435-414b-8fac-9d623c5cfa1c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa967da47d0>]}
+[0m12:07:13.549886 [info ] [MainThread]: Found 1 model, 726 macros
+[0m12:07:13.551973 [warn ] [MainThread]: [[33mWARNING[0m]: Nothing to do. Try checking your model configs and model specification args
+[0m12:07:13.554140 [debug] [MainThread]: Command end result
+[0m12:07:13.586632 [debug] [MainThread]: Wrote artifact WritableManifest to /home/criolys/Git-Repo/air-quality-pipeline/dbt/target/manifest.json
+[0m12:07:13.589174 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/criolys/Git-Repo/air-quality-pipeline/dbt/target/semantic_manifest.json
+[0m12:07:13.590968 [debug] [MainThread]: Wrote artifact OsiDocument to /home/criolys/Git-Repo/air-quality-pipeline/dbt/target/osi_document.json
+[0m12:07:13.593415 [debug] [MainThread]: Wrote artifact RunExecutionResult to /home/criolys/Git-Repo/air-quality-pipeline/dbt/target/run_results.json
+[0m12:07:13.594201 [debug] [MainThread]: Resource report: {"command_name": "build", "command_success": true, "command_wall_clock_time": 1.6882311, "process_in_blocks": "0", "process_kernel_time": 0.138584, "process_mem_max_rss": "310356", "process_out_blocks": "5400", "process_user_time": 3.795418}
+[0m12:07:13.594830 [debug] [MainThread]: Command `dbt build` succeeded at 12:07:13.594748 after 1.69 seconds
+[0m12:07:13.595146 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa99a1f9b70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa96c36faf0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa9990ccae0>]}
+[0m12:07:13.595456 [debug] [MainThread]: Flushing usage events
+[0m12:07:13.963580 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m12:09:06.772794 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f43c90ede80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f43cb00ce10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f43c7863890>]}
+
+
+============================== 12:09:06.775657 | 37b0677d-664d-4d4d-9b1a-2c4ce7fd3fbe ==============================
+[0m12:09:06.775657 [info ] [MainThread]: Running with dbt=1.12.6
+[0m12:09:06.776307 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'use_experimental_parser': 'False', 'log_cache_events': 'False', 'partial_parse': 'True', 'version_check': 'True', 'invocation_command': 'dbt ls', 'send_anonymous_usage_stats': 'True', 'empty': 'None', 'log_path': '/home/criolys/Git-Repo/air-quality-pipeline/dbt/logs', 'indirect_selection': 'eager', 'no_print': 'None', 'write_json': 'True', 'log_format': 'default', 'warn_error': 'None', 'cache_selected_only': 'False', 'debug': 'False', 'use_colors': 'True', 'maximum_seed_size_mib': '1', 'fail_fast': 'False', 'introspect': 'True', 'hints_enabled': 'True', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'profiles_dir': '/home/criolys/.dbt', 'target_path': 'None', 'printer_width': '80'}
+[0m12:09:07.363546 [debug] [MainThread]: Spark adapter: Setting pyhive.hive logging to ERROR
+[0m12:09:07.364004 [debug] [MainThread]: Spark adapter: Setting thrift.transport logging to ERROR
+[0m12:09:07.364330 [debug] [MainThread]: Spark adapter: Setting thrift.protocol logging to ERROR
+[0m12:09:07.824102 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '37b0677d-664d-4d4d-9b1a-2c4ce7fd3fbe', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f439c1316e0>]}
+[0m12:09:07.881893 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '37b0677d-664d-4d4d-9b1a-2c4ce7fd3fbe', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4397f23f00>]}
+[0m12:09:07.882573 [info ] [MainThread]: Registered adapter: databricks=1.10.9
+[0m12:09:07.944572 [debug] [MainThread]: checksum: 1457e9e0cab7fbddc602d11521c646aed4d6ff99c1bf217138a50570423cae67, vars: {}, profile: dbt, target: dev, version: 1.12.6
+[0m12:09:08.155131 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m12:09:08.155602 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m12:09:08.155854 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m12:09:08.162608 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.air_quality.example
+[0m12:09:08.167375 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '37b0677d-664d-4d4d-9b1a-2c4ce7fd3fbe', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f439c0cf150>]}
+[0m12:09:08.252985 [debug] [MainThread]: Wrote artifact WritableManifest to /home/criolys/Git-Repo/air-quality-pipeline/dbt/target/manifest.json
+[0m12:09:08.256797 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/criolys/Git-Repo/air-quality-pipeline/dbt/target/semantic_manifest.json
+[0m12:09:08.274904 [debug] [MainThread]: Wrote artifact OsiDocument to /home/criolys/Git-Repo/air-quality-pipeline/dbt/target/osi_document.json
+[0m12:09:08.285819 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '37b0677d-664d-4d4d-9b1a-2c4ce7fd3fbe', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f43979ff5c0>]}
+[0m12:09:08.286276 [info ] [MainThread]: Found 1 model, 726 macros
+[0m12:09:08.286623 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '37b0677d-664d-4d4d-9b1a-2c4ce7fd3fbe', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f43979f7e70>]}
+[0m12:09:08.287299 [info ] [MainThread]: air_quality.src.test
+[0m12:09:08.288189 [debug] [MainThread]: Resource report: {"command_name": "list", "command_success": true, "command_wall_clock_time": 1.5745817, "process_in_blocks": "0", "process_kernel_time": 0.142757, "process_mem_max_rss": "271936", "process_out_blocks": "1840", "process_user_time": 3.659701}
+[0m12:09:08.292630 [debug] [MainThread]: Command `dbt ls` succeeded at 12:09:08.292298 after 1.58 seconds
+[0m12:09:08.293489 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f43c7aa3ee0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f43979d7d10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4397bac110>]}
+[0m12:09:08.294321 [debug] [MainThread]: Flushing usage events
+[0m12:09:08.668007 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m12:09:16.605740 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f69f35bde80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f69f540ce10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f69f1d8b890>]}
+
+
+============================== 12:09:16.608213 | d41b3305-fd6c-40c6-a78a-f4e65b350827 ==============================
+[0m12:09:16.608213 [info ] [MainThread]: Running with dbt=1.12.6
+[0m12:09:16.608715 [debug] [MainThread]: running dbt with arguments {'invocation_command': 'dbt parse', 'printer_width': '80', 'maximum_seed_size_mib': '1', 'log_path': '/home/criolys/Git-Repo/air-quality-pipeline/dbt/logs', 'use_experimental_parser': 'False', 'send_anonymous_usage_stats': 'True', 'log_format': 'default', 'hints_enabled': 'True', 'fail_fast': 'False', 'profiles_dir': '/home/criolys/.dbt', 'static_parser': 'True', 'version_check': 'True', 'use_colors': 'True', 'warn_error': 'None', 'partial_parse': 'True', 'target_path': 'None', 'empty': 'None', 'indirect_selection': 'eager', 'introspect': 'True', 'quiet': 'False', 'log_cache_events': 'False', 'no_print': 'None', 'debug': 'False', 'write_json': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'cache_selected_only': 'False'}
+[0m12:09:17.191873 [debug] [MainThread]: Spark adapter: Setting pyhive.hive logging to ERROR
+[0m12:09:17.192288 [debug] [MainThread]: Spark adapter: Setting thrift.transport logging to ERROR
+[0m12:09:17.192589 [debug] [MainThread]: Spark adapter: Setting thrift.protocol logging to ERROR
+[0m12:09:17.646721 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'd41b3305-fd6c-40c6-a78a-f4e65b350827', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f69c23d56e0>]}
+[0m12:09:17.704148 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'd41b3305-fd6c-40c6-a78a-f4e65b350827', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f69c244bf00>]}
+[0m12:09:17.705120 [info ] [MainThread]: Registered adapter: databricks=1.10.9
+[0m12:09:17.763936 [debug] [MainThread]: checksum: 1457e9e0cab7fbddc602d11521c646aed4d6ff99c1bf217138a50570423cae67, vars: {}, profile: dbt, target: dev, version: 1.12.6
+[0m12:09:17.974128 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m12:09:17.974833 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m12:09:17.975203 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m12:09:17.981989 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.air_quality.example
+[0m12:09:17.985522 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'd41b3305-fd6c-40c6-a78a-f4e65b350827', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f69c2567150>]}
+[0m12:09:17.988135 [info ] [MainThread]: Performance info: /home/criolys/Git-Repo/air-quality-pipeline/dbt/target/perf_info.json
+[0m12:09:18.077960 [debug] [MainThread]: Wrote artifact WritableManifest to /home/criolys/Git-Repo/air-quality-pipeline/dbt/target/manifest.json
+[0m12:09:18.080566 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/criolys/Git-Repo/air-quality-pipeline/dbt/target/semantic_manifest.json
+[0m12:09:18.089894 [debug] [MainThread]: Wrote artifact OsiDocument to /home/criolys/Git-Repo/air-quality-pipeline/dbt/target/osi_document.json
+[0m12:09:18.090663 [debug] [MainThread]: Resource report: {"command_name": "parse", "command_success": true, "command_wall_clock_time": 1.6124507, "process_in_blocks": "0", "process_kernel_time": 0.117201, "process_mem_max_rss": "271936", "process_out_blocks": "1784", "process_user_time": 3.677782}
+[0m12:09:18.091245 [debug] [MainThread]: Command `dbt parse` succeeded at 12:09:18.091165 after 1.61 seconds
+[0m12:09:18.091569 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f69c221af30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f69c221ad50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f69f1e37cb0>]}
+[0m12:09:18.091874 [debug] [MainThread]: Flushing usage events
+[0m12:09:18.433694 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m12:09:23.371279 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4d46cc1e80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4d48ac8e10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4d453b7890>]}
+
+
+============================== 12:09:23.374506 | 05053e23-2172-4c38-9c5c-c27aac0ff17a ==============================
+[0m12:09:23.374506 [info ] [MainThread]: Running with dbt=1.12.6
+[0m12:09:23.375152 [debug] [MainThread]: running dbt with arguments {'cache_selected_only': 'False', 'no_print': 'None', 'write_json': 'True', 'debug': 'False', 'version_check': 'True', 'use_experimental_parser': 'False', 'hints_enabled': 'True', 'invocation_command': 'dbt build', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'use_colors': 'True', 'indirect_selection': 'eager', 'maximum_seed_size_mib': '1', 'warn_error': 'None', 'target_path': 'None', 'send_anonymous_usage_stats': 'True', 'printer_width': '80', 'quiet': 'False', 'introspect': 'True', 'fail_fast': 'False', 'partial_parse': 'True', 'profiles_dir': '/home/criolys/.dbt', 'log_path': '/home/criolys/Git-Repo/air-quality-pipeline/dbt/logs', 'empty': 'False', 'static_parser': 'True', 'log_cache_events': 'False', 'log_format': 'default'}
+[0m12:09:23.972808 [debug] [MainThread]: Spark adapter: Setting pyhive.hive logging to ERROR
+[0m12:09:23.973535 [debug] [MainThread]: Spark adapter: Setting thrift.transport logging to ERROR
+[0m12:09:23.974009 [debug] [MainThread]: Spark adapter: Setting thrift.protocol logging to ERROR
+[0m12:09:24.420775 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '05053e23-2172-4c38-9c5c-c27aac0ff17a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4d19b856e0>]}
+[0m12:09:24.479139 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '05053e23-2172-4c38-9c5c-c27aac0ff17a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4d19a87f00>]}
+[0m12:09:24.479825 [info ] [MainThread]: Registered adapter: databricks=1.10.9
+[0m12:09:24.536997 [debug] [MainThread]: checksum: 1457e9e0cab7fbddc602d11521c646aed4d6ff99c1bf217138a50570423cae67, vars: {}, profile: dbt, target: dev, version: 1.12.6
+[0m12:09:24.737463 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m12:09:24.737819 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m12:09:24.738094 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m12:09:24.745221 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.air_quality.example
+[0m12:09:24.748660 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '05053e23-2172-4c38-9c5c-c27aac0ff17a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4d19c03150>]}
+[0m12:09:24.827593 [debug] [MainThread]: Wrote artifact WritableManifest to /home/criolys/Git-Repo/air-quality-pipeline/dbt/target/manifest.json
+[0m12:09:24.830010 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/criolys/Git-Repo/air-quality-pipeline/dbt/target/semantic_manifest.json
+[0m12:09:24.839158 [debug] [MainThread]: Wrote artifact OsiDocument to /home/criolys/Git-Repo/air-quality-pipeline/dbt/target/osi_document.json
+[0m12:09:24.857983 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '05053e23-2172-4c38-9c5c-c27aac0ff17a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4d1936e4e0>]}
+[0m12:09:24.858702 [info ] [MainThread]: Found 1 model, 726 macros
+[0m12:09:24.860805 [warn ] [MainThread]: [[33mWARNING[0m]: Nothing to do. Try checking your model configs and model specification args
+[0m12:09:24.862443 [debug] [MainThread]: Command end result
+[0m12:09:24.895208 [debug] [MainThread]: Wrote artifact WritableManifest to /home/criolys/Git-Repo/air-quality-pipeline/dbt/target/manifest.json
+[0m12:09:24.897694 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/criolys/Git-Repo/air-quality-pipeline/dbt/target/semantic_manifest.json
+[0m12:09:24.899578 [debug] [MainThread]: Wrote artifact OsiDocument to /home/criolys/Git-Repo/air-quality-pipeline/dbt/target/osi_document.json
+[0m12:09:24.902158 [debug] [MainThread]: Wrote artifact RunExecutionResult to /home/criolys/Git-Repo/air-quality-pipeline/dbt/target/run_results.json
+[0m12:09:24.903007 [debug] [MainThread]: Resource report: {"command_name": "build", "command_success": true, "command_wall_clock_time": 1.5912915, "process_in_blocks": "0", "process_kernel_time": 0.128973, "process_mem_max_rss": "274008", "process_out_blocks": "3584", "process_user_time": 3.665399}
+[0m12:09:24.903640 [debug] [MainThread]: Command `dbt build` succeeded at 12:09:24.903558 after 1.59 seconds
+[0m12:09:24.903987 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4d46e31b70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4d193d3690>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4d460d8ae0>]}
+[0m12:09:24.904301 [debug] [MainThread]: Flushing usage events
+[0m12:09:25.249317 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:29:00.663511 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8490ec5d30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8492cb4e10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f848f567890>]}
+
+
+============================== 14:29:00.666083 | 0f60fcd4-c6b7-4e0d-ab3d-a4c88c13e0a1 ==============================
+[0m14:29:00.666083 [info ] [MainThread]: Running with dbt=1.12.6
+[0m14:29:00.666610 [debug] [MainThread]: running dbt with arguments {'log_cache_events': 'False', 'empty': 'None', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'profiles_dir': '/home/criolys/.dbt', 'log_format': 'default', 'use_experimental_parser': 'False', 'fail_fast': 'False', 'target_path': 'None', 'debug': 'False', 'indirect_selection': 'eager', 'log_path': '/home/criolys/Git-Repo/air-quality-pipeline/dbt/logs', 'no_print': 'None', 'hints_enabled': 'True', 'invocation_command': 'dbt ', 'write_json': 'True', 'use_colors': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'introspect': 'True', 'maximum_seed_size_mib': '1', 'warn_error': 'None', 'static_parser': 'True', 'printer_width': '80', 'version_check': 'True', 'cache_selected_only': 'False', 'partial_parse': 'True'}
+[0m14:29:00.764140 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '0f60fcd4-c6b7-4e0d-ab3d-a4c88c13e0a1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f848f7aad70>]}
+[0m14:29:00.794268 [info ] [MainThread]: Warning: No packages were found in packages.yml
+[0m14:29:00.795129 [info ] [MainThread]: Warning: No packages were found in packages.yml
+[0m14:29:00.796416 [debug] [MainThread]: Resource report: {"command_name": "deps", "command_success": true, "command_wall_clock_time": 0.26079336, "process_in_blocks": "8", "process_kernel_time": 0.07952, "process_mem_max_rss": "125924", "process_out_blocks": "304", "process_user_time": 1.35582}
+[0m14:29:00.796849 [debug] [MainThread]: Command `cli deps` succeeded at 14:29:00.796768 after 0.26 seconds
+[0m14:29:00.797151 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f848f50f8a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f848f3d8af0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f848f7aea50>]}
+[0m14:29:00.797480 [debug] [MainThread]: Flushing usage events
+[0m14:29:01.171986 [debug] [MainThread]: An error was encountered while trying to flush usage events
