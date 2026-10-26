@@ -41,9 +41,8 @@ files = list(Path("data/extracted").rglob("*.parquet"))
 if not files:
     print("Aucun fichier Parquet trouvé.")
 else:
-    df = pd.read_parquet(files[0])
+    for f in files:
+        df = pd.read_parquet(f)
 
-    print(df.head(10))
-    print(df.shape)
-    print(df.columns.tolist())
-    print(df.dtypes)
+        print(df.shape)
+        print(df.dtypes)
