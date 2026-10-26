@@ -1,13 +1,33 @@
 # Python-generated files
 __pycache__/
+**/__pycache__/
 *.py[oc]
+*.pyo
+*.pyd
 build/
 dist/
 wheels/
 *.egg-info
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.pyre/
+.ipynb_checkpoints/
 
 # Virtual environments
 .venv
 
+# Editor and local tooling
 .vscode
-logs
+
+# Logs and caches
+logs/
+*.log
+.cache/
+coverage/
+htmlcov/
+
+# Local environment files
+.env
+.env.*
+!.env.example

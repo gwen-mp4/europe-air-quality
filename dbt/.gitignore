@@ -1,8 +1,19 @@
-# dbt
+# dbt artifacts
 target/
 logs/
 dbt_packages/
 dbt_modules/
+
+# Python cache and local tooling
+**/__pycache__/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Logs and temp/cache files
+*.log
+.cache/
 
 .env
 .env.*
