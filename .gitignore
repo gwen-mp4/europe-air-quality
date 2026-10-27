@@ -31,3 +31,8 @@ htmlcov/
 .env
 .env.*
 !.env.example
+
+# DuckDB
+*.duckdb
+*.wal
+*.tmp/

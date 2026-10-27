@@ -10,6 +10,7 @@ requires-python = ">=3.14"
 dependencies = [
     "dbt-core>=1.12.6",
     "dbt-databricks>=1.10.9",
+    "dbt-duckdb>=1.11.1",
     "pandas>=3.0.6",
     "pyarrow>=26.0.0",
 ]
