@@ -19,3 +19,8 @@ dbt_modules/
 .env.*
 !.env.example
 profiles.yml
+
+# DuckDB
+*.duckdb
+*.wal
+*.tmp/
