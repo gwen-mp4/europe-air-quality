@@ -1,15 +1,16 @@
 [project]
 name = "air-quality-pipeline"
 version = "0.1.0"
-description = "Add your description here"
+description = "An end-to-end batch data pipeline following a medallion architecture."
 readme = "README.md"
 authors = [
     { name = "gwen-mp4", email = "wengeorgesxin@gmail.com" }
 ]
 requires-python = ">=3.14"
 dependencies = [
+    "boto3>=1.43.120",
+    "botocore[crt]>=1.43.120",
     "dbt-core>=1.12.6",
-    "dbt-databricks>=1.10.9",
     "dbt-duckdb>=1.11.1",
     "pandas>=3.0.6",
     "pyarrow>=26.0.0",
