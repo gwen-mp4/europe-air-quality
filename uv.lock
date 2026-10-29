@@ -34,6 +34,7 @@ dependencies = [
     { name = "botocore", extra = ["crt"] },
     { name = "dbt-core" },
     { name = "dbt-duckdb" },
+    { name = "duckdb" },
     { name = "pandas" },
     { name = "pyarrow" },
 ]
@@ -44,6 +45,7 @@ requires-dist = [
     { name = "botocore", extras = ["crt"], specifier = ">=1.43.120" },
     { name = "dbt-core", specifier = ">=1.12.6" },
     { name = "dbt-duckdb", specifier = ">=1.11.1" },
+    { name = "duckdb", specifier = ">=2.0.0" },
     { name = "pandas", specifier = ">=3.0.6" },
     { name = "pyarrow", specifier = ">=26.0.0" },
 ]

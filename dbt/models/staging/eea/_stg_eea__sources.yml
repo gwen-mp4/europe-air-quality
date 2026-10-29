@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: eea_air_quality
+    meta:
+      external_location: "read_parquet('s3://aws-s3-air-quality-bucket-309159505215-eu-west-3-an/raw/eea/parquet/**/*.parquet', hive_partitioning = true, union_by_name = true)"
+    tables:
+      - name: air_quality_raw

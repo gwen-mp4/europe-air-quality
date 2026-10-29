@@ -98,7 +98,7 @@ def download_from_src(
     archive_name = f"eea_{country}_{pollutant_norm}_{date_start}_{date_end}.zip"
     archive_key = f"{ARCHIVES_PREFIX}/{archive_name}"
     parquet_prefix = (
-        f"{PARQUET_PREFIX}/country={country}/pollutant={pollutant_norm}"
+        f"{PARQUET_PREFIX}/country={country}/pollutant_name={pollutant_norm}"
         f"/year={start.year}/month={start.month:02d}"
     )
 

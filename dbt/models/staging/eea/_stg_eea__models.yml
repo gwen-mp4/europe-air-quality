@@ -1,0 +1,62 @@
+version: 2
+
+models:
+    - name: stg_eea_air_quality
+      description: >
+        EEA hourly air quality measurements, one line per measurement.
+        Renaming and data typing only; no filtering or correction applied.
+      columns:
+        - name: sampling_point_id
+          description: Measurement point identifier (station and instrument).
+          data_tests:
+            - not_null
+        - name: pollutant_code
+          description: Numerical code for the pollutant in the EEA vocabulary.
+          data_tests:
+            - not_null
+        - name: measured_from
+          description: Start of the measured period.
+          data_tests:
+            - not_null
+        - name: measured_to
+          description: End of the measured period.
+          data_tests:
+            - not_null
+        - name: value
+          description: >
+            Measured concentration. May contain -999, a sentinel value
+            indicating the absence of a measurement (handled in the intermediate stage).
+        - name: unit
+          description: Unit of measurement for the reported pollutant concentration.
+          data_tests:
+            - not_null
+        - name: aggregation_type
+          description: Aggregation level used for the reported time series (for example, hourly).
+          data_tests:
+            - not_null
+        - name: validity_code
+          description: Code indicating the validity status of the measurement.
+        - name: verification_code
+          description: Code indicating whether the measurement has been verified or validated.
+        - name: data_capture
+          description: Percentage of valid data captured during the reporting period.
+        - name: result_time
+          description: Timestamp when the measurement result was produced or updated.
+          data_tests:
+            - not_null
+        - name: country
+          description: Country code associated with the measurement point.
+          data_tests:
+            - not_null
+        - name: pollutant_name
+          description: Human-readable pollutant name associated with the measurement.
+          data_tests:
+            - not_null
+        - name: year
+          description: Year extracted from the metadata of the source record.
+          data_tests:
+            - not_null
+        - name: month
+          description: Month extracted from the metadata of the source record.
+          data_tests:
+            - not_null
