@@ -19,7 +19,7 @@ clean-targets:
 models:
   europe_air_quality:
     staging:
-      +materialized: table # Using historical data, that's why not using `views`
+      +materialized: table # On purpose
     intermediate:
       +materialized: table
     marts:
