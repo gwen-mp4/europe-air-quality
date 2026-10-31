@@ -1,0 +1,12 @@
+version: 2
+
+seeds:
+    - name: countries
+      description: ISO country codes and names used to enrich the European air quality data.
+      columns:
+        - name: country_code
+          data_type: string
+          description: ISO 3166-1 alpha-2 country code.
+        - name: country_name
+          data_type: string
+          description: Full country name associated with the country code.

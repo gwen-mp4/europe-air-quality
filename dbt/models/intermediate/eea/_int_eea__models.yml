@@ -1,0 +1,115 @@
+version: 2
+
+models:
+  - name: int_air_quality__valid
+    description: >
+      EEA air-quality records after basic validity filtering, negative-value handling,
+      and sentinel-value cleanup. This layer retains the same grain as the raw staged data
+      while flagging and normalizing invalid measurements.
+    columns:
+      - name: sampling_point_id
+        description: Station/instrument identifier for the measurement point.
+        data_tests:
+          - not_null
+      - name: pollutant_code
+        description: EEA pollutant code.
+        data_tests:
+          - not_null
+      - name: measured_from
+        description: Start timestamp for the measured period.
+        data_tests:
+          - not_null
+      - name: measured_to
+        description: End timestamp for the measured period.
+        data_tests:
+          - not_null
+      - name: value
+        description: Cleaned pollutant concentration after replacing sentinel values and retaining valid observations.
+      - name: unit
+        description: Measurement unit for the pollutant.
+        data_tests:
+          - not_null
+      - name: aggregation_type
+        description: Aggregation type used in the record.
+      - name: validity_code
+        description: Original validity indicator from the upstream source.
+      - name: verification_code
+        description: Verification status of the measurement.
+      - name: data_capture
+        description: Percentage of valid data captured in the reporting period.
+      - name: result_time
+        description: Timestamp when the measurement result was reported.
+      - name: country
+        description: ISO country code associated with the measurement.
+        data_tests:
+          - not_null
+      - name: pollutant_name
+        description: Human-readable pollutant name.
+        data_tests:
+          - not_null
+      - name: year
+        description: Year extracted from the EEA record metadata.
+      - name: month
+        description: Month extracted from the EEA record metadata.
+      - name: is_below_detection_limit
+        description: True when the validity code indicates the value is below detection limit.
+      - name: is_imputed
+        description: True when the validity code indicates the value was imputed.
+      - name: is_negative
+        description: True when the cleaned value is negative and not a sentinel value.
+
+  - name: int_air_quality__deduplicated
+    description: >
+      EEA air-quality records after de-duplication by station, pollutant, and time window.
+      The most recent and highest-confidence record is kept for each measurement period.
+    columns:
+      - name: sampling_point_id
+        description: Station/instrument identifier for the measurement point.
+        data_tests:
+          - not_null
+      - name: pollutant_code
+        description: EEA pollutant code.
+        data_tests:
+          - not_null
+      - name: measured_from
+        description: Start timestamp for the measured period.
+        data_tests:
+          - not_null
+      - name: measured_to
+        description: End timestamp for the measured period.
+        data_tests:
+          - not_null
+      - name: value
+        description: Cleaned pollutant concentration retained after deduplication.
+      - name: unit
+        description: Measurement unit for the pollutant.
+        data_tests:
+          - not_null
+      - name: aggregation_type
+        description: Aggregation type used in the record.
+      - name: validity_code
+        description: Original validity indicator from the upstream source.
+      - name: verification_code
+        description: Verification status of the measurement.
+      - name: data_capture
+        description: Percentage of valid data captured in the reporting period.
+      - name: result_time
+        description: Timestamp when the measurement result was reported.
+      - name: country
+        description: ISO country code associated with the measurement.
+        data_tests:
+          - not_null
+      - name: pollutant_name
+        description: Human-readable pollutant name.
+        data_tests:
+          - not_null
+      - name: year
+        description: Year extracted from the EEA record metadata.
+      - name: month
+        description: Month extracted from the EEA record metadata.
+      - name: is_below_detection_limit
+        description: True when the validity code indicates the value is below detection limit.
+      - name: is_imputed
+        description: True when the validity code indicates the value was imputed.
+      - name: is_negative
+        description: True when the cleaned value is negative and not a sentinel value.
