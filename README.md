@@ -53,10 +53,8 @@ air-quality-pipeline/
 ├── src/
 │   └── air_quality_pipeline/
 │       ├── bronze/
-│       │   ├── config.py                                           # Config settings for ingestion and storage access.
-│       │   └── get_raw_data.py                                     # Main data ingestion script for downloading and extracting source files.
-│       ├── silver/                                                 # Silver layer package for cleaned and quality-checked data logic.
-│       └── gold/                                                   # Gold layer package for curated final analytical models.
+│           ├── config.py                                           # Config settings for ingestion and storage access.
+│           └── get_raw_data.py                                     # Main data ingestion script for downloading and extracting source files.
 ├── dbt/
 │   ├── dbt_project.yml                                             # dbt project configuration.
 │   ├── profiles.yml                                                # dbt connection profile configuration. (.gitignore)

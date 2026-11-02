@@ -9,3 +9,4 @@ from .config import (
     END_YEAR,
     END_MONTH,
 )
+from .logging import setup_logging

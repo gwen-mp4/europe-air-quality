@@ -1,14 +1,15 @@
-import logging
 from datetime import date
 from io import BytesIO
 from pathlib import PurePosixPath
 from zipfile import ZipFile, is_zipfile
+import logging
 
 import boto3
 import requests
 from botocore.exceptions import ClientError
 
-from config import (
+from air_quality_pipeline.ingestion.utils import (
+    setup_logging,
     URL,
     ENDPOINT,
     BUCKET,
@@ -20,12 +21,7 @@ from config import (
     END_MONTH,
 )
 
-
-logging.basicConfig(
-	level=logging.INFO,
-    format="[%(asctime)s] [%(levelname)s] %(message)s",
-    datefmt="%Y-%m-%d %H:%M:%S"
-)
+logger = logging.getLogger(__name__)
 
 s3 = boto3.client("s3")
 
@@ -54,6 +50,7 @@ def fetch_archive(
    if not is_zipfile(BytesIO(res.content)):
        raise ValueError(f"The EEA response is not a valid ZIP: {archive_name}")
 
+   logger.debug("Data retrieved: %s", archive_name)
    return res.content
 
 
@@ -63,22 +60,26 @@ def extract_zip_to_s3(
 ) -> None:
     """Upload each file of the ZIP to S3, then write a _SUCCESS marker."""
 
+    logger.debug("Checking before extracting: %s", parquet_prefix)
     with ZipFile(BytesIO(content)) as archive:
         # Prevent file in the archive from escaping the destination
         for member in archive.infolist():
             if member.is_dir():
+                logger.warning("Directory in %s, skipping", parquet_prefix)
                 continue
 
             parts = PurePosixPath(member.filename).parts
             if ".." in parts or member.filename.startswith("/"):
                 raise ValueError(f"Unsafe path in archive: {member.filename}")
 
+            logger.debug("Extracting: %s", parquet_prefix)
             with archive.open(member) as f:
                 s3.upload_fileobj(f, BUCKET, f"{parquet_prefix}/{member.filename}")
 
     # Creating an empty _SUCCESS file to avoid repeating the same process
+    logger.debug("Creating _SUCCESS file: %s", parquet_prefix)
     s3.put_object(Bucket=BUCKET, Key=f"{parquet_prefix}/_SUCCESS", Body=b"")
-    logging.info(f"Extracted to s3://{BUCKET}/{parquet_prefix}")
+    logger.info("Extracted to s3://%s/%s", BUCKET, parquet_prefix)
 
 
 # Add variable validation later (e.g. pollutant must be PM2.5, PM10, CO etc...)
@@ -102,12 +103,14 @@ def download_from_src(
         f"/year={start.year}/month={start.month:02d}"
     )
 
+    logger.debug("Downloading: %s", archive_name)
+
     if key_exists(f"{parquet_prefix}/_SUCCESS"):
-        logging.warning(f"Already processed: {archive_name}")
+        logger.warning("Already processed: %s", archive_name)
         return
 
     if key_exists(archive_key):
-        logging.warning(f"Archive already in S3: {archive_name}")
+        logger.warning("Archive already in S3: %s", archive_name)
         content = s3.get_object(Bucket=BUCKET, Key=archive_key)["Body"].read()
     else:
         payload = {
@@ -120,14 +123,16 @@ def download_from_src(
             "aggregationType": agg_type,
         }
 
+        logger.debug("Fetching archive with payload: %s", payload)
         content = fetch_archive(payload, archive_name)
         s3.put_object(Bucket=BUCKET, Key=archive_key, Body=content)
-        logging.info(f"Uploaded: s3://{BUCKET}/{archive_key}")
+        logger.info("Uploaded: s3://%s/%s", BUCKET, archive_key)
 
     extract_zip_to_s3(content, parquet_prefix)
 
 
 if __name__ == "__main__":
+    setup_logging()
     download_from_src(
         country="FR",
         pollutant="PM2.5",
