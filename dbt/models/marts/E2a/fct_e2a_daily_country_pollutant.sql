@@ -1,8 +1,10 @@
+-- Change the ref by another
+
 with
 
 station_days as (
     select *
-    from {{ ref('int_air_quality__daily') }}
+    from {{ ref('int_e2a__daily') }}
     where is_valid_day
 ),
 

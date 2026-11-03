@@ -8,5 +8,7 @@ from .config import (
     START_MONTH,
     END_YEAR,
     END_MONTH,
+    POLLUTANTS,
+    COUNTRIES,
 )
 from .logging import setup_logging

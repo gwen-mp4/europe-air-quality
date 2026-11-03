@@ -1,7 +1,7 @@
 version: 2
 
 models:
-    - name: stg_eea_air_quality
+    - name: stg_e1a__air_quality
       description: >
         EEA hourly air quality measurements, one line per measurement.
         Renaming and data typing only; no filtering or correction applied.

@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: dim_countries
+  - name: dim_e1a__countries
     description: Dimension table linking each ISO country code to its official country name and the number of stations active in that country.
     columns:
       - name: country_code

@@ -1,7 +1,9 @@
+-- Change ref by another
+
 with
 
 measurements as (
-    select * from {{ ref('int_air_quality__deduplicated') }}
+    select * from {{ ref('int_e1a__deduplicated') }}
 ),
 
 usable as (

@@ -8,13 +8,16 @@ import boto3
 import requests
 from botocore.exceptions import ClientError
 
-from air_quality_pipeline.ingestion.utils import (
+from air_quality_pipeline.bronze.ingestion.get_date import generate_months_period
+from air_quality_pipeline.bronze.utils import (
     setup_logging,
     URL,
     ENDPOINT,
     BUCKET,
     ARCHIVES_PREFIX,
     PARQUET_PREFIX,
+    COUNTRIES,
+    POLLUTANTS,
     START_YEAR,
     START_MONTH,
     END_YEAR,
@@ -133,9 +136,15 @@ def download_from_src(
 
 if __name__ == "__main__":
     setup_logging()
-    download_from_src(
-        country="FR",
-        pollutant="PM2.5",
-        date_start="2025-12-30",
-        date_end="2025-12-31",
-    )
+    for country in COUNTRIES:
+        for pollutant in POLLUTANTS:
+            for start_date, end_date in generate_months_period(
+                    f"{START_YEAR}-{START_MONTH:02d}-01",
+                    f"{END_YEAR}-{END_MONTH:02d}-01",
+            ):
+                download_from_src(
+                    country=country,
+                    pollutant=pollutant,
+                    date_start=start_date,
+                    date_end=end_date,
+                )

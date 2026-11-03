@@ -5,7 +5,7 @@ countries as (
 ),
 
 valid as (
-    select * from {{ ref('int_air_quality__deduplicated') }}
+    select * from {{ ref('int_e1a__deduplicated') }}
 ),
 
 station_count as (

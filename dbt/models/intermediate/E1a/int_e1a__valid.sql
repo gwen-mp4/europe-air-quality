@@ -1,7 +1,7 @@
 with
 
 staged as (
-    select * from {{ ref('stg_eea__air_quality') }}
+    select * from {{ ref('stg_e1a__air_quality') }}
 ),
 
 valid_only as (

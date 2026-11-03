@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: int_air_quality__valid
+  - name: int_e1a__valid
     description: >
       EEA air-quality records after basic validity filtering, negative-value handling,
       and sentinel-value cleanup. This layer retains the same grain as the raw staged data
@@ -58,7 +58,7 @@ models:
       - name: is_negative
         description: True when the cleaned value is negative and not a sentinel value.
 
-  - name: int_air_quality__deduplicated
+  - name: int_e1a__deduplicated
     description: >
       EEA air-quality records after de-duplication by station, pollutant, and time window.
       The most recent and highest-confidence record is kept for each measurement period.

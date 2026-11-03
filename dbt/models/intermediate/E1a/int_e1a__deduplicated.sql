@@ -1,7 +1,7 @@
 with
 
 valid as (
-    select * from {{ ref('int_air_quality__valid') }}
+    select * from {{ ref('int_e1a__valid') }}
 ),
 
 deduplicated as (
