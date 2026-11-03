@@ -48,43 +48,58 @@ This is a simple and scalable architecture that separates ingestion, transformat
 ## 📦 Project Structure
 ```text
 air-quality-pipeline/
-├── README.md                                                       # Project overview, architecture, workflow, roadmap, and credits.
-├── pyproject.toml                                                  # Python project configuration and dependency management.
+├── README.md                                                          # Project overview, architecture, workflow, roadmap, and credits.
+├── pyproject.toml                                                     # Python project configuration and dependency management.
 ├── src/
 │   └── air_quality_pipeline/
-│       ├── bronze/
-│           ├── config.py                                           # Config settings for ingestion and storage access.
-│           └── get_raw_data.py                                     # Main data ingestion script for downloading and extracting source files.
+│       └── bronze/
+│           ├── ingestion/
+│           │   ├── get_date.py                                        # Date helpers used by ingestion logic.
+│           │   ├── get_raw_data.py                                    # Main data ingestion script for downloading and extracting source files.
+│           │   └── logs/
+│           └── utils/
+│               ├── config.py                                          # Config settings for ingestion and storage access.
+│               └── logging.py                                         # Logging helpers for pipeline execution.
 ├── dbt/
-│   ├── dbt_project.yml                                             # dbt project configuration.
-│   ├── profiles.yml                                                # dbt connection profile configuration. (.gitignore)
-│   ├── dev.duckdb                                                  # Local DuckDB database used in development. (.gitignore)
-│   ├── analyses/                                                   # Ad hoc SQL analysis files.
-│   ├── macros/                                                     # Reusable dbt macros.
+│   ├── dbt_project.yml                                                # dbt project configuration.
+│   ├── profiles.yml                                                   # dbt connection profile configuration.
+│   ├── dev.duckdb                                                     # Local DuckDB database used in development.
+│   ├── analyses/                                                      # Ad hoc SQL analysis files.
+│   ├── logs/                                                          # dbt execution logs.
+│   ├── macros/                                                        # Reusable dbt macros.
 │   ├── models/
-│   │   ├── staging/
-│   │   │   └── eea/
-│   │   │       ├── _stg_eea__models.yml                            # Metadata and tests for staging models.
-│   │   │       └── stg_eea__air_quality.sql                        # Staging model for the EEA dataset.
 │   │   ├── intermediate/
-│   │   │   └── eea/
-│   │   │       ├── _int_eea__models.yml                            # Metadata and tests for intermediate models.
-│   │   │       ├── int_air_quality__valid.sql                      # Validity-filtered intermediate dataset.
-│   │   │       └── int_air_quality__deduplicated.sql               # Deduplicated intermediate dataset.
-│   │   └── marts/
-│   │       └── eea/
-│   │           ├── _marts_eea__models.yml                          # Metadata and tests for mart models.
-│   │           ├── dim_countries.sql                               # Country dimension table.
-│   │           ├── fct_daily_pollutant_by_country.sql              # Daily pollutant fact table by country.
-│   │           ├── fct_monthly_pollutant_by_country.sql            # Monthly pollutant fact table by country.
-│   │           ├── fct_yearly_exceedance.sql                       # Yearly exceedance fact table.
-│   │           └── fct_yearly_pollutant_by_country.sql             # Yearly pollutant fact table by country.
+│   │   │   ├── E1a/
+│   │   │   │   ├── _int_e1a__models.yml                               # Metadata and tests for intermediate E1a models.
+│   │   │   │   ├── int_e1a__deduplicated.sql                          # Deduplicated E1a intermediate dataset.
+│   │   │   │   └── int_e1a__valid.sql                                 # Validity-filtered E1a intermediate dataset.
+│   │   │   └── E2a/
+│   │   │       └── int_e2a__daily.sql                                 # Daily E2a intermediate dataset.
+│   │   ├── marts/
+│   │   │   ├── E1a/
+│   │   │   │   ├── _marts_e1a__models.yml                             # Metadata and tests for E1a mart models.
+│   │   │   │   ├── dim_e1a__countries.sql                             # E1a country dimension table.
+│   │   │   │   ├── dim_e1a__stations.sql                              # E1a station dimension table.
+│   │   │   │   ├── fct_e1a__monthly_country_pollutant.sql             # E1a monthly country-pollutant fact table.
+│   │   │   │   ├── fct_e1a_yearly_country_exceedance.sql              # E1a yearly exceedance fact table.
+│   │   │   │   └── fct_e1a_yearly_country_pollutant.sql               # E1a yearly country-pollutant fact table.
+│   │   │   └── E2a/
+│   │   │       ├── dim_e2a_countries.sql                              # E2a country dimension table.
+│   │   │       ├── dim_e2a_stations.sql                               # E2a station dimension table.
+│   │   │       └── fct_e2a_daily_country_pollutant.sql                # E2a daily country-pollutant fact table.
+│   │   └── staging/
+│   │       ├── E1a/
+│   │       │   ├── _stg_e1a__models.yml                               # Metadata and tests for E1a staging models.
+│   │       │   ├── _stg_e1a__sources.yml                              # Source definitions for E1a staging models.
+│   │       │   └── stg_e1a__air_quality.sql                           # E1a staging model for EEA air-quality data.
+│   │       └── E2a/
 │   ├── seeds/
-│   │   ├── _seeds.yml                                              # Seed metadata and schema definitions.
-│   │   └── countries.csv                                           # Country-code reference data.
-│   ├── snapshots/                                                  # Historical snapshot definitions.
-│   ├── target/                                                     # Compiled dbt artifacts and execution output.
-│   └── tests/                                                      # dbt tests and custom data validation rules.
+│   │   ├── _seeds.yml                                                 # Seed metadata and schema definitions.
+│   │   └── countries.csv                                              # Country-code reference data.
+│   ├── snapshots/                                                     # Historical snapshot definitions.
+│   ├── target/                                                        # Compiled dbt artifacts and execution output.
+│   ├── dbt_packages/                                                  # Installed dbt dependencies.
+│   └── tests/                                                         # dbt tests and custom data validation rules.
 └──
 ```
 
