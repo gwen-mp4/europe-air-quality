@@ -1,5 +1,9 @@
 with
 
+source as (
+    select * from {{ source('eea__e1a_air_quality', 'e1a_air_quality_raw') }}
+),
+
 renamed_and_cast as (
     select
         cast(Samplingpoint as varchar)          as sampling_point_id,
@@ -17,7 +21,7 @@ renamed_and_cast as (
         pollutant_name,
         year,
         month
-    from {{ source('eea_air_quality', 'air_quality_raw') }}
+    from source
 )
 
 select * from renamed_and_cast

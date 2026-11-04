@@ -1,4 +1,4 @@
-# Europe Air Quality Pipeline
+# Europe Air Quality
 
 ## 📖 Overview
 This project implements an ELT pipeline for European air quality data, covering historical records from January 2020 to December 2025. The objective is to ingest, validate, transform, and model air quality measurements in a structured and analysis-ready format for reporting and downstream analytics.
@@ -35,6 +35,7 @@ This is a simple and scalable architecture that separates ingestion, transformat
 4. The staging data is then passed through intermediate models, where validity rules, deduplication logic, and basic cleaning operations are applied.
 5. The cleaned and enriched intermediate data is transformed into mart models for downstream reporting and analysis with dbt.
 6. DuckDB executes the SQL transformation logic efficiently, ensuring fast and flexible analytical processing.
+I am currently adding more and more countries and pollutants little by little.
 
 ## 🛠️ Tech Stack
 
@@ -48,58 +49,32 @@ This is a simple and scalable architecture that separates ingestion, transformat
 ## 📦 Project Structure
 ```text
 air-quality-pipeline/
-├── README.md                                                          # Project overview, architecture, workflow, roadmap, and credits.
-├── pyproject.toml                                                     # Python project configuration and dependency management.
+├── README.md
+├── pyproject.toml
 ├── src/
 │   └── air_quality_pipeline/
-│       └── bronze/
+│       └── bronze/                     # Ingestion and bronze layer utilities
 │           ├── ingestion/
-│           │   ├── get_date.py                                        # Date helpers used by ingestion logic.
-│           │   ├── get_raw_data.py                                    # Main data ingestion script for downloading and extracting source files.
-│           │   └── logs/
+│           │   ├── get_date.py         # Date helpers for ingestion windows
+│           │   └── get_raw_data.py     # Raw data download and extraction logic
 │           └── utils/
-│               ├── config.py                                          # Config settings for ingestion and storage access.
-│               └── logging.py                                         # Logging helpers for pipeline execution.
-├── dbt/
-│   ├── dbt_project.yml                                                # dbt project configuration.
-│   ├── profiles.yml                                                   # dbt connection profile configuration.
-│   ├── dev.duckdb                                                     # Local DuckDB database used in development.
-│   ├── analyses/                                                      # Ad hoc SQL analysis files.
-│   ├── logs/                                                          # dbt execution logs.
-│   ├── macros/                                                        # Reusable dbt macros.
-│   ├── models/
-│   │   ├── intermediate/
-│   │   │   ├── E1a/
-│   │   │   │   ├── _int_e1a__models.yml                               # Metadata and tests for intermediate E1a models.
-│   │   │   │   ├── int_e1a__deduplicated.sql                          # Deduplicated E1a intermediate dataset.
-│   │   │   │   └── int_e1a__valid.sql                                 # Validity-filtered E1a intermediate dataset.
-│   │   │   └── E2a/
-│   │   │       └── int_e2a__daily.sql                                 # Daily E2a intermediate dataset.
-│   │   ├── marts/
-│   │   │   ├── E1a/
-│   │   │   │   ├── _marts_e1a__models.yml                             # Metadata and tests for E1a mart models.
-│   │   │   │   ├── dim_e1a__countries.sql                             # E1a country dimension table.
-│   │   │   │   ├── dim_e1a__stations.sql                              # E1a station dimension table.
-│   │   │   │   ├── fct_e1a__monthly_country_pollutant.sql             # E1a monthly country-pollutant fact table.
-│   │   │   │   ├── fct_e1a_yearly_country_exceedance.sql              # E1a yearly exceedance fact table.
-│   │   │   │   └── fct_e1a_yearly_country_pollutant.sql               # E1a yearly country-pollutant fact table.
-│   │   │   └── E2a/
-│   │   │       ├── dim_e2a_countries.sql                              # E2a country dimension table.
-│   │   │       ├── dim_e2a_stations.sql                               # E2a station dimension table.
-│   │   │       └── fct_e2a_daily_country_pollutant.sql                # E2a daily country-pollutant fact table.
-│   │   └── staging/
-│   │       ├── E1a/
-│   │       │   ├── _stg_e1a__models.yml                               # Metadata and tests for E1a staging models.
-│   │       │   ├── _stg_e1a__sources.yml                              # Source definitions for E1a staging models.
-│   │       │   └── stg_e1a__air_quality.sql                           # E1a staging model for EEA air-quality data.
-│   │       └── E2a/
-│   ├── seeds/
-│   │   ├── _seeds.yml                                                 # Seed metadata and schema definitions.
-│   │   └── countries.csv                                              # Country-code reference data.
-│   ├── snapshots/                                                     # Historical snapshot definitions.
-│   ├── target/                                                        # Compiled dbt artifacts and execution output.
-│   ├── dbt_packages/                                                  # Installed dbt dependencies.
-│   └── tests/                                                         # dbt tests and custom data validation rules.
+│               ├── config.py           # Pipeline configuration and storage settings
+│               └── logging.py          # Logging setup for ingestion runs
+│
+├── dbt/                                # Silver and Gold layers (intermediate and marts)
+│   ├── dbt_project.yml                 # dbt project configuration
+│   ├── profiles.yml                    # dbt connection/profile settings (.gitignore)
+│   ├── dev.duckdb                      # Local DuckDB dev database (.gitignore)
+│   ├── .env.example                    # An .env example file of how it should be (without credentials)
+│   └── models/
+│       ├── intermediate/
+│       │   └── E1a/                    # Intermediate models for EEA E1a data
+│       ├── marts/
+│       │   ├── E1a/                    # Mart models for EEA E1a data (dim and facts tables)
+│       │   └── E2a/                    # Mart models for EEA E2a data (dim and facts tables)
+│       └── staging/
+│           ├── E1a/                    # Staging models for EEA E1a data
+│           └── E2a/                    # Staging models for EEA E2a data
 └──
 ```
 

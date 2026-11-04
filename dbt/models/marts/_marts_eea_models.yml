@@ -1,0 +1,58 @@
+version: 2
+
+models:
+  - name: dim_eea__sampling_point
+    description: >
+      Dimension table containing the latest available EEA sampling-point metadata for the
+      pollutants used in the project. The model keeps only the most recent record per
+      station and filters to the core set of pollutants in scope.
+    columns:
+      - name: country
+        description: Country code recorded for the sampling point.
+        data_tests:
+          - not_null
+      - name: sampling_point_id
+        description: Unique sampling point identifier.
+        data_tests:
+          - not_null
+      - name: station_code
+        description: EEA air-quality station code associated with the sampling point.
+        data_tests:
+          - not_null
+      - name: pollutant_code
+        description: Pollutant code retained in the final station dimension.
+        data_tests:
+          - not_null
+      - name: observation_start
+        description: Start of the observation period for the latest metadata record.
+      - name: observation_end
+        description: End of the observation period if reported by the source metadata.
+      - name: longitude
+        description: Longitude coordinate of the sampling point.
+      - name: latitude
+        description: Latitude coordinate of the sampling point.
+      - name: altitude
+        description: Altitude in meters for the sampling point when reported.
+      - name: station_type
+        description: Type of the air-quality station, such as background or traffic.
+        data_tests:
+          - not_null
+      - name: area_type
+        description: Area classification of the station, such as urban or rural.
+        data_tests:
+          - not_null
+
+  - name: dim_stations
+    description: >
+      Summary table comparing the number of distinct sampling points present in the
+      E1a measurements against the number that also have matching coordinates in the
+      EEA metadata dimension.
+    columns:
+      - name: n_in_measurements
+        description: Number of distinct sampling points found in the measurement data.
+        data_tests:
+          - not_null
+      - name: n_with_coordinates
+        description: Number of distinct sampling points that match an EEA station metadata row.
+        data_tests:
+          - not_null

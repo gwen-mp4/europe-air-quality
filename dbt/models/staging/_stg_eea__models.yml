@@ -1,0 +1,46 @@
+version: 2
+
+models:
+    - name: stg_eea__sampling_points
+      description: >
+        EEA Pan-European sampling point metadata, one line per sampling point
+        and pollutant. Renaming and data typing only; no filtering or correction applied.
+      columns:
+        - name: country
+          description: Country code of the sampling point.
+          data_tests:
+            - not_null
+        - name: sampling_point_id
+          description: Sampling point identifier.
+          data_tests:
+            - not_null
+        - name: station_code
+          description: EOI code of the air quality station.
+          data_tests:
+            - not_null
+        - name: pollutant_code
+          description: Numerical code for the pollutant in the EEA vocabulary.
+          data_tests:
+            - not_null
+        - name: observation_start
+          description: Start of the observation period. Null when not reported by the EEA.
+        - name: observation_end
+          description: End of the observation period. Null when not reported by the EEA.
+        - name: longitude
+          description: Longitude of the sampling point.
+          data_tests:
+            - not_null
+        - name: latitude
+          description: Latitude of the sampling point.
+          data_tests:
+            - not_null
+        - name: altitude
+          description: Altitude of the sampling point in meters. Null when reported as the -999 sentinel.
+        - name: station_type
+          description: Type of the air quality station (for example, background).
+          data_tests:
+            - not_null
+        - name: area_type
+          description: Area classification of the air quality station (for example, urban).
+          data_tests:
+            - not_null

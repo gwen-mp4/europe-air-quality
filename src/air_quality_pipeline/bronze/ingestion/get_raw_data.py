@@ -3,6 +3,7 @@ from io import BytesIO
 from pathlib import PurePosixPath
 from zipfile import ZipFile, is_zipfile
 import logging
+import csv
 
 import boto3
 import requests
@@ -13,9 +14,12 @@ from air_quality_pipeline.bronze.utils import (
     setup_logging,
     URL,
     ENDPOINT,
+    METADATA_URL,
     BUCKET,
     ARCHIVES_PREFIX,
     PARQUET_PREFIX,
+    METADATA_PREFIX,
+    METADATA_FILE,
     COUNTRIES,
     POLLUTANTS,
     START_YEAR,
@@ -55,6 +59,39 @@ def fetch_archive(
 
    logger.debug("Data retrieved: %s", archive_name)
    return res.content
+
+
+def is_csvfile(filename: bytes) -> bool:
+    """Check if the file is a CSV based on its content."""
+    try:
+        text_content = filename.decode("utf-8", errors="strict")
+        sample_data = text_content[:4096]  # Read the first 4KB of the file
+
+        if not sample_data.strip():
+            return False
+
+        csv.Sniffer().sniff(sample_data)
+        return True
+    except (csv.Error, AttributeError, ValueError):
+        return False
+
+
+def fetch_metadata():
+    """Fetch EEA sampling point metadata."""
+
+    metadata_file = f"{METADATA_FILE}"
+    metadata_prefix = f"{METADATA_PREFIX}/{metadata_file}"
+
+    logger.debug("Fetching EEA metadata...")
+    with requests.get(f"{METADATA_URL}/{METADATA_FILE}", headers={"User-Agent": "curl/8.23.0"}, stream=True, timeout=60) as res:
+        res.raise_for_status()
+
+        content = res.content
+        if not is_csvfile(content):
+            raise ValueError(f"The EEA metadata response is not a valid CSV: {METADATA_FILE}")
+
+        s3.put_object(Bucket=BUCKET, Key=metadata_prefix, Body=content)
+    logger.info("EEA metadata fetched in %s", metadata_prefix)
 
 
 def extract_zip_to_s3(
@@ -136,6 +173,7 @@ def download_from_src(
 
 if __name__ == "__main__":
     setup_logging()
+    fetch_metadata()
     for country in COUNTRIES:
         for pollutant in POLLUTANTS:
             for start_date, end_date in generate_months_period(
