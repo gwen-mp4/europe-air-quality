@@ -19,10 +19,6 @@ models:
         description: EEA air-quality station code associated with the sampling point.
         data_tests:
           - not_null
-      - name: pollutant_code
-        description: Pollutant code retained in the final station dimension.
-        data_tests:
-          - not_null
       - name: observation_start
         description: Start of the observation period for the latest metadata record.
       - name: observation_end
@@ -39,20 +35,5 @@ models:
           - not_null
       - name: area_type
         description: Area classification of the station, such as urban or rural.
-        data_tests:
-          - not_null
-
-  - name: dim_stations
-    description: >
-      Summary table comparing the number of distinct sampling points present in the
-      E1a measurements against the number that also have matching coordinates in the
-      EEA metadata dimension.
-    columns:
-      - name: n_in_measurements
-        description: Number of distinct sampling points found in the measurement data.
-        data_tests:
-          - not_null
-      - name: n_with_coordinates
-        description: Number of distinct sampling points that match an EEA station metadata row.
         data_tests:
           - not_null

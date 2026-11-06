@@ -5,7 +5,7 @@ countries as (
 ),
 
 valid as (
-    select * from {{ ref('int_e1a__deduplicated') }}
+    select * from {{ ref('int_e1a__valid') }}
 ),
 
 station_count as (

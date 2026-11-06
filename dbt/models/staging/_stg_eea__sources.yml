@@ -3,6 +3,6 @@ version: 2
 sources:
   - name: eea__sampling_points_metadata
     meta:
-      external_location: "read_csv('s3://aws-s3-air-quality-bucket-309159505215-eu-west-3-an/raw/eea/metadata/PanEuropean_metadata.csv', delim='\\t', header=true, all_varchar=true)"
+      external_location: "read_csv('s3://aws-s3-air-quality-bucket-309159505215-eu-west-3-an/raw/eea/metadata/DataExtract.csv', header=true, all_varchar=true)"
     tables:
       - name: sampling_points_metadata_raw

@@ -2,13 +2,9 @@
 URL = "https://eeadmz1-downloads-api-appservice.azurewebsites.net/"
 ENDPOINT = "ParquetFile"
 
-METADATA_URL = "https://discomap.eea.europa.eu/map/fme/metadata"
-METADATA_FILE = "PanEuropean_metadata.csv"
-
 BUCKET = "aws-s3-air-quality-bucket-309159505215-eu-west-3-an"
 ARCHIVES_PREFIX = "raw/eea/archives"
 PARQUET_PREFIX = "raw/eea/parquet"
-METADATA_PREFIX = "raw/eea/metadata"
 
 START_YEAR = 2020
 START_MONTH = 1

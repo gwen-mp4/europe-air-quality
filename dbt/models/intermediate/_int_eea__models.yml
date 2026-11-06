@@ -1,0 +1,51 @@
+version: 2
+
+models:
+  - name: int_eea__valid
+    description: >
+      EEA sampling-point metadata after standardizing pollutant names and classifying the
+      pollutant into the canonical categories used downstream. This layer keeps the same grain
+      as the staging model while adding a normalized pollutant field and the resulting category.
+    columns:
+      - name: country
+        description: Country code of the sampling point.
+        data_tests:
+          - not_null
+      - name: sampling_point_id
+        description: Sampling point identifier.
+        data_tests:
+          - not_null
+      - name: station_code
+        description: EEA air-quality station code associated with the sampling point.
+        data_tests:
+          - not_null
+      - name: air_pollutant
+        description: Original pollutant label from the source metadata before normalization.
+        data_tests:
+          - not_null
+      - name: reporting_year
+        description: Reporting year associated with the source metadata record.
+      - name: observation_start
+        description: Start of the observation period. Null when not reported by the EEA.
+      - name: observation_end
+        description: End of the observation period. Null when not reported by the EEA.
+      - name: imported_at
+        description: Timestamp when the source row was imported into the staging layer.
+      - name: longitude
+        description: Longitude of the sampling point.
+      - name: latitude
+        description: Latitude of the sampling point.
+      - name: altitude
+        description: Altitude in meters for the sampling point when available.
+      - name: station_type
+        description: Type of the air-quality station, such as background or traffic.
+        data_tests:
+          - not_null
+      - name: area_type
+        description: Area classification of the air-quality station, such as urban or rural.
+        data_tests:
+          - not_null
+      - name: pollutant_normalized
+        description: Pollutant name normalized to the canonical EEA vocabulary used in downstream logic.
+      - name: pollutant_category
+        description: Standardized pollutant family such as PM2.5, PM10, NO2, O3, or SO2.
