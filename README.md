@@ -200,7 +200,7 @@ dbt does **not** read `.env` files by itself. You have to write down the variabl
 ### Run the ingestion
 
 ```bash
-uv run python -m air_quality_pipeline.bronze.ingestion.get_raw_data
+uv run python -m src.air_quality_pipeline.bronze.ingestion.get_raw_data
 ```
 
 ### Run the transformations
@@ -227,7 +227,7 @@ uv run dbt build --select +int_e1a__valid --profiles-dir .
 ## 🛠️ Useful commands
 
 ```bash
-# List what is stored in S3 and its total size (example, not the full bucket name)
+# List what is stored in S3 and its total size (example, not the full bucket name and needs AWS CLI installed and logged via 'aws login')
 aws s3 ls s3://aws-s3-air-quality-bucket/raw/eea/ --recursive --human-readable --summarize
 
 # Generate and open the dbt documentation (includes the lineage graph)
