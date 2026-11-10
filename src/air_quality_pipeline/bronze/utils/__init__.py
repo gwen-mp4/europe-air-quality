@@ -2,7 +2,6 @@ from .config import (
     URL,
     ENDPOINT,
     METADATA_URL,
-    METADATA_FILE,
     BUCKET,
     ARCHIVES_PREFIX,
     PARQUET_PREFIX,
