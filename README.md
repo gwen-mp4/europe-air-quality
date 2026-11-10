@@ -170,7 +170,6 @@ air-quality-pipeline/
 ### Prerequisites
 
 - [uv](https://docs.astral.sh/uv/) (it installs and manages the Python version and dependencies)
-- [EEA metadata CSV file](https://discomap.eea.europa.eu/App/AQViewer/index.html?fqn=Airquality_Dissem.b2g.Measurements) to put in S3 bucket in `raw/eea/metadata`
 - An AWS account with an S3 bucket and credentials allowed to list, read and write it
 - No EEA account or API key is needed
 
@@ -193,8 +192,11 @@ cp dbt/.env.example dbt/.env
 
 dbt does **not** read `.env` files by itself. You have to write down the variables in `profiles.yml` (located in `~/.dbt/profiles.yml` by default on Linux) using Jinja templates:  
 ```bash
-"{{ env_var('S3_ACCESS_KEY_ID') }}"
-"{{ env_var('S3_SECRET_ACCESS_KEY') }}"
+secrets:
+- type: s3
+    region: "{{ env_var('S3_REGION') }}"
+    key_id: "{{ env_var('S3_ACCESS_KEY_ID') }}"
+    secret: "{{ env_var('S3_SECRET_ACCESS_KEY') }}"
 ```
 
 ### Run the ingestion
@@ -227,14 +229,14 @@ uv run dbt build --select +int_e1a__valid --profiles-dir .
 ## 🛠️ Useful commands
 
 ```bash
-# List what is stored in S3 and its total size (example, not the full bucket name and needs AWS CLI installed and logged via 'aws login')
-aws s3 ls s3://aws-s3-air-quality-bucket/raw/eea/ --recursive --human-readable --summarize
+# List what is stored in S3 and its total size (needs AWS CLI installed and logged via 'aws login')
+aws s3 ls s3://{your_bucket_name}/raw/eea/ --recursive --human-readable --summarize
 
 # Generate and open the dbt documentation (includes the lineage graph)
 uv run dbt docs generate --profiles-dir .
 uv run dbt docs serve --profiles-dir .
 
-# Inspect the local DuckDB database (read-only, avoids lock conflicts)
+# Inspect the local DuckDB database (read-only, avoids lock conflicts, by default, database name is dev.duckdb)
 uv run python -c "import duckdb; duckdb.connect('dev.duckdb', read_only=True).sql('show all tables').show()"
 ```
 
