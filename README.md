@@ -44,6 +44,9 @@ flowchart LR
 | **Silver** (intermediate) | dbt (DuckDB) | Decisions: validity filtering, sentinel handling, quality flags, deduplication. |
 | **Gold** (marts) | dbt (DuckDB) | Analysis-ready tables: dimensions and facts. |
 
+### DBT Lineage Graph:
+![alt text](./images/lineage_graph.png)
+
 ## ⚙️ How it works
 
 ### 1. Source data
