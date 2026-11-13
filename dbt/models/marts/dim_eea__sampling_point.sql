@@ -1,7 +1,7 @@
 {{
   config(
     materialized = 'external',
-    location='../evidence/sources/air_quality/mart_station_info.parquet'
+    location='../evidence-legacy/sources/air_quality/mart_station_info.parquet'
     )
 }}
 

@@ -1,0 +1,16 @@
+{
+  "name": "eea-air-quality",
+  "version": "0.0.1",
+  "scripts": {
+    "build": "evidence build",
+    "dev": "evidence dev --open /",
+    "sources": "evidence sources",
+    "preview": "evidence preview"
+  },
+  "type": "module",
+  "dependencies": {
+    "@evidence-dev/core-components": "^4.8.10",
+    "@evidence-dev/evidence": "^39.1.13",
+    "evidence-connector-parquet": "^0.0.2"
+  }
+}
