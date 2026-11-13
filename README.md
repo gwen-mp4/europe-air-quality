@@ -9,7 +9,7 @@ A batch ELT pipeline that ingests, validates, cleans and models European air qua
 - **Scope:** hourly measurements of selected pollutants, January 2020 to December 2025, from the EEA verified dataset (E1a). The scope is extended country by country and pollutant by pollutant.
 - **Scale:** more than 70 million hourly rows in staging for France alone (5 pollutants, 2020–2025).
 - **Approach:** raw files are kept untouched in S3 (bronze); all cleaning decisions live in versioned SQL models (silver and gold) so they are visible, testable and reversible.
-- **Stack:** Python, AWS S3, Parquet, DuckDB, dbt, managed with `uv`.
+- **Stack:** Evidence Dev, Python, AWS S3, Parquet, DuckDB, dbt, managed with `uv`.
 
 ## 📌 Status
 
