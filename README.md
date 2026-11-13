@@ -20,7 +20,7 @@ A batch ELT pipeline that ingests, validates, cleans and models European air qua
 | dbt staging, intermediate and marts models | ✅ Done (growing) |
 | dbt data tests | ✅ Basic coverage |
 | Station dimension with coordinates | ✅ Done |
-| Interactive station map | 🚧 Next |
+| Interactive station map | 🚧 In progress |
 | More countries and pollutants | 🚧 In progress |
 | CI, orchestration, recent unverified data | 📝 Planned |
 
@@ -152,20 +152,26 @@ air-quality-pipeline/
 │               ├── config.py           # Pipeline and storage configuration
 │               └── logging.py          # Logging setup for ingestion runs
 │
-└── dbt/                                # Silver and gold layers
-    ├── dbt_project.yml                 # dbt project configuration
-    ├── profiles.yml                    # dbt connection profile (gitignored)
-    ├── dev.duckdb                      # Local DuckDB database (gitignored)
-    ├── .env.example                    # Environment variables template (no secrets)
-    └── models/
-        ├── staging/
-        │   ├── E1a/                    # Staging models for E1a data
-        │   └── E2a/                    # Placeholder for E2a (not implemented)
-        ├── intermediate/
-        │   └── E1a/                    # Validity rules, flags, deduplication
-        └── marts/
-            ├── E1a/                    # Dimensions and facts for E1a data
-            └── E2a/                    # Placeholder for E2a (not implemented)
+├── dbt/                                # Silver and gold layers
+│   ├── dbt_project.yml                 # dbt project configuration
+│   ├── profiles.yml                    # dbt connection profile (gitignored)
+│   ├── dev.duckdb                      # Local DuckDB database (gitignored)
+│   ├── .env.example                    # Environment variables template (no secrets)
+│   └── models/
+│       ├── staging/
+│       │   ├── E1a/                    # Staging models for E1a data
+│       │   └── E2a/                    # Placeholder for E2a (not implemented)
+│       ├── intermediate/
+│       │   └── E1a/                    # Validity rules, flags, deduplication
+│       └── marts/
+│           ├── E1a/                    # Dimensions and facts for E1a data
+│           └── E2a/                    # Placeholder for E2a (not implemented)
+│
+└── evidence-legacy/
+    ├── pages/
+    │   └── index.md                    # Evidence page
+    └── sources/
+        └── air_quality/                # All marts data
 ```
 
 ## 🚀 Getting started
@@ -176,6 +182,12 @@ air-quality-pipeline/
 - An AWS account with an S3 bucket and credentials allowed to list, read and write it
 - No EEA account or API key is needed
 
+### Evidence dev
+
+- npm
+- nvm
+- Node.js
+
 ### Installation
 
 ```bash
@@ -184,6 +196,12 @@ cd air-quality-pipeline
 
 # Create the virtual environment and install dependencies from pyproject.toml / uv.lock
 uv sync
+
+# Evidence dev
+nvm install --lts
+nvm use --lts
+cd evidence-legacy
+npm install
 ```
 
 ### Configuration
@@ -275,4 +293,4 @@ uv run python -c "import duckdb; duckdb.connect('dev.duckdb', read_only=True).sq
 ## 🤝 Credits
 
 - **Data:** European Environment Agency (EEA). Please refer to the EEA copyright and re-use policy.
-- **Tools:** AWS S3, DuckDB, dbt, Python and uv.
+- **Tools:** Evidence Dev, AWS S3, DuckDB, dbt, Python and uv.
