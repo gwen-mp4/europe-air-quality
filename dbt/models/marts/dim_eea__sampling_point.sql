@@ -1,3 +1,10 @@
+{{
+  config(
+    materialized = 'external',
+    location='../evidence/sources/air_quality/mart_station_info.parquet'
+    )
+}}
+
 with
 
 staged as (
