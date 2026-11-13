@@ -198,8 +198,8 @@ cd air-quality-pipeline
 uv sync
 
 # Evidence dev
-nvm install --lts
-nvm use --lts
+nvm install 20
+nvm use 20
 cd evidence-legacy
 npm install
 ```
@@ -246,6 +246,14 @@ uv run dbt build --select +int_e1a__valid --profiles-dir .
 ```
 
 `+model` selects a model and everything it depends on; `model+` selects it and everything downstream.
+
+### Check everything on the map
+
+```bash
+npm run sources # Need connection.yaml in `sources/air_quality/`
+
+npm run dev
+```
 
 ## 🛠️ Useful commands
 
