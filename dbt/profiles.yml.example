@@ -1,0 +1,14 @@
+air_quality:                 # must match `profile:` in dbt_project.yml
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: dev.duckdb
+      threads: 4
+      extensions:
+        - httpfs
+      secrets:
+        - type: s3
+          region: "{{ env_var('S3_REGION') }}"
+          key_id: "{{ env_var('S3_ACCESS_KEY_ID') }}"
+          secret: "{{ env_var('S3_SECRET_ACCESS_KEY') }}"
