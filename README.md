@@ -10,6 +10,7 @@ A batch ELT pipeline that ingests, validates, cleans and models European air qua
 - **Scale:** more than 70 million hourly rows in staging for France alone (5 pollutants, 2020–2025).
 - **Approach:** raw files are kept untouched in S3 (bronze); all cleaning decisions live in versioned SQL models (silver and gold) so they are visible, testable and reversible.
 - **Stack:** Evidence Dev, Python, AWS S3, Parquet, DuckDB, dbt, managed with `uv`.
+- **Output:** an interactive map of European monitoring stations colored by concentration, published as a static site built with Evidence.
 
 ## 📌 Status
 
@@ -20,21 +21,22 @@ A batch ELT pipeline that ingests, validates, cleans and models European air qua
 | dbt staging, intermediate and marts models | ✅ Done (growing) |
 | dbt data tests | ✅ Basic coverage |
 | Station dimension with coordinates | ✅ Done |
-| Interactive station map | 🚧 In progress |
-| More countries and pollutants | 🚧 In progress |
-| CI, orchestration, recent unverified data | 📝 Planned |
+| Interactive station map (Evidence) | ✅ Done (local) |
+| Map deployment as a static site | 📝 Planned |
+| CI with GitHub Actions | 📝 Planned |
+| Recent unverified data (E2a) and orchestration | 📝 Optional |
 
 ## 🏗️ Architecture
 
 ```mermaid
 flowchart LR
     A[EEA Download Service<br/>E1a verified data] --> B[Python ingestion]
-    M[EEA metadata<br/>data flow D] --> B
-    B --> C[(AWS S3<br/>bronze: archives, parquet, metadata)]
+    B --> C[(AWS S3<br/>bronze: archives, parquet)]
+    M[EEA metadata<br/>data flow D] --> C
     C --> D[dbt + DuckDB<br/>staging]
     D --> E[dbt + DuckDB<br/>intermediate / silver]
     E --> F[dbt + DuckDB<br/>marts / gold]
-    F --> G[Analytics and map<br/>planned]
+    F -->|Parquet export| G[Evidence<br/>interactive map]
 ```
 
 | Layer | Where | What happens |
@@ -45,7 +47,7 @@ flowchart LR
 | **Gold** (marts) | dbt (DuckDB) | Analysis-ready tables: dimensions and facts. |
 
 ### DBT Lineage Graph:
-![alt text](./images/lineage_graph.png)
+![dbt lineage graph of the project](./images/lineage_graph.png)
 
 ## ⚙️ How it works
 
@@ -118,6 +120,16 @@ This is where decisions are made.
 
 Data tests (`not_null`, `unique`, `relationships`, and more) are declared in the YAML files next to the models and run with `dbt build`.
 
+### 7. Map (Evidence)
+
+The gold mart `mart_station_info` is exported by dbt as a Parquet file into `evidence-legacy/sources/air_quality/`. Evidence loads it with `npm run sources` and the page `pages/index.md` queries it in SQL and draws the stations on an OpenStreetMap basemap, colored by concentration.
+
+**Why this design**
+
+- The map is a static site: no server and no credentials in the browser.
+- Evidence Studio (the current hosted version) cannot read local Parquet files, so this project uses the open-source version of Evidence with a Parquet connector.
+- Only a small aggregated mart is shipped to the browser, never hourly data.
+
 ## ✅ Data quality
 
 - With the current metadata, every sampling point present in the measurements has coordinates (checked in `dim_stations`).
@@ -167,11 +179,19 @@ air-quality-pipeline/
 │           ├── E1a/                    # Dimensions and facts for E1a data
 │           └── E2a/                    # Placeholder for E2a (not implemented)
 │
-└── evidence-legacy/
+└── evidence-legacy/                    # Interactive map (open-source Evidence)
     ├── pages/
-    │   └── index.md                    # Evidence page
-    └── sources/
-        └── air_quality/                # All marts data
+    │   └── index.md                    # Map page (SQL + components)
+    ├── sources/
+    │   └── air_quality/
+    │       ├── connection.yaml         # Parquet connector configuration
+    │       └── *.parquet               # Gold marts exported by dbt
+    ├── evidence.config.yaml            # Project settings
+    ├── evidence.plugins.yaml           # Registered plugins (Parquet connector)
+    ├── theme.yaml                      # Site theme
+    ├── access.yaml                     # Template file (unused)
+    ├── package.json
+    └── package-lock.json               # Pinned Node dependencies
 ```
 
 ## 🚀 Getting started
@@ -182,33 +202,37 @@ air-quality-pipeline/
 - An AWS account with an S3 bucket and credentials allowed to list, read and write it
 - No EEA account or API key is needed
 
-### Evidence dev
+### Evidence (map)
 
-- npm
-- nvm
-- Node.js
+- Node.js 20 (installed with [nvm](https://github.com/nvm-sh/nvm)); other major versions may not work with this Evidence version
+- npm 7+ and Git
 
 ### Installation
 
 ```bash
 git clone https://github.com/gwen-mp4/europe-air-quality.git
-cd air-quality-pipeline
+cd europe-air-quality
 
-# Create the virtual environment and install dependencies from pyproject.toml / uv.lock
+# Python environment
 uv sync
 
-# Evidence dev
-nvm install 20
-nvm use 20
-cd evidence-legacy
-npm install
+# Evidence
+nvm install 20 && nvm use 20
+cd evidence-legacy && npm install && cd ..
 ```
 
 ### Configuration
 
 ```bash
+# 1. Copy the templates
 cp dbt/.env.example dbt/.env
-# Fill in your AWS region, bucket name and credentials
+cp dbt/profiles.yml.example dbt/profiles.yml
+
+# 2. Fill in dbt/.env (AWS region, bucket, credentials), then load it into your shell
+set -a && source dbt/.env && set +a
+```
+
+dbt does **not** load `.env` files by itself. `profiles.yml` reads the variables with `env_var(...)`, so they must exist in your shell.
 ```
 
 dbt does **not** read `.env` files by itself. You have to write down the variables in `profiles.yml` (located in `~/.dbt/profiles.yml` by default on Linux) using Jinja templates:  
@@ -221,6 +245,10 @@ secrets:
 ```
 
 ### Run the ingestion
+
+By default, the program fetches data from January 2020 to December 2025, from all EEA member countries and for PM2.5, PM10, NO2, O3 and SO2 pollutants.
+
+But you can also change the arguments (date, countries and pollutants) in `src/air_quality_pipeline/bronze/utils/config.py`.  
 
 ```bash
 uv run python -m src.air_quality_pipeline.bronze.ingestion.get_raw_data
@@ -247,12 +275,17 @@ uv run dbt build --select +int_e1a__valid --profiles-dir .
 
 `+model` selects a model and everything it depends on; `model+` selects it and everything downstream.
 
-### Check everything on the map
+### Build and view the map
 
 ```bash
-npm run sources # Need connection.yaml in `sources/air_quality/`
+# 1. Rebuild the mart exported to Evidence
+cd dbt
+uv run dbt build --select mart_station_info --profiles-dir .
 
-npm run dev
+# 2. Load it into Evidence and start the site
+cd ../evidence-legacy
+npm run sources         # needs sources/air_quality/connection.yaml
+npm run dev             # http://localhost:3000
 ```
 
 ## 🛠️ Useful commands
@@ -281,24 +314,29 @@ uv run python -c "import duckdb; duckdb.connect('dev.duckdb', read_only=True).sq
 | Sampling points do not match the metadata | Check the ID normalization (country prefix) and compare match rates per country before writing any new rule. |
 | EEA download returns an error or a non-ZIP response | Temporary service issue or wrong parameters. The request is safe to rerun. |
 | First `dbt build` is slow | DuckDB reads Parquet from S3 for the first time. Later models read local tables. |
+| `npm run sources` fails or the source is unknown | `sources/air_quality/connection.yaml` is missing. Recreate it from `http://localhost:3000/settings` (new source with the Parquet connector). |
+| Evidence will not install or start | Use Node.js 20 (`nvm use 20`). |
+| `JavaScript heap out of memory` during `npm run sources` | Keep the exported mart small, or run `NODE_OPTIONS="--max-old-space-size=4096" npm run sources`. |
+| Table `air_quality.mart_station_info` not found | The source name is the folder name and the table name is the file name. Rerun `npm run sources`. |
+| The map is blank | The basemap tiles need an internet connection. |
 
 ## ⚠️ Known limitations
 
 - Only verified (E1a) data is processed; recent unverified data is not.
 - Timestamps follow the time zone of each reporting network, which matters when aggregating by day.
-- Country-level averages (when added) are simple averages across stations, so urban, traffic and rural stations are not weighted differently.
-- Coordinates come from yearly declarations by countries; a few recent sampling points may be missing in a given metadata version.
-- Single-machine processing: very large extensions to all countries require batching.
+- The map uses the open-source version of Evidence, which receives no new features.
+- Single-machine processing: DuckDB memory and temporary directory settings matter at this scale.
 
 ## 🗺️ Roadmap
 
-1. Interactive map of stations colored by concentration (static site built with Evidence).
-2. Extend to more countries and pollutants (configuration-driven).
-3. CI with GitHub Actions: lint, tests and `dbt build` on a small sample.
+1. Deploy the map as a static site (GitHub Pages) and add a live demo link.
+2. CI with GitHub Actions: lint, tests and `dbt build` on a small sample.
+3. Time-series views (monthly facts by country) in the Evidence app.
 4. Additional data quality reporting from dbt tests.
 5. *(Optional)* Recent unverified data (E2a) with scheduled collection, and orchestration.
 
 ## 🤝 Credits
 
-- **Data:** European Environment Agency (EEA). Please refer to the EEA copyright and re-use policy.
+- **Data:** European Environment Agency (EEA). Please refer to the EEA copyright and reuse policy.
 - **Tools:** Evidence Dev, AWS S3, DuckDB, dbt, Python and uv.
+- **Map tiles**: © OpenStreetMap contributors.
