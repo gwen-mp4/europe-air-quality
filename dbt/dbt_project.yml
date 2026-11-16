@@ -19,7 +19,7 @@ clean-targets:
 models:
   europe_air_quality:
     staging:
-      +materialized: table # On purpose
+      +materialized: view
     intermediate:
       +materialized: table
     marts:

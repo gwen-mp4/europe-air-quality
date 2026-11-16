@@ -83,7 +83,7 @@ def extract_zip_to_s3(
             with archive.open(member) as f:
                 s3.upload_fileobj(f, BUCKET, f"{parquet_prefix if is_metadata is False else metadata_prefix}/{member.filename}")
 
-    if is_metadata is True:
+    if is_metadata is False:
         logger.debug("Creating _SUCCESS file: %s", parquet_prefix)
         s3.put_object(Bucket=BUCKET, Key=f"{parquet_prefix}/_SUCCESS", Body=b"")
     logger.info("Extracted to s3://%s/%s", BUCKET, parquet_prefix if is_metadata is False else metadata_prefix)

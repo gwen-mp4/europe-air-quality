@@ -1,7 +1,18 @@
+{{
+    config(
+        materialized='incremental',
+        incremental_strategy='delete+insert',
+        unique_key='batch_key',
+        tags=['heavy']
+    )
+}}
+
 with
 
 staged as (
     select * from {{ ref('stg_e1a__air_quality') }}
+    where country = '{{ var("country") }}'
+    and year = {{ var("year") }}
 ),
 
 normalize as (
@@ -49,4 +60,7 @@ cleaned as (
     from flagged
 )
 
-select * from cleaned
+select
+    *,
+    country || '-' || cast(year as varchar) as batch_key
+from cleaned

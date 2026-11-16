@@ -1,6 +1,6 @@
 # European Air Quality ELT Pipeline
 
-A batch ELT pipeline that ingests, validates, cleans and models European air quality measurements published by the European Environment Agency (EEA). The project focuses on data quality, reproducibility and clear modeling decisions rather than on heavy infrastructure.
+An on-demand batch ELT pipeline that ingests, validates, cleans and models European air quality measurements published by the European Environment Agency (EEA). The project focuses on data quality, reproducibility and clear modeling decisions rather than on heavy infrastructure.
 
 > **Status: work in progress.** The core pipeline (ingestion → bronze → silver → gold) works end to end on the current scope. See [Status](#-status) and [Roadmap](#-roadmap).
 
@@ -172,12 +172,13 @@ air-quality-pipeline/
 │   └── models/
 │       ├── staging/
 │       │   ├── E1a/                    # Staging models for E1a data
-│       │   └── E2a/                    # Placeholder for E2a (not implemented)
+│       │   └── metadata/               # Metadata of EEA
 │       ├── intermediate/
 │       │   └── E1a/                    # Validity rules, flags, deduplication
+│       │   └── metadata/
 │       └── marts/
 │           ├── E1a/                    # Dimensions and facts for E1a data
-│           └── E2a/                    # Placeholder for E2a (not implemented)
+│           └── metadata/
 │
 └── evidence-legacy/                    # Interactive map (open-source Evidence)
     ├── pages/
