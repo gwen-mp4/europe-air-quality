@@ -1,3 +1,9 @@
+{{ config(
+    materialized='incremental',
+    incremental_strategy='delete+insert',
+    unique_key=['sampling_point_id', 'pollutant_code', 'unit', 'month_start']
+) }}
+
 with
 
 source as (
@@ -13,6 +19,9 @@ source as (
         is_imputed,
         is_below_detection_limit,
     from {{ ref('int_e1a__valid') }}
+    {% if is_incremental() %}
+    where measured_from >= (select max(month_start) from {{ this }})
+    {% endif %}
 ),
 
 usable as (

@@ -1,0 +1,45 @@
+name: Pipeline Setup Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  python:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v4
+        - uses: astral-sh/setup-uv@v5
+        - run: uv sync --locked
+        - run: uv run ruff check .
+        - run: uv run ruff --format check .
+        - run: uv run pytest
+  dbt:
+    runs-on: ubuntu-latest
+    env:
+      S3_ACCESS_KEY_ID: dummy
+      S3_SECRET_ACCESS_KEY: dummy
+      S3_REGION: dummy
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - run: uv sync --locked
+      - run: cp dbt/profiles.yml.example dbt/profiles.yml
+      - run: uv run dbt parse --profiles-dir .
+        working-directory: dbt
+  map:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: evidence-legacy
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: evidence-legacy/package-lock.json
+      - run: npm ci
+      - run: npm run sources
+      - run: nom run build
