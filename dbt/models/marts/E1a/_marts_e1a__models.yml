@@ -2,7 +2,9 @@ version: 2
 
 models:
   - name: dim_e1a__countries
-    description: Dimension table linking each ISO country code to its official country name and the number of stations active in that country.
+    description: >
+      Dimension table linking each ISO country code to its official name and the number of
+      stations observed in the EEA measurement data for that country.
     columns:
       - name: country_code
         description: ISO 3166-1 alpha-2 country code.
@@ -17,3 +19,47 @@ models:
         description: Number of distinct sampling stations observed for the country in the deduplicated EEA data.
         data_tests:
           - not_null
+
+  - name: fct_e1a__monthly_pollutants
+    description: >
+      Monthly aggregate pollutant statistics at the country-sampling-point level, including
+      totals, counts, exclusions, and coverage for each pollutant series.
+    columns:
+      - name: country
+        description: ISO country code for the aggregated monthly series.
+        data_tests:
+          - not_null
+      - name: sampling_point_id
+        description: Sampling point identifier for the monthly aggregate.
+        data_tests:
+          - not_null
+      - name: pollutant_code
+        description: EEA pollutant code for the aggregate series.
+        data_tests:
+          - not_null
+      - name: pollutant_name
+        description: Human-readable pollutant name.
+      - name: unit
+        description: Measurement unit used for the aggregate values.
+      - name: month_start
+        description: First day of the month represented by this aggregate row.
+      - name: sum_value
+        description: Sum of valid pollutant values for the month after excluding negative values.
+      - name: n_valid_hours
+        description: Number of valid hourly measurements retained for the month.
+      - name: min_value
+        description: Minimum valid value observed during the month.
+      - name: max_value
+        description: Maximum valid value observed during the month.
+      - name: n_negative_excluded
+        description: Count of negative values excluded from the monthly aggregate.
+      - name: n_imputed
+        description: Count of imputed values included in the monthly aggregate.
+      - name: n_below_detection_limit
+        description: Count of values below the detection limit retained in the aggregate.
+      - name: mean_value
+        description: Mean pollutant value calculated from the valid hourly data.
+      - name: n_hours_expected
+        description: Expected number of hourly measurements for the month.
+      - name: coverage
+        description: Share of expected hourly readings represented by valid observations.

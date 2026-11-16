@@ -22,8 +22,9 @@ An on-demand batch ELT pipeline that ingests, validates, cleans and models Europ
 | dbt data tests | ✅ Basic coverage |
 | Station dimension with coordinates | ✅ Done |
 | Interactive station map (Evidence) | ✅ Done (local) |
+| CI with GitHub Actions | ✅ Done |
+| Makefile task runner | ✅ Done |
 | Map deployment as a static site | 📝 Planned |
-| CI with GitHub Actions | 📝 Planned |
 | Recent unverified data (E2a) and orchestration | 📝 Optional |
 
 ## 🏗️ Architecture

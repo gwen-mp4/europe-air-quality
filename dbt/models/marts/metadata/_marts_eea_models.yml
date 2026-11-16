@@ -19,10 +19,16 @@ models:
         description: EEA air-quality station code associated with the sampling point.
         data_tests:
           - not_null
+      - name: air_pollutant
+        description: Pollutant name retained in the latest metadata snapshot.
+      - name: reporting_year
+        description: Reporting year for the selected metadata row.
       - name: observation_start
         description: Start of the observation period for the latest metadata record.
       - name: observation_end
         description: End of the observation period if reported by the source metadata.
+      - name: imported_at
+        description: Timestamp when the selected metadata row was imported.
       - name: longitude
         description: Longitude coordinate of the sampling point.
       - name: latitude
@@ -37,3 +43,19 @@ models:
         description: Area classification of the station, such as urban or rural.
         data_tests:
           - not_null
+
+  - name: dim_stations
+    description: >
+      Yearly station coverage summary comparing the valid measurement points against the
+      EEA sampling-point metadata dimension to estimate matching coverage.
+    columns:
+      - name: n_in_measurements
+        description: Count of distinct sampling points present in measurements for the project scope.
+      - name: n_with_coordinates
+        description: Count of distinct sampling points that exist in the coordinate metadata dimension.
+      - name: year
+        description: Year analyzed in the summary.
+      - name: n_points
+        description: Number of unique measurement points observed in that year.
+      - name: pct_matched
+        description: Percentage of points in the measurement layer that match a station in the dimension table.

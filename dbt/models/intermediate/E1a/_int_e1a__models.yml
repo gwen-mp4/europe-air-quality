@@ -3,16 +3,25 @@ version: 2
 models:
   - name: int_e1a__valid
     description: >
-      EEA air-quality records after basic validity filtering, negative-value handling,
-      and sentinel-value cleanup. This layer retains the same grain as the raw staged data
-      while flagging and normalizing invalid measurements.
+      EEA E1a records after filtering to valid status codes, replacing sentinel values,
+      and flagging negative, imputed, and below-detection-limit observations.
     columns:
+      - name: country
+        description: ISO country code associated with the measurement record.
+        data_tests:
+          - not_null
+      - name: sampling_point_source_id
+        description: Original sampling point identifier from the upstream EEA source.
       - name: sampling_point_id
-        description: Station/instrument identifier for the measurement point.
+        description: Normalized sampling point identifier with any leading path prefix removed.
         data_tests:
           - not_null
       - name: pollutant_code
         description: EEA pollutant code.
+        data_tests:
+          - not_null
+      - name: pollutant_name
+        description: Human-readable pollutant name.
         data_tests:
           - not_null
       - name: measured_from
@@ -24,7 +33,7 @@ models:
         data_tests:
           - not_null
       - name: value
-        description: Cleaned pollutant concentration after replacing sentinel values and retaining valid observations.
+        description: Cleaned pollutant concentration after replacing the sentinel value with null.
       - name: unit
         description: Measurement unit for the pollutant.
         data_tests:
@@ -32,28 +41,22 @@ models:
       - name: aggregation_type
         description: Aggregation type used in the record.
       - name: validity_code
-        description: Original validity indicator from the upstream source.
+        description: Original validity status code from the upstream source.
       - name: verification_code
-        description: Verification status of the measurement.
+        description: Verification code from the upstream source.
       - name: data_capture
         description: Percentage of valid data captured in the reporting period.
       - name: result_time
-        description: Timestamp when the measurement result was reported.
-      - name: country
-        description: ISO country code associated with the measurement.
-        data_tests:
-          - not_null
-      - name: pollutant_name
-        description: Human-readable pollutant name.
-        data_tests:
-          - not_null
+        description: Timestamp when the value was produced or updated in the source system.
       - name: year
-        description: Year extracted from the EEA record metadata.
+        description: Year extracted from the source record metadata.
       - name: month
-        description: Month extracted from the EEA record metadata.
+        description: Month extracted from the source record metadata.
       - name: is_below_detection_limit
-        description: True when the validity code indicates the value is below detection limit.
+        description: True when the validity code indicates a value below the detection limit.
       - name: is_imputed
         description: True when the validity code indicates the value was imputed.
       - name: is_negative
-        description: True when the cleaned value is negative and not a sentinel value.
+        description: True when the cleaned value is negative and not the sentinel value.
+      - name: batch_key
+        description: Synthetic batch key built as country-year for incremental processing.

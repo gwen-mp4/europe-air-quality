@@ -3,9 +3,8 @@ version: 2
 models:
   - name: int_eea__valid
     description: >
-      EEA sampling-point metadata after standardizing pollutant names and classifying the
-      pollutant into the canonical categories used downstream. This layer keeps the same grain
-      as the staging model while adding a normalized pollutant field and the resulting category.
+      EEA sampling-point metadata restricted to the core pollutant set used by the project,
+      with pollutant labels normalized to the canonical names expected downstream.
     columns:
       - name: country
         description: Country code of the sampling point.
@@ -20,7 +19,7 @@ models:
         data_tests:
           - not_null
       - name: air_pollutant
-        description: Original pollutant label from the source metadata before normalization.
+        description: Original pollutant label from the source metadata before standardization.
         data_tests:
           - not_null
       - name: reporting_year
@@ -46,6 +45,4 @@ models:
         data_tests:
           - not_null
       - name: pollutant_normalized
-        description: Pollutant name normalized to the canonical EEA vocabulary used in downstream logic.
-      - name: pollutant_category
-        description: Standardized pollutant family such as PM2.5, PM10, NO2, O3, or SO2.
+        description: Pollutant name normalized to the canonical EEA vocabulary used downstream.
