@@ -9,8 +9,12 @@
   },
   "type": "module",
   "dependencies": {
-    "@evidence-dev/core-components": "^4.8.10",
-    "@evidence-dev/evidence": "^39.1.13",
+    "@evidence-dev/core-components": "^4.9.2",
+    "@evidence-dev/evidence": "^39.2.3",
     "evidence-connector-parquet": "^0.0.2"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.2",
+    "vite": "^5.4.11"
   }
 }

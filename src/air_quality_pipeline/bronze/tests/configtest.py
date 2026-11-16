@@ -1,5 +1,6 @@
 import pytest
 
+
 @pytest.fixture(autouse=True)
 def fake_aws_credentials(monkeypatch):
     monkeypatch.setenv("S3_ACCESS_KEY_ID", "test")

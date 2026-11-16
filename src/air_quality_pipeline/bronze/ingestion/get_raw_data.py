@@ -1,8 +1,8 @@
+import logging
 from datetime import date
 from io import BytesIO
 from pathlib import PurePosixPath
 from zipfile import ZipFile, is_zipfile
-import logging
 
 import boto3
 import requests
@@ -10,20 +10,20 @@ from botocore.exceptions import ClientError
 
 from air_quality_pipeline.bronze.ingestion.get_date import generate_months_period
 from air_quality_pipeline.bronze.utils import (
-    setup_logging,
-    URL,
-    ENDPOINT,
-    BUCKET,
-    METADATA_URL,
     ARCHIVES_PREFIX,
-    PARQUET_PREFIX,
-    METADATA_PREFIX,
+    BUCKET,
     COUNTRIES,
-    POLLUTANTS,
-    START_YEAR,
-    START_MONTH,
-    END_YEAR,
     END_MONTH,
+    END_YEAR,
+    ENDPOINT,
+    METADATA_PREFIX,
+    METADATA_URL,
+    PARQUET_PREFIX,
+    POLLUTANTS,
+    START_MONTH,
+    START_YEAR,
+    URL,
+    setup_logging,
 )
 
 logger = logging.getLogger(__name__)
@@ -100,7 +100,7 @@ def fetch_metadata():
         res.raise_for_status()
 
         if not is_zipfile(BytesIO(res.content)):
-            raise ValueError(f"The EEA response is not a valid ZIP.")
+            raise ValueError("The EEA response is not a valid ZIP.")
         content = res.content
         s3.put_object(Bucket=BUCKET, Key=metadata_key, Body=content)
         logger.info("EEA metadata fetched in %s", metadata_key)

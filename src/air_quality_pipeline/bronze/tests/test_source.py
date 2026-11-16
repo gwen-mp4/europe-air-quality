@@ -1,13 +1,15 @@
 import io
 import zipfile
-
-import pytest
-import boto3
-from moto import mock_aws
 from unittest.mock import Mock
 
+import boto3
+import pytest
+from moto import mock_aws
 
-from src.air_quality_pipeline.bronze.ingestion import generate_months_period, get_raw_data
+from src.air_quality_pipeline.bronze.ingestion import (
+    generate_months_period,
+    get_raw_data,
+)
 
 
 @pytest.mark.parametrize(
