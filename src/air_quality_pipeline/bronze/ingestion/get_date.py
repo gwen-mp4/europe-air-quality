@@ -3,8 +3,8 @@ from datetime import date
 
 
 def generate_months_period(
-        start_date: str,
-        end_date: str,
+    start_date: str,
+    end_date: str,
 ):
     """Increment the date from start to end of months."""
 

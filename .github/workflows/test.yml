@@ -42,4 +42,4 @@ jobs:
           cache-dependency-path: evidence-legacy/package-lock.json
       - run: npm ci
       - run: npm run sources
-      - run: nom run build
+      - run: npm run build

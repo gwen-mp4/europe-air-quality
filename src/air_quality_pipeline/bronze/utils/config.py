@@ -1,4 +1,3 @@
-
 URL = "https://eeadmz1-downloads-api-appservice.azurewebsites.net/"
 ENDPOINT = "ParquetFile"
 
@@ -15,10 +14,45 @@ START_MONTH = 1
 END_YEAR = 2025
 END_MONTH = 12
 
-POLLUTANTS = ["PM2.5", "PM10", "NO2", "O3", "SO2"] # 6001, 5, 8, 7, 1
+POLLUTANTS = ["PM2.5", "PM10", "NO2", "O3", "SO2"]  # 6001, 5, 8, 7, 1
 
 COUNTRIES = [
-    "AD", "AL", "AT", "BA", "BE", "BG", "CH", "CY", "CZ", "DE", "DK", "EE", "ES",
-    "FI", "FR", "GB", "GR", "HR", "HU", "IE", "IS", "IT", "LT", "LU", "LV", "ME",
-    "MK", "MT", "NL", "NO", "PL", "PT", "RO", "RS", "SE", "SI", "SK", "GI"
+    "AD",
+    "AL",
+    "AT",
+    "BA",
+    "BE",
+    "BG",
+    "CH",
+    "CY",
+    "CZ",
+    "DE",
+    "DK",
+    "EE",
+    "ES",
+    "FI",
+    "FR",
+    "GB",
+    "GR",
+    "HR",
+    "HU",
+    "IE",
+    "IS",
+    "IT",
+    "LT",
+    "LU",
+    "LV",
+    "ME",
+    "MK",
+    "MT",
+    "NL",
+    "NO",
+    "PL",
+    "PT",
+    "RO",
+    "RS",
+    "SE",
+    "SI",
+    "SK",
+    "GI",
 ]

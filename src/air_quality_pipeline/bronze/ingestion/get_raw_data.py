@@ -44,26 +44,26 @@ def key_exists(key: str) -> bool:
 
 
 def fetch_archive(
-        payload: dict,
-        archive_name: str,
+    payload: dict,
+    archive_name: str,
 ) -> bytes:
-   """Download an EEA ZIP archive and return its content."""
+    """Download an EEA ZIP archive and return its content."""
 
-   res = requests.post(f"{URL}{ENDPOINT}", json=payload, timeout=120)
-   res.raise_for_status()
+    res = requests.post(f"{URL}{ENDPOINT}", json=payload, timeout=120)
+    res.raise_for_status()
 
-   if not is_zipfile(BytesIO(res.content)):
-       raise ValueError(f"The EEA response is not a valid ZIP: {archive_name}")
+    if not is_zipfile(BytesIO(res.content)):
+        raise ValueError(f"The EEA response is not a valid ZIP: {archive_name}")
 
-   logger.debug("Data retrieved: %s", archive_name)
-   return res.content
+    logger.debug("Data retrieved: %s", archive_name)
+    return res.content
 
 
 def extract_zip_to_s3(
-        content: bytes,
-        parquet_prefix: str,
-        is_metadata: bool,
-        metadata_prefix: str,
+    content: bytes,
+    parquet_prefix: str,
+    is_metadata: bool,
+    metadata_prefix: str,
 ) -> None:
     """Upload each file of the ZIP to S3, then write a _SUCCESS marker if Parquet file."""
 
@@ -72,21 +72,35 @@ def extract_zip_to_s3(
         # Prevent file in the archive from escaping the destination
         for member in archive.infolist():
             if member.is_dir():
-                logger.warning("Directory in %s, skipping", parquet_prefix if is_metadata is False else metadata_prefix)
+                logger.warning(
+                    "Directory in %s, skipping",
+                    parquet_prefix if is_metadata is False else metadata_prefix,
+                )
                 continue
 
             parts = PurePosixPath(member.filename).parts
             if ".." in parts or member.filename.startswith("/"):
                 raise ValueError(f"Unsafe path in archive: {member.filename}")
 
-            logger.debug("Extracting: %s", parquet_prefix if is_metadata is False else metadata_prefix)
+            logger.debug(
+                "Extracting: %s",
+                parquet_prefix if is_metadata is False else metadata_prefix,
+            )
             with archive.open(member) as f:
-                s3.upload_fileobj(f, BUCKET, f"{parquet_prefix if is_metadata is False else metadata_prefix}/{member.filename}")
+                s3.upload_fileobj(
+                    f,
+                    BUCKET,
+                    f"{parquet_prefix if is_metadata is False else metadata_prefix}/{member.filename}",
+                )
 
     if is_metadata is False:
         logger.debug("Creating _SUCCESS file: %s", parquet_prefix)
         s3.put_object(Bucket=BUCKET, Key=f"{parquet_prefix}/_SUCCESS", Body=b"")
-    logger.info("Extracted to s3://%s/%s", BUCKET, parquet_prefix if is_metadata is False else metadata_prefix)
+    logger.info(
+        "Extracted to s3://%s/%s",
+        BUCKET,
+        parquet_prefix if is_metadata is False else metadata_prefix,
+    )
 
 
 def fetch_metadata():
@@ -96,7 +110,9 @@ def fetch_metadata():
     metadata_key = f"{METADATA_PREFIX}/{metadata_name}"
 
     logger.debug("Fetching EEA metadata...")
-    with requests.get(f"{METADATA_URL}", headers={"User-Agent": "curl/8.23.0"}, timeout=60) as res:
+    with requests.get(
+        f"{METADATA_URL}", headers={"User-Agent": "curl/8.23.0"}, timeout=60
+    ) as res:
         res.raise_for_status()
 
         if not is_zipfile(BytesIO(res.content)):
@@ -111,12 +127,12 @@ def fetch_metadata():
 # Add variable validation later (e.g. pollutant must be PM2.5, PM10, CO etc...)
 # Add try-expect too
 def download_from_src(
-        country: str,
-        pollutant: str,
-        date_start: str,
-        date_end: str,
-        dataset: int = 2,
-        agg_type: str = "hour"
+    country: str,
+    pollutant: str,
+    date_start: str,
+    date_end: str,
+    dataset: int = 2,
+    agg_type: str = "hour",
 ) -> None:
 
     pollutant_norm = pollutant.replace(".", "")
@@ -163,8 +179,8 @@ if __name__ == "__main__":
     for country in COUNTRIES:
         for pollutant in POLLUTANTS:
             for start_date, end_date in generate_months_period(
-                    f"{START_YEAR}-{START_MONTH:02d}-01",
-                    f"{END_YEAR}-{END_MONTH:02d}-01",
+                f"{START_YEAR}-{START_MONTH:02d}-01",
+                f"{END_YEAR}-{END_MONTH:02d}-01",
             ):
                 download_from_src(
                     country=country,

@@ -64,7 +64,9 @@ def s3_bucket(monkeypatch):
 def test_extraction_uploads_each_file(s3_bucket):
     content = make_zip({"a.parquet": b"x", "b.parquet": b"y"})
     get_raw_data.extract_zip_to_s3(content, "raw/eea/parquet/test", False, None)
-    keys = {o["Key"] for o in s3_bucket.list_objects_v2(Bucket="test-bucket")["Contents"]}
+    keys = {
+        o["Key"] for o in s3_bucket.list_objects_v2(Bucket="test-bucket")["Contents"]
+    }
     assert "raw/eea/parquet/test/a.parquet" in keys
     assert "raw/eea/parquet/test/b.parquet" in keys
 
