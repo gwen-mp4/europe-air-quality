@@ -6,8 +6,8 @@ An on-demand batch ELT pipeline that ingests, validates, cleans and models Europ
 
 ## 📖 Overview
 
-- **Scope:** hourly measurements of selected pollutants, January 2020 to December 2025, from the EEA verified dataset (E1a). The scope is extended country by country and pollutant by pollutant.
-- **Scale:** more than 70 million hourly rows in staging for France alone (5 pollutants, 2020–2025).
+- **Scope:** hourly measurements of five pollutants (PM2.5, PM10, NO2, O3, SO2) for 37 European countries, January 2020 to December 2025, from the EEA verified dataset (E1a).
+- **Scale:** +544 million hourly rows and around 190.000 sampling points.
 - **Approach:** raw files are kept untouched in S3 (bronze); all cleaning decisions live in versioned SQL models (silver and gold) so they are visible, testable and reversible.
 - **Stack:** Evidence Dev, Python, AWS S3, Parquet, DuckDB, dbt, managed with `uv`.
 - **Output:** an interactive map of European monitoring stations colored by concentration, published as a static site built with Evidence.
@@ -131,6 +131,17 @@ The gold mart `mart_station_info` is exported by dbt as a Parquet file into `evi
 - Evidence Studio (the current hosted version) cannot read local Parquet files, so this project uses the open-source version of Evidence with a Parquet connector.
 - Only a small aggregated mart is shipped to the browser, never hourly data.
 
+### 8. Large-volume builds (incremental by country and year)
+
+The bronze layer holds all European countries, which is too much to process in a single query on one machine. The heavy hourly model (`int_e1a__valid`) is incremental and processed one **slice** (country and year) at a time:
+
+- the slice is chosen with dbt variables (`--vars "{country: 'FR', year: 2023}"`);
+- DuckDB pushes the filter down to the Parquet files, so only the matching S3 partitions are read;
+- each slice is tagged with a `batch_key` (for example `FR-2023`); rerunning a slice replaces exactly that slice, so runs are idempotent;
+- dimensions, facts and marts are cheap aggregates and remain regular tables.
+
+Assumption: duplicates never span two slices, which holds for E1a because requests are non-overlapping calendar months.
+
 ## ✅ Data quality
 
 - With the current metadata, every sampling point present in the measurements has coordinates (checked in `dim_stations`).
@@ -147,6 +158,8 @@ The gold mart `mart_station_info` is exported by dbt as a Parquet file into `evi
 | **Flags instead of deleting rows** | Filtering is a decision; making it in a later model keeps the earlier data inspectable. |
 | **Metadata as a source, not a dbt seed** | It is large and changes over time; seeds are meant for small static files. |
 | **`uv` for Python dependencies** | Fast, reproducible environments from `pyproject.toml` and a lockfile. |
+| **Incremental only for the heavy hourly models** | Rebuilding hundreds of millions of rows at once exceeds the memory of a single machine; aggregates are cheap to rebuild, so keeping them as plain tables avoids drift. |
+| **Makefile as task runner** | One command per task from the repository root, without remembering which folder to enter. |
 
 ## 📦 Project structure
 
@@ -246,6 +259,21 @@ secrets:
     secret: "{{ env_var('S3_SECRET_ACCESS_KEY') }}"
 ```
 
+### Running tasks with `make`
+
+All commands run from the repository root. Run `make help` to list them.
+
+| Command | What it does |
+| --- | --- |
+| `make install` | Install Python and Node dependencies |
+| `make ingest` | Download EEA data into S3 (see src/air_quality_pipeline/bronze/utils/config.py for more info of what are downloaded) |
+| `make dbt-batches COUNTRIES="FR" YEARS="2024 2025"` | Build the heavy hourly models one country/year slice at a time |
+| `make dbt-rest` | Build dimensions, facts and marts |
+| `make dbt-test` | Run all dbt tests |
+| `make transform` | `dbt-batches` + `dbt-rest` + `dbt-test` |
+| `make map-sources` / `make map-dev` / `make map-build` | Load data into Evidence, run the map locally, build the static site |
+| `make refresh` | Ingest, transform and reload the map |
+
 ### Run the ingestion
 
 By default, the program fetches data from January 2020 to December 2025, from all EEA member countries and for PM2.5, PM10, NO2, O3 and SO2 pollutants.
@@ -316,6 +344,9 @@ uv run python -c "import duckdb; duckdb.connect('dev.duckdb', read_only=True).sq
 | Sampling points do not match the metadata | Check the ID normalization (country prefix) and compare match rates per country before writing any new rule. |
 | EEA download returns an error or a non-ZIP response | Temporary service issue or wrong parameters. The request is safe to rerun. |
 | First `dbt build` is slow | DuckDB reads Parquet from S3 for the first time. Later models read local tables. |
+| `dbt run` fails with "Required var 'country' not found" | The heavy models need `--vars "{country: 'FR', year: 2023}"`. Use `make dbt-batches`. |
+| Out-of-memory even with one slice | Lower `threads`, set `memory_limit` and `temp_directory` in the dbt profile, or split the slice further. |
+| Country `NO` is treated as `false` | Quote country codes in `--vars`: `{country: 'NO'}`. |
 | `npm run sources` fails or the source is unknown | `sources/air_quality/connection.yaml` is missing. Recreate it from `http://localhost:3000/settings` (new source with the Parquet connector). |
 | Evidence will not install or start | Use Node.js 20 (`nvm use 20`). |
 | `JavaScript heap out of memory` during `npm run sources` | Keep the exported mart small, or run `NODE_OPTIONS="--max-old-space-size=4096" npm run sources`. |

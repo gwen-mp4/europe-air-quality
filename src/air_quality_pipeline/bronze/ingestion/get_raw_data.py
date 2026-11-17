@@ -1,4 +1,5 @@
 import logging
+import time
 from datetime import date
 from io import BytesIO
 from pathlib import PurePosixPath
@@ -49,14 +50,30 @@ def fetch_archive(
 ) -> bytes:
     """Download an EEA ZIP archive and return its content."""
 
-    res = requests.post(f"{URL}{ENDPOINT}", json=payload, timeout=120)
-    res.raise_for_status()
+    last_error = None
+    for attempt in range(1, 4):
+        try:
+            res = requests.post(f"{URL}{ENDPOINT}", json=payload, timeout=120)
+            res.raise_for_status()
 
-    if not is_zipfile(BytesIO(res.content)):
-        raise ValueError(f"The EEA response is not a valid ZIP: {archive_name}")
+            if not is_zipfile(BytesIO(res.content)):
+                raise ValueError(f"The EEA response is not a valid ZIP: {archive_name}")
 
-    logger.debug("Data retrieved: %s", archive_name)
-    return res.content
+            logger.debug("Data retrieved: %s", archive_name)
+            return res.content
+        except (requests.exceptions.RequestException, ValueError) as exc:
+            last_error = exc
+            if attempt == 3:
+                raise
+            logger.warning(
+                "Retrying archive fetch for %s (attempt %s/3) after error: %s",
+                archive_name,
+                attempt + 1,
+                exc,
+            )
+            time.sleep(5)
+
+    raise last_error
 
 
 def extract_zip_to_s3(

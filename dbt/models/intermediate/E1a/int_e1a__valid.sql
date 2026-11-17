@@ -39,28 +39,19 @@ normalize as (
 valid_only as (
     select
         * exclude (value),
-        nullif(value, -999) as value,
-        validity_code in (2, 3) as is_below_detection_limit,
-        validity_code = 3 as is_imputed
+        nullif(value, -999)       as value,
+        validity_code in (2, 3)   as is_below_detection_limit,
+        validity_code = 3         as is_imputed
     from normalize
     where validity_code in (1, 2, 3)
 ),
 
-flagged as (
+final as (
     select
         *,
-        value < 0 and value <> -999 as is_negative
+        value < 0                                  as is_negative,
+        country || '-' || cast(year as varchar)    as batch_key  -- slice identifier, not unique per row
     from valid_only
-),
-
-cleaned as (
-    select
-        * exclude (value),
-        nullif(value, -999) as value
-    from flagged
 )
 
-select
-    *,
-    country || '-' || cast(year as varchar) as batch_key
-from cleaned
+select * from final
