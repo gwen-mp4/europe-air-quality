@@ -131,6 +131,10 @@ The gold mart `mart_station_info` is exported by dbt as a Parquet file into `evi
 - Evidence Studio (the current hosted version) cannot read local Parquet files, so this project uses the open-source version of Evidence with a Parquet connector.
 - Only a small aggregated mart is shipped to the browser, never hourly data.
 
+#### First look at the map on Evidence
+
+![evidence map](images/evidence_map.png)
+
 ### 8. Large-volume builds (incremental by country and year)
 
 The bronze layer holds all European countries, which is too much to process in a single query on one machine. The heavy hourly model (`int_e1a__valid`) is incremental and processed one **slice** (country and year) at a time:
@@ -372,4 +376,4 @@ uv run python -c "import duckdb; duckdb.connect('dev.duckdb', read_only=True).sq
 
 - **Data:** European Environment Agency (EEA). Please refer to the EEA copyright and reuse policy.
 - **Tools:** Evidence Dev, AWS S3, DuckDB, dbt, Python and uv.
-- **Map tiles**: © OpenStreetMap contributors.
+- **Map tiles**: © OpenStreetMap contributors © CARTO

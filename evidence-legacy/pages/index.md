@@ -29,7 +29,7 @@ where air_pollutant = '${inputs.pollutant.value}'
     long=longitude
     pointName=station_code
     colorPalette={['yellow','orange','red','darkred']}
-    basemap="https://{ '{' }s{ '}' }.tile.openstreetmap.org/{ '{' }z{ '}' }/{ '{' }x{ '}' }/{ '{' }y{ '}' }.png"
+    basemap="https://{ '{' }s{ '}' }.basemaps.cartocdn.com/light_all/{ '{' }z{ '}' }/{ '{' }x{ '}' }/{ '{' }y{ '}' }.png?key=cb1_5aub_1_0023a59448831feacf46495b"
     startingLat=46.6
     startingLong=2.4
     startingZoom=5
