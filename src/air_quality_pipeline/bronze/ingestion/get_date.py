@@ -11,8 +11,8 @@ def generate_months_period(
     start = date.fromisoformat(start_date)
     end = date.fromisoformat(end_date)
 
-    if start > end:
-        raise ValueError("start_date must be less than or equal to end_date")
+    if end < start or (start.year, start.month) != (end.year, end.month):
+        raise ValueError(f"start_date and end_date must be in the same month: {start_date} / {end_date}")
 
     year = start.year
     month = start.month

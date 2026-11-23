@@ -141,8 +141,6 @@ def fetch_metadata():
     extract_zip_to_s3(content, None, True, METADATA_PREFIX)
 
 
-# Add variable validation later (e.g. pollutant must be PM2.5, PM10, CO etc...)
-# Add try-expect too
 def download_from_src(
     country: str,
     pollutant: str,
