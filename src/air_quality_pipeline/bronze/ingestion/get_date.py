@@ -13,8 +13,8 @@ def generate_months_period(
 
     if end < start or (start.year, start.month) != (end.year, end.month):
         raise ValueError(
-16 +             f"start_date and end_date must be in the same month: {start_date} / {end_date}"
-17 +         )
+            f"start_date and end_date must be in the same month: {start_date} / {end_date}"
+        )
 
     year = start.year
     month = start.month
