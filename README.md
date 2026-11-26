@@ -24,7 +24,7 @@ An on-demand batch ELT pipeline that ingests, validates, cleans and models Europ
 | Interactive station map (Evidence) | ✅ Done (local) |
 | CI with GitHub Actions | ✅ Done |
 | Makefile task runner | ✅ Done |
-| Map deployment as a static site | 📝 Planned |
+| Map deployment as a static site | ✅ Done |
 | Recent unverified data (E2a) and orchestration | 📝 Optional |
 
 ## 🏗️ Architecture
@@ -131,7 +131,11 @@ The gold mart `mart_station_info` is exported by dbt as a Parquet file into `evi
 - Evidence Studio (the current hosted version) cannot read local Parquet files, so this project uses the open-source version of Evidence with a Parquet connector.
 - Only a small aggregated mart is shipped to the browser, never hourly data.
 
-#### First look at the map on Evidence
+#### Evidence Map
+
+There are, in total, 5 pollutants and 36 countries. From `1 January 2020` to `31 December 2025`.  
+We can either select the date range we want (see the image below), the last 3 months, one year and all time.  
+Here's an look at the Evidence map, selecting `NO2` as pollutant from `22 March 2020` to `7 March 2022`:  
 
 ![evidence map](images/evidence_map.png)
 
@@ -240,6 +244,10 @@ nvm install 20 && nvm use 20
 cd evidence-legacy && npm install && cd ..
 ```
 
+The Evidence project includes a post-install and pre-build workaround for its current manifest route: `npm install` or `npm ci` applies `scripts/disable-manifest-prerender.mjs`, and `npm run build` runs it again before the build. This workaround prevents `/manifest.webmanifest` from being marked as prerenderable when it is already provided as a static asset at `evidence-legacy/static/manifest.webmanifest`.
+
+Run npm commands from `evidence-legacy/`, because that folder contains the Evidence `package.json`. The static production output is written to `evidence-legacy/build/`; this folder is generated content and is excluded by the root `.gitignore` (`build/`).
+
 ### Configuration
 
 ```bash
@@ -320,7 +328,13 @@ uv run dbt build --select mart_station_info --profiles-dir .
 cd ../evidence-legacy
 npm run sources         # needs sources/air_quality/connection.yaml
 npm run dev             # http://localhost:3000
+
+# Or create and preview the production static site
+npm run build
+npm run preview        # serves evidence-legacy/build locally
 ```
+
+`npm run build` creates the deployable static site in `evidence-legacy/build/`. `npm run preview` only serves that generated build locally; run `npm run build` again after changing the page or source data.
 
 ## 🛠️ Useful commands
 
@@ -353,6 +367,9 @@ uv run python -c "import duckdb; duckdb.connect('dev.duckdb', read_only=True).sq
 | Country `NO` is treated as `false` | Quote country codes in `--vars`: `{country: 'NO'}`. |
 | `npm run sources` fails or the source is unknown | `sources/air_quality/connection.yaml` is missing. Recreate it from `http://localhost:3000/settings` (new source with the Parquet connector). |
 | Evidence will not install or start | Use Node.js 20 (`nvm use 20`). |
+| `npm error Could not read package.json` | Run npm commands from `evidence-legacy/`, where `package.json` is located. For example: `cd evidence-legacy && npm run build`. |
+| `/manifest.webmanifest` appears in a prerender build error | Run a clean install before building (`npm ci`), then run `npm run build`. The project applies `scripts/disable-manifest-prerender.mjs` automatically through the `postinstall` and `prebuild` scripts, and provides the manifest through `static/manifest.webmanifest`. |
+| `npm run preview` does not show recent changes | `npm run preview` serves the existing generated site. Rebuild with `npm run build`, then run `npm run preview` again. |
 | `JavaScript heap out of memory` during `npm run sources` | Keep the exported mart small, or run `NODE_OPTIONS="--max-old-space-size=4096" npm run sources`. |
 | Table `air_quality.mart_station_info` not found | The source name is the folder name and the table name is the file name. Rerun `npm run sources`. |
 | The map is blank | The basemap tiles need an internet connection. |

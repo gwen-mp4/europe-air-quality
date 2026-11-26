@@ -5,7 +5,9 @@
     "build": "evidence build",
     "dev": "evidence dev --open /",
     "sources": "evidence sources",
-    "preview": "evidence preview"
+    "preview": "evidence preview",
+    "postinstall": "node scripts/disable-manifest-prerender.mjs",
+    "prebuild": "node scripts/disable-manifest-prerender.mjs"
   },
   "type": "module",
   "dependencies": {
