@@ -383,11 +383,7 @@ uv run python -c "import duckdb; duckdb.connect('dev.duckdb', read_only=True).sq
 
 ## 🗺️ Roadmap
 
-1. Deploy the map as a static site (GitHub Pages) and add a live demo link.
-2. CI with GitHub Actions: lint, tests and `dbt build` on a small sample.
-3. Time-series views (monthly facts by country) in the Evidence app.
-4. Additional data quality reporting from dbt tests.
-5. *(Optional)* Recent unverified data (E2a) with scheduled collection, and orchestration.
+1. *(Optional)* Recent unverified data (E2a) with scheduled collection, and orchestration.
 
 ## 🤝 Credits
 
