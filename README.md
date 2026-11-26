@@ -135,7 +135,7 @@ The gold mart `mart_station_info` is exported by dbt as a Parquet file into `evi
 
 There are, in total, 5 pollutants and 36 countries. From `1 January 2020` to `31 December 2025`.  
 We can either select the date range we want (see the image below), the last 3 months, one year and all time.  
-Here's an look at the Evidence map, selecting `NO2` as pollutant from `22 March 2020` to `7 March 2022`:  
+Here's an look at the Evidence map, selecting `NO2` as pollutant from `20 March 2020` to `7 March 2022`:  
 
 ![evidence map](images/evidence_map.png)
 
