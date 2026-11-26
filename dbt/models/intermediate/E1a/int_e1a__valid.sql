@@ -11,7 +11,7 @@ with
 
 staged as (
     select * from {{ ref('stg_e1a__air_quality') }}
-    where country = '{{ var("country") }}'
+    where country = {{ var("country") }}
     and year = {{ var("year") }}
 ),
 

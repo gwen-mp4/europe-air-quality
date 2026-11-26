@@ -6,8 +6,7 @@ SHELL := /bin/bash
 # Load environment variables from dbt/.env
 ENV := set -a; source dbt/.env; set +a
 
-# Removed AD AL AT BA BE BG CH CY CZ DE DK EE ES FI FR GB GR HR HU IE IS IT LT LU LV ME MK MT NL because already done
-COUNTRIES ?= NO PL PT RO RS SE SI SK
+COUNTRIES ?= AD AL AT BA BE BG CH CY CZ DE DK EE ES FI FR GB GR HR HU IE IS IT LT LU LV ME MK MT NL NO PL PT RO RS SE SI SK
 YEARS     ?= 2020 2021 2022 2023 2024 2025
 
 .DEFAULT_GOAL := help
@@ -59,6 +58,7 @@ dbt-test:  ## Run all dbt tests once
 	uv run dbt test --profiles-dir .
 
 dbt-docs:  ## Generate and serve the dbt documentation
+	$(ENV)
 	cd dbt
 	uv run dbt docs generate --profiles-dir .
 	uv run dbt docs serve --profiles-dir .

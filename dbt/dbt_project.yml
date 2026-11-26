@@ -4,6 +4,12 @@ version: '1.0.0'
 
 profile: 'europe_air_quality'
 
+# Defaults so the project compiles in every mode (docs generate, build, compile).
+# `make dbt-batches` overrides these per country/year slice via --vars.
+vars:
+  country: 'NO'
+  year: 2020
+
 model-paths: ["models"]
 analysis-paths: ["analyses"]
 test-paths: ["tests"]
